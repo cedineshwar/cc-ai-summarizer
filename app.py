@@ -41,8 +41,8 @@ if st.button("Generate Summary"):
         st.warning("Please upload a transcript or enable the sample call.")
     else:
         with st.spinner("Summarizing..."):
-            summary = summarize_call(transcript, model=model_choice, max_sentences=max_len)
+            # summary = summarize_call(transcript, model=model_choice, max_sentences=max_len)
         st.subheader("Summary")
-        st.write(summary)
+        # st.write(summary)
 
 
