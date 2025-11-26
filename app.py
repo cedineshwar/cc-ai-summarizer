@@ -54,3 +54,5 @@ if st.button("Generate Summary"):
             summary = summarize_call(transcript, model=model_choice, max_sentences=max_len)
         st.subheader("Summary")
         st.write(summary)
+
+
