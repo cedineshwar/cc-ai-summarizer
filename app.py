@@ -1,5 +1,5 @@
 import streamlit as st 
-from src.summarizer import summarize_call
+# from src.summarizer import summarize_call
 from src.utils import load_sample_call, load_file, list_files
 
 
