@@ -1,0 +1,32 @@
+Below is a call-center conversation between an agent and a customer.
+Please summarize it using the exact structure provided.
+Conversation:
+{{PASTE TRANSCRIPT HERE}}
+Required Output Format (Follow strictly):
+1. Summary of the Call
+A concise 4–6 sentence overview of the issue, actions taken, and resolution status.
+2. Customer Tone
+Describe the customer’s tone (e.g., calm, upset, confused, angry, frustrated, appreciative, neutral).
+3. Customer Emotions (Explicit Only)
+List observable emotions based only on actual statements (e.g., frustration, worry, satisfaction).
+No guessing.
+4. Agent Tone
+Describe the agent’s tone (e.g., professional, empathetic, rushed, neutral).
+5. Agent Emotions (If Detectable)
+Only include emotions that the agent clearly expresses.
+If none: “The agent did not express explicit emotions.”
+6. Agent Score (0–100)
+Score based on:
+Friendliness
+Clarity
+Policy adherence
+Resolution effectiveness
+Empathy
+Include a 2–3 sentence justification.
+7. Agent Rating (1–5 stars)
+5 = Excellent
+4 = Very Good
+3 = Average
+2 = Poor
+1 = Very Poor
+Include a 1–2 sentence explanation.

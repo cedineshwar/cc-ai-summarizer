@@ -1,0 +1,186 @@
+CUSTOMER - VALENTINE GEORGE 
+AGENT - ID - 2222 - NAME - FRANK AGENT
+DEPARTMENT - BANKING
+CONVERSATION DATE - 02/18/2025 - MM/DD/YYYY
+CONVERSATION TIME - 10AM PST
+CONVERSATION LENGTH - 9 MINUTES
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: Everything is secure now. You won’t be responsible for any unauthorized charges.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Everything is secure now. You won’t be responsible for any unauthorized charges.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: Everything is secure now. You won’t be responsible for any unauthorized charges.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Everything is secure now. You won’t be responsible for any unauthorized charges.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: Please tell me my account isn’t compromised.
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: Everything is secure now. You won’t be responsible for any unauthorized charges.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: Please tell me my account isn’t compromised.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: Please tell me my account isn’t compromised.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: Please tell me my account isn’t compromised.
+AGENT: Everything is secure now. You won’t be responsible for any unauthorized charges.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: You did the right thing calling us. I’m locking your card immediately to stop further charges.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: Please tell me my account isn’t compromised.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Everything is secure now. You won’t be responsible for any unauthorized charges.
+
+CUSTOMER: Please tell me my account isn’t compromised.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: Please tell me my account isn’t compromised.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: How quickly can we resolve this?
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: We’ve enabled enhanced monitoring on your account for extra protection.
+
+CUSTOMER: I rely on this account daily. I need it secured.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.
+
+CUSTOMER: I’ve never seen these charges before. This is alarming.
+AGENT: Your new card will be expedited and shipped in 24 hours.
+
+CUSTOMER: I got a notification about suspicious transactions. I didn’t authorize anything.
+AGENT: I can confirm the transactions were fraudulent. We’ll refund them to your account.

@@ -1,0 +1,186 @@
+CUSTOMER - JOHN SMITH
+AGENT - ID - 1111 - NAME - DAVE AGENT
+DEPARTMENT - AIRLINE
+CONVERSATION DATE - 01/01/2025 - MM/DD/YYYY
+CONVERSATION TIME - 4PM PST
+CONVERSATION LENGTH - 10 MINUTES
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: Thank you so much for calling me personally.
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: Everything is already processed—your new boarding pass is ready.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: Everything is already processed—your new boarding pass is ready.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: Everything is already processed—your new boarding pass is ready.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: Everything is already processed—your new boarding pass is ready.
+
+CUSTOMER: Thank you so much for calling me personally.
+AGENT: Everything is already processed—your new boarding pass is ready.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Thank you so much for calling me personally.
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: Everything is already processed—your new boarding pass is ready.
+
+CUSTOMER: Thank you so much for calling me personally.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: Thank you so much for calling me personally.
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: This makes my whole week. I’m so excited.
+AGENT: Everything is already processed—your new boarding pass is ready.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We’re thrilled to give you this surprise experience.
+
+CUSTOMER: Thank you so much for calling me personally.
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: Thank you so much for calling me personally.
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: Are you sure there’s nothing else I need to do?
+AGENT: We selected you because of your loyalty and perfect flight history.
+
+CUSTOMER: Seriously? I got a free upgrade? That’s amazing!
+AGENT: You’ll enjoy lounge access, priority boarding, and upgraded meals.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: Yes! You’ve been upgraded to business class at no additional cost.
+
+CUSTOMER: I’ve never flown business class before. This is such a wonderful surprise.
+AGENT: Everything is already processed—your new boarding pass is ready.

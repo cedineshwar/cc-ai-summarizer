@@ -1,0 +1,187 @@
+CUSTOMER - MARY PRICE 
+AGENT - ID - 4444 - NAME -  DEBBIE AGENT
+DEPARTMENT - HEALTH CARE 
+CONVERSATION DATE - 03/25/2025 - MM/DD/YYYY
+CONVERSATION TIME - 3PM PST
+CONVERSATION LENGTH - 7 MINUTES
+
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: If we can’t get you in today, I will personally coordinate the earliest emergency slot.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: Your situation matters, and I will stay on this until we get a solution.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: I rearranged everything in my schedule because of this.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: I took time off work and arranged childcare, and now you're telling me my appointment isn't in the system?
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: I’ve been waiting weeks for this. I don’t know what else to do.
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.
+
+CUSTOMER: This appointment was for something important. I really needed to be seen today.
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: Let me check every doctor’s availability to see if we can fit you in today.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: I’m truly sorry. This appears to be a scheduling error on our end.
+
+CUSTOMER: Why wasn’t I notified earlier?
+AGENT: I understand how much this appointment meant, and I don’t want you to leave without support.

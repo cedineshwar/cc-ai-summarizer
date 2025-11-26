@@ -1,0 +1,186 @@
+CUSTOMER - CLARA WASHINGTON 
+AGENT - ID - 3333 - NAME - DELAN AGENT
+DEPARTMENT - BANKING - CREDIT CARD 
+CONVERSATION DATE - 02/14/2025 - MM/DD/YYYY
+CONVERSATION TIME - 12 NOON  PST
+CONVERSATION LENGTH - 10 MINUTES
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’m looking at my statement right now. The numbers don’t add up, and I’m not paying this.
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’m looking at my statement right now. The numbers don’t add up, and I’m not paying this.
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: I’m looking at my statement right now. The numbers don’t add up, and I’m not paying this.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’m looking at my statement right now. The numbers don’t add up, and I’m not paying this.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’m looking at my statement right now. The numbers don’t add up, and I’m not paying this.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I’m looking at my statement right now. The numbers don’t add up, and I’m not paying this.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: At this time, the system isn’t allowing me to remove the charge.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I understand your frustration. Let me check your account again, but our system shows both charges as valid.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: Why can’t you reverse the duplicate charge?
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I can escalate this, but I can’t guarantee the duplicate will be reversed.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: I just want my bill corrected. That’s all I’m asking.
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’ve called multiple times but nothing gets fixed. Why is this so hard?
+AGENT: I wish I could resolve this immediately, but the billing department must handle adjustments.
+
+CUSTOMER: I’m looking at my statement right now. The numbers don’t add up, and I’m not paying this.
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.
+
+CUSTOMER: I’ve been charged twice for the same billing cycle. This keeps happening and it’s exhausting.
+AGENT: I’m sorry you’ve experienced repeated issues, but I can only follow the policies in place.

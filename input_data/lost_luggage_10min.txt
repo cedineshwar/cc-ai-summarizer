@@ -1,0 +1,187 @@
+CUSTOMER - VALERI DOE  
+AGENT - ID - 5555 - NAME - HUNTER AGENT
+DEPARTMENT - AIRLINE  
+CONVERSATION DATE - 12/25/2025 - MM/DD/YYYY
+CONVERSATION TIME - 9PM PST
+CONVERSATION LENGTH - 10 MINUTES
+
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I’ve been waiting at the carousel for an hour and my bag still isn’t here. I’m flying internationally tomorrow morning!
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: We can arrange emergency delivery directly to your hotel abroad if necessary.
+
+CUSTOMER: I filed a report but nothing seems to be moving. Can someone please tell me where my luggage is?
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: Why did the tracker stop updating? It was last scanned two airports back.
+AGENT: I see the last scan was at the transfer hub. It appears the bag may have missed the connection, but we can still reroute it urgently.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: I know this is stressful, but I’ll stay on the line with you while I verify every possible update.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: This is really stressing me out. That suitcase has all my documents and clothes for the trip.
+AGENT: I completely understand how urgent this is, especially before an international trip. Let me check the global tracking system again.
+
+CUSTOMER: I can’t travel without that bag. I don’t know what else to do.
+AGENT: Thank you for your patience. I’m escalating your case to priority so the luggage team flags it immediately.

@@ -1,0 +1,2 @@
+default_model: simple-extract
+max_summary_sentences: 3
