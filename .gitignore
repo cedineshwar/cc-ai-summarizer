@@ -5,7 +5,7 @@ __pycache__/
 .env
 
 # Data
-sample_data/*.txt
+#sample_data/*.txt
 
 # IDE
 .vscode/
