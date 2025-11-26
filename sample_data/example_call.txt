@@ -1,0 +1,13 @@
+Agent: Hi, thanks for calling ExampleTel. This is Maya, how can I help today?
+Customer: Hi, I'm having trouble with my internet — it's been disconnecting frequently over the last two days.
+Agent: I'm sorry to hear that. Can I have your account number so I can look it up?
+Customer: Sure, it's 12345678.
+Agent: Thanks. I see there's a reported outage in your area yesterday that may have affected connectivity. Have you tried restarting your router?
+Customer: Yes, I restarted it twice but the issue persists.
+Agent: Okay — I'll run a remote diagnostic and, if needed, schedule a technician. I can also offer a temporary billing credit for the inconvenience.
+Customer: That would be great. Thank you.
+Agent: I've scheduled a technician visit for tomorrow between 9am and 12pm. Is that okay?
+Customer: Yes, that's perfect.
+Agent: You're all set. Is there anything else I can help with?
+Customer: No, that's all. Thanks for your help.
+Agent: Thank you for calling ExampleTel. Have a great day.
