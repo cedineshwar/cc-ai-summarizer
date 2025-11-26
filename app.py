@@ -10,17 +10,8 @@ st.write(":orange[AI-powered call center summarization tool. Upload a call trans
 
 cc_filelist = []
 
-# cc_files = st.sidebar.selectbox("Select Convserations", cc_filelist , index =0)
-
-# cc_files = st.sidebar.checkbox("Fetch Conversation Files", value=False)
 cc_filelist = list_files('input_data/')
 cc_files = st.sidebar.selectbox("Select Convserations", cc_filelist , index =0) 
-
-
-
-    # if st.sidebar.button("Refresh File List"):
-#     cc_filelist = list_files('input_data/')
-#     cc_files = st.sidebar.selectbox("Select Convserations", cc_filelist , index =0)  
 
 sample = st.sidebar.checkbox("Use sample data", value=False)
 
@@ -37,14 +28,13 @@ if sample and uploaded_file is None:
 elif uploaded_file is not None:
     transcript = uploaded_file.getvalue().decode('utf-8')
 elif cc_files is not None:
-    st.write(cc_files)
+    # st.write(cc_files)
     transcript = load_file(cc_files)
 else:
     transcript = ""
 
 st.subheader("Transcript")
 st.text_area("", value=transcript, height=400)
-
 
 if st.button("Generate Summary"):
     if not transcript.strip():
