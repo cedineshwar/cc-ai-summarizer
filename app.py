@@ -42,7 +42,7 @@ if st.button("Generate Summary"):
     else:
         with st.spinner("Summarizing..."):
             # summary = summarize_call(transcript, model=model_choice, max_sentences=max_len)
-        st.subheader("Summary")
+            st.subheader("Summary")
         # st.write(summary)
 
 
