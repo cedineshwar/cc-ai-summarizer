@@ -60,5 +60,6 @@ def setup_logger(debug=False):
     return logger
 
 # Create a default logger instance
-DEBUG = True  # Set to True to enable debug logging
+DEBUG = True
+  # Set to True to enable debug logging
 logger = setup_logger(debug=DEBUG)

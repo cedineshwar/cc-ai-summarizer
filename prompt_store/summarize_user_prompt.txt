@@ -1,22 +1,30 @@
 Below is a call-center conversation between an agent and a customer.
 Please summarize it using the exact structure provided and get me the JSON structure with key value pair like given below and strictly follow the format of the json structure
 {
-  'agentName': '',
-  'agentId': '',
-  'department': '',
-  'customerName': '',
-  'conversationDate': '',
-  'conversationTime': '', 
-  'conversationlength': '',
-  'callSummary': '',
-  'customerTone': '',
-  'customerEmotions': '',
-  'agentTone': '',
-  'agentEmotions': '',
-  'agentScore': 85,
-  'agentScoreReason': '',
-  'agentRating': 4
+  "agentName": "",
+  "agentId": "",
+  "department": "",
+  "customerName": "",
+  "conversationDate": "",
+  "conversationTime": "", 
+  "conversationlength": "",
+  "callSummary": "",
+  "customerTone": "",
+  "customerEmotions": "",
+  "agentTone": "",
+  "agentEmotions": "",
+  "agentScore": 85,
+  "agentScoreReason": "",
+  "agentRating": 4
 }
+Value Rules:
+Please keep all values in the json as init case. 
+For timezone alone keep it all upper case. 
+For time like AM or PM, keep it as am or pm. 
+For noon change it to pm.
+For HOURS or Hours or hours, keep it hrs.
+For MINUTES or Minutes or minutes, keep it mins.
+For SECONDS or Seconds or seconds, keep it secs.
 
 Conversation:
 {{PASTE TRANSCRIPT HERE}}
