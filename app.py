@@ -41,12 +41,22 @@ openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
 
 API_KEY = openai_api_key if openai_api_key else API_KEY
 
+# Store API key globally in session state for access across all pages
+st.session_state.openai_api_key = API_KEY
+openai.api_key = API_KEY
 
 model_choice = st.sidebar.selectbox("Summarization model", models_list, index=0)
+
+# Store model choice in session state for access across all pages
+st.session_state.model_choice = model_choice
 
 temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.3)
 max_tokens = st.sidebar.slider("Token", 0, 1000, 600)
 max_len = st.sidebar.slider("Max summary length (sentences)", 1, 10, 2)
+
+# Store settings in session state for access across all pages
+st.session_state.temperature = temperature
+st.session_state.max_tokens = max_tokens
 
 # Process uploaded files
 transcripts = {}
@@ -149,7 +159,7 @@ if "bulk_summaries" in st.session_state and st.session_state.bulk_summaries:
                 cols.remove('filename')
             new_cols = ['id', 'filename'] + cols
             data = data[new_cols]
-            st.dataframe(data, hide_index=True, use_container_width=True)
+            st.dataframe(data, hide_index=True, width="stretch")
             # st.subheader("Displaying  as table")
             # st.table(data)
         except Exception as e:

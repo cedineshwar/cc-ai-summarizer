@@ -15,7 +15,8 @@ Please summarize it using the exact structure provided and get me the JSON struc
   "agentEmotions": "",
   "agentScore": 85,
   "agentScoreReason": "",
-  "agentRating": 4
+  "agentRating": 4,
+  "agentRatingReason": "",
 }
 Value Rules:
 Please keep all values in the json as init case. 
