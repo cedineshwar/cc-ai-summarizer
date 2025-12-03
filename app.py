@@ -7,6 +7,8 @@ import openai
 import os
 import pandas as pd
 import json
+import numpy as np
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -39,7 +41,7 @@ API_KEY = openai_api_key if openai_api_key else API_KEY
 
 model_choice = st.sidebar.selectbox("Summarization model", models_list, index=0)
 
-temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 1.0)
+temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.3)
 max_tokens = st.sidebar.slider("Token", 0, 1000, 600)
 max_len = st.sidebar.slider("Max summary length (sentences)", 1, 10, 2)
 
@@ -155,3 +157,9 @@ if "bulk_summaries" in st.session_state and st.session_state.bulk_summaries:
     if st.button("Clear All"):
         st.session_state.clear()
         st.rerun()
+
+
+
+with st.chat_message("user"):
+    st.write("Hello 👋")
+    st.line_chart(np.random.randn(30, 3))
