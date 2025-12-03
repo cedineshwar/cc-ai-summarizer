@@ -82,3 +82,46 @@ def save_bulk_summary(summaries: list) -> None:
         
     except Exception as e:
         logger.error(f"Error saving bulk summaries: {e}", exc_info=True)
+
+
+def load_chat_history() -> list:
+    """
+    Load chat history from output_data folder.
+    Returns a list of chat messages.
+    """
+    chat_file = 'output_data/chat_history.json'
+    
+    try:
+        if os.path.exists(chat_file):
+            with open(chat_file, 'r', encoding='utf-8') as f:
+                history = json.load(f)
+                logger.info(f"Loaded chat history with {len(history)} messages")
+                return history
+        else:
+            logger.info("No previous chat history found")
+            return []
+    except Exception as e:
+        logger.error(f"Error loading chat history: {e}")
+        return []
+
+
+def save_chat_history(messages: list) -> None:
+    """
+    Save chat history to output_data folder.
+    Appends new messages to existing history.
+    """
+    output_dir = 'output_data'
+    chat_file = os.path.join(output_dir, 'chat_history.json')
+    
+    try:
+        # Ensure output directory exists
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Save chat history
+        with open(chat_file, 'w', encoding='utf-8') as f:
+            json.dump(messages, f, indent=2)
+        
+        logger.info(f"Saved chat history with {len(messages)} messages")
+        
+    except Exception as e:
+        logger.error(f"Error saving chat history: {e}", exc_info=True)

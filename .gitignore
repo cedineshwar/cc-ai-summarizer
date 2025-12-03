@@ -19,3 +19,6 @@ logs/*.*
 #.py files
 p1.py
 app_old.py
+
+#files
+/output_data/chat*.json

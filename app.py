@@ -1,6 +1,6 @@
 import streamlit as st
 from dotenv import load_dotenv
-from src.utils import load_sample_call, load_file, list_files, get_next_id, save_bulk_summary
+from src.utils import load_sample_call, load_file, list_files, get_next_id, save_bulk_summary, load_chat_history, save_chat_history
 from src.summarizer import summarize_call
 from src.logger import logger
 import openai
@@ -8,6 +8,7 @@ import os
 import pandas as pd
 import json
 import numpy as np
+
 
 
 # Load environment variables from .env file
@@ -18,6 +19,8 @@ st.set_page_config(page_title="Call Center AI Summarizer")
 
 st.title("Call Center AI Summarizer")
 st.write(":orange[AI-powered bulk call center summarization tool. Upload up to 10 call transcripts and get summaries for all.]")
+
+
 
 # Sidebar configuration
 cc_filelist = []
@@ -158,8 +161,84 @@ if "bulk_summaries" in st.session_state and st.session_state.bulk_summaries:
         st.session_state.clear()
         st.rerun()
 
+# Chat widget popover - positioned using columns
+col1, col2, col3 = st.columns([3, 1, 0.3])
 
+with col3:
+    with st.popover("💬"):
+        st.subheader("Chat About Summaries")
+        
+        # Initialize chat history with persistent memory
+        if "messages" not in st.session_state:
+            # Load chat history from file if it exists
+            st.session_state.messages = load_chat_history()
+        
+        # Check if summaries exist
+        if "bulk_summaries" not in st.session_state or not st.session_state.bulk_summaries:
+            st.info("Generate summaries first to chat about them!")
+        else:
+            # Chat input at the top
+            user_input = st.chat_input("Ask a question about the summaries...", key="chat_input")
+            
+            # Display chat history with limited height below input
+            chat_container = st.container(height=300)
+            with chat_container:
+                for message in st.session_state.messages:
+                    with st.chat_message(message["role"]):
+                        st.markdown(message["content"])
+            
+            if user_input:
+                # Add user message to history
+                st.session_state.messages.append({"role": "user", "content": user_input})
+                
+                with st.chat_message("user"):
+                    st.markdown(user_input)
+                
+                # Prepare context from bulk summaries
+                summaries_context = json.dumps(st.session_state.bulk_summaries, indent=2)
+                
+                # Get response from LLM
+                with st.chat_message("assistant"):
+                    with st.spinner("Thinking..."):
+                        try:
+                            if API_KEY == "your_api_key_here" or API_KEY.strip() == "":
+                                st.error("Please provide a valid OpenAI API Key to use the chat feature.")
+                            else:
+                                openai.api_key = API_KEY
+                                
+                                response = openai.chat.completions.create(
+                                    model=model_choice,
+                                    messages=[
+                                        {
+                                            "role": "system",
+                                            "content": f"""You are a helpful assistant that analyzes call center summaries. 
+You have access to the following summaries data:
 
-with st.chat_message("user"):
-    st.write("Hello 👋")
-    st.line_chart(np.random.randn(30, 3))
+{summaries_context}
+
+Answer questions about these summaries accurately and concisely."""
+                                        },
+                                        {"role": "user", "content": user_input}
+                                    ],
+                                    temperature=0.7,
+                                    max_tokens=500
+                                )
+                                
+                                assistant_message = response.choices[0].message.content
+                                st.markdown(assistant_message)
+                                
+                                # Add assistant message to history
+                                st.session_state.messages.append({
+                                    "role": "assistant",
+                                    "content": assistant_message
+                                })
+                                
+                                # Save chat history to file
+                                save_chat_history(st.session_state.messages)
+                                
+                                logger.info(f"Chat query processed: {user_input[:100]}")
+                                
+                        except Exception as e:
+                            error_msg = f"Error processing chat: {str(e)}"
+                            st.error(error_msg)
+                            logger.error(error_msg, exc_info=True)
