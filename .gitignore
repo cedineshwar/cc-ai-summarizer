@@ -6,6 +6,7 @@ __pycache__/
 
 # Data
 #sample_data/*.txt
+logs/*.*
 
 # IDE
 .vscode/

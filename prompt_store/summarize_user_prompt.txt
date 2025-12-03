@@ -1,10 +1,28 @@
 Below is a call-center conversation between an agent and a customer.
-Please summarize it using the exact structure provided.
+Please summarize it using the exact structure provided and get me the JSON structure with key value pair like given below and strictly follow the format of the json structure
+{
+  'agentName': '',
+  'agentId': '',
+  'department': '',
+  'customerName': '',
+  'conversationDate': '',
+  'conversationTime': '', 
+  'conversationlength': '',
+  'callSummary': '',
+  'customerTone': '',
+  'customerEmotions': '',
+  'agentTone': '',
+  'agentEmotions': '',
+  'agentScore': 85,
+  'agentScoreReason': '',
+  'agentRating': 4
+}
+
 Conversation:
 {{PASTE TRANSCRIPT HERE}}
 Required Output Format (Follow strictly):
 1. Summary of the Call
-A concise 4–6 sentence overview of the issue, actions taken, and resolution status.
+A concise {{max_summary_length}} sentence overview of the issue, actions taken, and resolution status.
 2. Customer Tone
 Describe the customer’s tone (e.g., calm, upset, confused, angry, frustrated, appreciative, neutral).
 3. Customer Emotions (Explicit Only)

@@ -1,0 +1,51 @@
+{
+  'agentName': '',
+  'agentId': '',
+  'department': '',
+  'customerName': '',
+  'conversationDate': '',
+  'conversationTime': '', 
+  'conversationlength': '',
+  'callSummary': '',
+  'customerTone': '',
+  'customerEmotions': 'satisfaction, excitement, gratitude',
+  'agentTone': '',
+  'agentEmotions': '',
+  'agentScore': 85,
+  'agentScoreReason': '',
+  'agentRating': 4
+}
+{
+
+
+  "Summary of the Call": "The customer was contacted regarding a surprise upgrade to business class, which was provided at no cost. The agent confirmed the upgrade, explained the benefits, and assured the customer that everything was processed with a new boarding pass ready. The customer expressed excitement and gratitude multiple times about the unexpected upgrade. The conversation was repetitive, with the same key messages conveyed multiple times, but the issue was resolved with clear information and confirmation. The call ended with the customer satisfied and the upgrade successfully implemented.",
+  "Customer Tone": "Appreciative and excited",
+  "Customer Emotions": ["satisfaction", "excitement", "gratitude"],
+  "Agent Tone": "Professional and enthusiastic",
+  "Agent Emotions": "The agent did not express explicit emotions.",
+  "Agent Score": 85,
+  "Justification": "The agent maintained a friendly and professional tone, providing clear and consistent information about the upgrade and process. Adherence to policy was evident through confirming the upgrade and processing details. Slight repetition and lack of variation in responses impacted the score, but resolution was effective and the customer was kept engaged positively.",
+  "Agent Rating": 4
+}
+
+
+{
+  "agentName":"",
+  "agentId":"",
+  "department":"",
+  "customerName":"",
+  "conversationDate":"",
+  "conversationTime":"", 
+  "conversationlength":"",
+  "callSummary": "",
+  "customerTone": "",
+  "customerEmotions": "satisfaction, excitement, gratitude",
+  "agentTone": "",
+  "agentEmotions": "",
+  "agentScore": 85,
+  "agentScoreReason": "",
+  "agentRating": 4.3
+}
+
+
+
