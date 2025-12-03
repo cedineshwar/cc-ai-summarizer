@@ -1,6 +1,9 @@
 streamlit>=1.20
 PyYAML
 python-dotenv
+openai
+pandas
+    
 #nltk
 #transformers>=4.0.0
 #torch
