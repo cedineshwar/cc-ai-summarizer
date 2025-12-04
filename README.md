@@ -19,6 +19,9 @@ An AI-powered Streamlit application for bulk call center summarization with inte
 - **Persistent Storage**: Save summaries to JSON with auto-appending (no data loss)
 - **CSV Export**: Download summaries as CSV files
 
+### Functional Flow Diagram
+
+![alt text](image-1.png)
 ### Chat & Analysis
 - **Interactive Chat with Summaries**: Ask questions about all summaries on the "View Summaries" page
 - **Full Context Awareness**: LLM has access to complete summary data including:
