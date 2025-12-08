@@ -17,10 +17,21 @@ load_dotenv()
 API_KEY = os.getenv("OPENAI_API_KEY")
 st.set_page_config(page_title="Call Center AI Summarizer")
 
+# Initialize session state variables if they don't exist
+if 'openai_api_key' not in st.session_state:
+    st.session_state.openai_api_key = API_KEY
+
+if 'model_choice' not in st.session_state:
+    st.session_state.model_choice = None
+
+if 'temperature' not in st.session_state:
+    st.session_state.temperature = 0.0
+
+if 'max_tokens' not in st.session_state:
+    st.session_state.max_tokens = 600
+
 st.title("Call Center AI Summarizer")
 st.write(":orange[AI-powered bulk call center summarization tool. Upload up to 10 call transcripts and get summaries for all.]")
-
-
 
 # Sidebar configuration
 cc_filelist = []
@@ -36,22 +47,37 @@ models_list = [
     "gpt-4.1-mini-2025-04-14",
     "gpt-4.1-nano",
 ]
+st.markdown(
+    """
+    <style>
+    [title="Show password text"] {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+#openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password", value=st.session_state.openai_api_key if st.session_state.openai_api_key else "", placeholder="Enter your OpenAI API key")
 
-openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
+openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password", value=st.session_state.openai_api_key if st.session_state.openai_api_key else "")
 
-API_KEY = openai_api_key if openai_api_key else API_KEY
+# Initialize API key in session state if user removes the key
+st.session_state.openai_api_key = ""
 
-# Store API key globally in session state for access across all pages
-st.session_state.openai_api_key = API_KEY
-openai.api_key = API_KEY
+# Only update API key if user enters a new one
+if openai_api_key:
+    st.session_state.openai_api_key = openai_api_key
+    openai.api_key = openai_api_key
+else:
+    openai.api_key = st.session_state.openai_api_key
 
 model_choice = st.sidebar.selectbox("Summarization model", models_list, index=0)
 
 # Store model choice in session state for access across all pages
 st.session_state.model_choice = model_choice
 
-temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.3)
-max_tokens = st.sidebar.slider("Token", 0, 1000, 600)
+temperature = st.sidebar.slider("Temperature", 0.0, 1.0, st.session_state.temperature)
+max_tokens = st.sidebar.slider("Token", 0, 1000, st.session_state.max_tokens)
 max_len = st.sidebar.slider("Max summary length (sentences)", 1, 10, 2)
 
 # Store settings in session state for access across all pages
@@ -87,12 +113,12 @@ elif cc_files:
 # Generate Summary button
 if st.button("Generate Summary"):
 
-    if API_KEY =="your_api_key_here" or API_KEY.strip() == "":
+    if st.session_state.openai_api_key == "your_api_key_here" or st.session_state.openai_api_key.strip() == "":
         logger.error("Please provide a valid OpenAI API Key")
         st.warning("Please enter your OpenAI API key!", icon="⚠")
         st.stop()
     else:
-        openai.api_key = API_KEY
+        openai.api_key = st.session_state.openai_api_key
 
     if not transcripts:
         st.warning("Please upload transcripts or enable the sample call.")
@@ -211,27 +237,32 @@ with col3:
                 with st.chat_message("assistant"):
                     with st.spinner("Thinking..."):
                         try:
-                            if API_KEY == "your_api_key_here" or API_KEY.strip() == "":
+                            if st.session_state.openai_api_key == "your_api_key_here" or st.session_state.openai_api_key.strip() == "":
                                 st.error("Please provide a valid OpenAI API Key to use the chat feature.")
                             else:
-                                openai.api_key = API_KEY
+                                openai.api_key = st.session_state.openai_api_key
                                 
-                                response = openai.chat.completions.create(
-                                    model=model_choice,
-                                    messages=[
-                                        {
-                                            "role": "system",
-                                            "content": f"""You are a helpful assistant that analyzes call center summaries. 
+                                # Build messages with full conversation history
+                                messages = [
+                                    {
+                                        "role": "system",
+                                        "content": f"""You are a helpful assistant that analyzes call center summaries. 
 You have access to the following summaries data:
 
 {summaries_context}
 
-Answer questions about these summaries accurately and concisely."""
-                                        },
-                                        {"role": "user", "content": user_input}
-                                    ],
-                                    temperature=0.7,
-                                    max_tokens=500
+Answer questions about these summaries accurately and concisely. Remember the context of the entire conversation."""
+                                    }
+                                ]
+                                
+                                # Add full conversation history to messages
+                                messages.extend(st.session_state.messages)
+                                
+                                response = openai.chat.completions.create(
+                                    model=model_choice,
+                                    messages=messages,
+                                    temperature=st.session_state.temperature,
+                                    max_tokens=st.session_state.max_tokens
                                 )
                                 
                                 assistant_message = response.choices[0].message.content
@@ -244,7 +275,7 @@ Answer questions about these summaries accurately and concisely."""
                                 })
                                 
                                 # Save chat history to file
-                                save_chat_history(st.session_state.messages)
+                                # save_chat_history(st.session_state.messages)
                                 
                                 logger.info(f"Chat query processed: {user_input[:100]}")
                                 
@@ -252,3 +283,10 @@ Answer questions about these summaries accurately and concisely."""
                             error_msg = f"Error processing chat: {str(e)}"
                             st.error(error_msg)
                             logger.error(error_msg, exc_info=True)
+            
+            # Clear chat history button
+            if st.button("Clear Chat History", key="clear_chat_btn"):
+                st.session_state.messages = []
+                save_chat_history([])
+                st.success("Chat history cleared!")
+                st.rerun()

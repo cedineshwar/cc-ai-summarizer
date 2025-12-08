@@ -7,10 +7,12 @@ __pycache__/
 # Data
 #sample_data/*.txt
 logs/*.*
+/input_data/synthetic_data/*.*
 
 #pages
 /pages/sub/*.*
 /pages/sub
+
 
 # IDE
 .vscode/
@@ -21,4 +23,6 @@ p1.py
 app_old.py  
 
 #files
+Projects/capstone/gitcommands.txt
+
 #/output_data/chat*.json

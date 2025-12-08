@@ -15,7 +15,17 @@ def write_file(filename) -> str:
 
 
 def list_files(folderpath: str) -> list:
-    return os.listdir(folderpath)
+    """
+    List only .txt files in the specified folder, excluding directories.
+    """
+    try:
+        all_items = os.listdir(folderpath)
+        # Filter to only include .txt files, exclude directories
+        txt_files = [f for f in all_items if f.endswith('.txt') and os.path.isfile(os.path.join(folderpath, f))]
+        return sorted(txt_files)
+    except Exception as e:
+        logger.error(f"Error listing files in {folderpath}: {e}")
+        return []
 
 
 def get_next_id() -> int:
@@ -89,7 +99,7 @@ def load_chat_history() -> list:
     Load chat history from output_data folder.
     Returns a list of chat messages.
     """
-    chat_file = 'output_data/chat_history.json'
+    chat_file = 'output_data/app_chat_history.json'
     
     try:
         if os.path.exists(chat_file):
@@ -111,7 +121,7 @@ def save_chat_history(messages: list) -> None:
     Appends new messages to existing history.
     """
     output_dir = 'output_data'
-    chat_file = os.path.join(output_dir, 'chat_history.json')
+    chat_file = os.path.join(output_dir, 'app_chat_history.json')
     
     try:
         # Ensure output directory exists

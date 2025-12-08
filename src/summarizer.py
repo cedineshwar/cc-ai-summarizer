@@ -14,7 +14,7 @@ def load_prompt(prompt_file):
         logger.error(f"Prompt file not found: {prompt_path}")
         return None
 
-def summarize_call(transcript, model="gpt-4.1-nano-2025-04-14", max_sentences=3, temperature=0.7, max_tokens=150):
+def summarize_call(transcript, model="gpt-4.1-nano-2025-04-14", max_sentences=3, temperature=0.0, max_tokens=600):
     # Load prompts from files
     system_prompt = load_prompt('summarize_system_prompt.txt')
     user_prompt_template = load_prompt('summarize_user_prompt.txt')
@@ -59,7 +59,61 @@ def summarize_call(transcript, model="gpt-4.1-nano-2025-04-14", max_sentences=3,
         return None
 
 
-def chat_with_bulk_summaries(user_message: str, chat_history: list, summaries_context: str, model="gpt-4.1-nano-2025-04-14", temperature=0.7, max_tokens=500):
+def chat_with_bulk_summaries(user_message: str, chat_history: list, summaries_context: str, model: str = "gpt-4.1-mini-2025-04-14", temperature: float = 0.0, max_tokens: int = 600) -> str:
+    """
+    Send a message to the LLM with full conversation history context.
+    
+    Args:
+        user_message: The current user message
+        chat_history: List of previous messages in the conversation (excluding current message)
+        summaries_context: JSON context of all summaries
+        model: The model to use
+        temperature: Temperature setting for the LLM
+        max_tokens: Maximum tokens for the response
+    
+    Returns:
+        The assistant's response or None if an error occurs
+    """
+    try:
+        # Build system message with summaries context
+        system_message = f"""You are a helpful assistant that analyzes call center summaries. 
+You have access to the following summaries data:
+
+{summaries_context}
+
+Answer questions about these summaries accurately and concisely. 
+Remember the context of the entire conversation and maintain continuity in your responses.
+Refer back to previous messages when relevant."""
+        
+        # Build messages list with system message, history, and current user message
+        messages = [{"role": "system", "content": system_message}]
+        
+        # Add entire conversation history
+        messages.extend(chat_history)
+        
+        # Add current user message
+        messages.append({"role": "user", "content": user_message})
+        
+        logger.debug(f"Chat request with {len(chat_history)} previous messages")
+        
+        response = openai.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens
+        )
+        
+        assistant_message = response.choices[0].message.content
+        logger.info(f"Chat response generated ({len(assistant_message)} characters)")
+        
+        return assistant_message
+        
+    except Exception as e:
+        logger.error(f"An error occurred during chat: {e}", exc_info=True)
+        return None
+
+
+def chat_with_bulk_summaries(user_message: str, chat_history: list, summaries_context: str, model="gpt-4.1-nano-2025-04-14", temperature=0.0, max_tokens=600):
     """
     Chat with LLM about bulk summaries using chat prompts.
     

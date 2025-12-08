@@ -1,14 +1,17 @@
 Below is a call-center conversation between an agent and a customer.
 Please summarize it using the exact structure provided and get me the JSON structure with key value pair like given below and strictly follow the format of the json structure
 {
+  "callId": "",
+  "conversationDate": "",
+  "conversationTime": "", 
+  "conversationlength": "",
   "agentName": "",
   "agentId": "",
   "department": "",
   "customerName": "",
-  "conversationDate": "",
-  "conversationTime": "", 
-  "conversationlength": "",
   "callSummary": "",
+  "issueCategory": "",
+  "resolutionStatus": "",
   "customerTone": "",
   "customerEmotions": "",
   "agentTone": "",

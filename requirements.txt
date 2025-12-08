@@ -4,6 +4,9 @@ python-dotenv
 openai
 numpy
 pandas
+matplotlib
+seaborn
+watchdog
 
 #nltk
 #transformers>=4.0.0

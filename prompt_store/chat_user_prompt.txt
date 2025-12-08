@@ -1,14 +1,17 @@
 Below is a call-center Summary
 This is how the structure of the call summary, and it is multiple array so you will see more than 1 call summary always.
 [{
+  "callId": "",
+  "conversationDate": "",
+  "conversationTime": "", 
+  "conversationlength": "",
   "agentName": "",
   "agentId": "",
   "department": "",
   "customerName": "",
-  "conversationDate": "",
-  "conversationTime": "", 
-  "conversationlength": "",
   "callSummary": "",
+  "issueCategory": "",
+  "resolutionStatus": "",
   "customerTone": "",
   "customerEmotions": "",
   "agentTone": "",
