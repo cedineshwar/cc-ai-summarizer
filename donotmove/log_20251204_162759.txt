@@ -1,0 +1,383 @@
+2025-12-04 16:27:59 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251204_162759.txt
+2025-12-04 16:27:59 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-04 16:28:01 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:28:01 - cc_ai_summarizer - INFO - Loaded chat history with 42 messages
+2025-12-04 16:28:05 - cc_ai_summarizer - DEBUG - Loaded 8 summaries from output_data/bulk_summaries.json
+2025-12-04 16:28:05 - cc_ai_summarizer - INFO - Loaded bulk summary chat history with 43 messages
+2025-12-04 16:28:10 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:28:22 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:28:28 - cc_ai_summarizer - DEBUG - Loaded 8 summaries from output_data/bulk_summaries.json
+2025-12-04 16:28:32 - cc_ai_summarizer - DEBUG - Loaded 8 summaries from output_data/bulk_summaries.json
+2025-12-04 16:28:32 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 0 messages
+2025-12-04 16:28:32 - cc_ai_summarizer - DEBUG - Loaded 8 summaries from output_data/bulk_summaries.json
+2025-12-04 16:28:35 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:28:51 - cc_ai_summarizer - INFO - Starting summarization for file: airlinecancellationforconvocation.txt
+2025-12-04 16:28:51 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_system_prompt.txt
+2025-12-04 16:28:51 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_user_prompt.txt
+2025-12-04 16:28:51 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_guardrail_prompt.txt
+2025-12-04 16:28:51 - cc_ai_summarizer - DEBUG - User prompt after replacing the strings:  Below is a call-center conversation between an agent and a customer.
+Please summarize it using the exact structure provided and get me the JSON structure with key value pair like given below and strictly follow the format of the json structure
+{
+  "callId": "",
+  "conversationDate": "",
+  "conversationTime": "", 
+  "conversationlength": "",
+  "agentName": "",
+  "agentId": "",
+  "department": "",
+  "customerName": "",
+  "callSummary": "",
+  "issueCategory": "",
+  "resolutionStatus": "",
+  "customerTone": "",
+  "customerEmotions": "",
+  "agentTone": "",
+  "agentEmotions": "",
+  "agentScore": 85,
+  "agentScoreReason": "",
+  "agentRating": 4,
+  "agentRatingReason": "",
+}
+Value Rules:
+Please keep all values in the json as init case. 
+For timezone alone keep it all upper case. 
+For time like AM or PM, keep it as am or pm. 
+For noon change it to pm.
+For HOURS or Hours or hours, keep it hrs.
+For MINUTES or Minutes or minutes, keep it mins.
+For SECONDS or Seconds or seconds, keep it secs.
+
+Conversation:
+CALL TRANSCRIPT
+===============
+Call ID: CC-2025-002741
+Date: January 20, 2025
+Time: 09:15 - 10:02 (47 minutes)
+Agent: Jessica Chen (ID: AG-5634)
+Customer: Robert Williams
+Issue Category: Flight Cancellation - Operational Issue
+Resolution Status: UNRESOLVED - CUSTOMER UNABLE TO ATTEND CRITICAL EVENT
+
+---START OF CALL---
+
+Customer: "Hello? Yes, I need to speak to someone about flight 447 departing at 2 PM today! It just got canceled! I need to get to Boston TODAY!"
+
+Agent: "Hi, welcome to SkyLine Airways. Can I get your confirmation number please?"
+
+Customer: "The confirmation number is SK-B47X9K2. This is absolutely ridiculous! My flight was supposed to depart in FIVE HOURS and I just got a notification it's canceled! How is this possible?"
+
+Agent: "Let me pull that up... okay, I see it. Flight SL447 Boston departure at 2:15 PM. You're right, that flight has been canceled due to operational maintenance issues. I can rebook you on another flight."
+
+Customer: "ANOTHER FLIGHT?! When? I need to be in Boston TODAY! This is not optional! My son is graduating today! His convocation ceremony is at 6 PM and I promised him I would be there!"
+
+Agent: "I understand. Let me check available flights... we have one departing at 5:45 PM that gets into Boston at 8:20 PM."
+
+Customer: "5:45 PM?! That lands at 8:20 PM! The ceremony is at 6 PM! I'll miss it!"
+
+Agent: "That's the only available flight we have today on SkyLine Airways. You could also look at other carriers, but that would be a separate booking."
+
+Customer: "Are you KIDDING me? Your airline canceled MY flight and now you're telling me the only option gets me there AFTER my son's graduation?"
+
+Agent: "Sir, I understand you're upset. These operational cancellations are beyond our control. We do have the 5:45 PM flight available—"
+
+Customer: "Beyond your control? You're an airline! Your job IS to control operations! This is unacceptable! I paid $850 for this flight specifically because it got me there in time!"
+
+Agent: "I understand your frustration. We can rebook you on the 5:45 PM flight at no additional charge, or you can wait for tomorrow's flights."
+
+Customer: "Tomorrow? Tomorrow is too late! The ceremony is TODAY! Can you not understand that?!"
+
+Agent: "Sir, I hear you. But that's all I have available on SkyLine Airways today. If you want to explore other carriers—"
+
+Customer: "No! I want MY flight back! I want the 2 PM flight that I paid for! I want to get to Boston on time! That's what I paid you $850 for!"
+
+Agent: "I understand, but the flight has been canceled. We cannot operate it. I can rebook you on the 5:45 PM—"
+
+Customer: "You keep saying the same thing! You're not listening to me! My SON is graduating TODAY and I will not miss it! What are you going to do to make this right?"
+
+Agent: "Sir, I apologize. I know this is frustrating. Regarding compensation, we can offer you a full refund of your ticket price or a travel credit for a future flight."
+
+Customer: "A REFUND?! Or a TRAVEL CREDIT?! I don't need money! I need to GET TO BOSTON! How does a refund help me attend my son's graduation in FOUR HOURS?!"
+
+Agent: "I understand. Unfortunately, the only option for you to get to Boston today is the 5:45 PM flight. There's no other way around that."
+
+Customer: "This is the worst customer service I've ever experienced! Can I speak to a supervisor? RIGHT NOW!"
+
+Agent: "Hold on one moment, sir."
+
+[Agent places customer on hold for 8 minutes while background noise shows multiple phones ringing and agents talking urgently]
+
+Agent: "Sir? I'm back. I've spoken with my supervisor. Unfortunately, we don't have any other flights available today. The 5:45 PM is genuinely the only option."
+
+Customer: "So you're telling me there's nothing you can do? Nothing at all? My son's graduation is in a few hours and you can't help me?"
+
+Agent: "I'm sorry, sir. What I CAN do is put you on a standby list for any earlier flights if there's a cancellation or if we can get another aircraft, but I can't guarantee anything."
+
+Customer: "A standby list? So I'm supposed to just SIT HERE and HOPE that maybe, possibly, by some miracle, something opens up? This is insane!"
+
+Agent: "I understand how you feel. But given the operational situation today, we're dealing with multiple canceled flights and very limited options. I really wish I could do more."
+
+Customer: "Multiple canceled flights? What's going on? Is this an airline-wide issue?"
+
+Agent: "We've had weather issues combined with some unexpected maintenance failures. It's been a difficult day. We've had approximately 23 flight cancellations across our network today, and we're completely overwhelmed with call volume."
+
+Customer: "So YOU'RE overwhelmed? I'M the one missing my son's graduation! Your overwhelming day is not my problem!"
+
+Agent: "You're right. That was unprofessional of me. I'm sorry. But the fact is, I don't have a magical solution here. There is no earlier flight available."
+
+Customer: "Can you do ANYTHING? Upgrade me to first class on the 5:45 PM? Comp my entire ticket? Get me a connecting flight through another airline at your expense? ANYTHING?"
+
+Agent: "Sir, let me be honest. I'm looking at our system right now and I can offer you: full refund of $850, a $200 travel credit for future flights, and a complimentary upgrade to first class on the 5:45 PM flight. But that doesn't get you there by 6 PM."
+
+Customer: "So nothing actually solves my problem. It's just money. Money doesn't bring me to my son's graduation. Money doesn't make me a father who kept his promise."
+
+Agent: "I understand. And I'm genuinely sorry. But operationally, I cannot make a flight appear that doesn't exist."
+
+Customer: "You know what? Forget the 5:45 PM. I'm going to rent a car and drive to Boston. How far is that?"
+
+Agent: "I think Boston is about 3.5 to 4 hours from here, depending on where you are."
+
+Customer: "3.5 hours? And my ceremony is in... [checks time] ...3 hours and 45 minutes. So I can't even make it by driving."
+
+Agent: "I'm sorry, sir."
+
+Customer: "You know what's the worst part? The worst part is I booked with YOUR airline specifically because you had the direct flight at the right time. I had other options but I chose SkyLine Airways because of that 2 PM flight. And now you're telling me you can't operate it."
+
+Agent: "Sir, I genuinely apologize. These operational failures are not acceptable. You made the right choice - our 2 PM flight WAS the right option. We just failed to deliver."
+
+Customer: "You failed. Yes. You absolutely failed. And now my son is going to have his graduation ceremony and his father won't be there because SkyLine Airways failed."
+
+Agent: "I know this doesn't help, but I want to make sure you get something out of this. Let me add another $300 travel credit to your account. So you have $500 in total credits plus the $850 refund."
+
+Customer: "Stop offering me money! I don't want your money! I want to go back in time and choose a different airline! I want to have made a different choice! But I can't! I made the choice to trust SkyLine Airways and you let me down!"
+
+Agent: "Sir, I understand. You have every right to be angry. I'm genuinely sorry."
+
+Customer: "Are you though? Are you genuinely sorry? Or are you just saying that because you've probably said it 50 times today because your airline has been a disaster?"
+
+Agent: "You're right. I have said it many times today. And honestly, I'm frustrated too. We've been completely overwhelmed. But that's not your fault. You're right to be angry."
+
+Customer: "I don't care if you're frustrated. I don't care about your day. I care about MY son's graduation. And I'm going to miss it. And that's on SkyLine Airways."
+
+Agent: "Yes. That's on us. And I'm sorry."
+
+Customer: "So what happens now? Do I just... accept that I'm not going?"
+
+Agent: "You still have the 5:45 PM option. You won't make the 6 PM ceremony, but you could potentially catch a late dinner or celebration after. Or you can take the refund and try another airline for tomorrow. But for today, those are your only options."
+
+Customer: "There is no celebrating after a missed graduation ceremony. That's not how this works. Missing the ceremony means missing the memory. It means not being there for my son on one of the most important days of his life."
+
+Agent: "I know. And I'm sorry I can't fix that."
+
+Customer: "You can't fix it. That's right. SkyLine Airways broke something you can't fix. And that's the most frustrating part."
+
+[Long pause]
+
+Customer: "I'm going to take the 5:45 PM flight. I'll be late, but at least I'll be in Boston. And then I'm going to file a formal complaint. And I'm going to look for a different airline for all my future bookings."
+
+Agent: "I understand. Would you like me to confirm the 5:45 PM flight for you?"
+
+Customer: "Yes. Confirm it. And just... understand that you've lost a loyal customer today. I've flown SkyLine Airways for five years. And this is how you treat me when there's a crisis."
+
+Agent: "I understand. And I'm truly sorry. Let me just confirm your booking... okay, you're confirmed on flight SL482 departing at 5:45 PM, first class, arriving Boston Logan at 8:20 PM. Your confirmation number is SK-48Z7J9K. You'll receive a notification with your refund and travel credits within 48 hours."
+
+Customer: "So I'm paying to fly at 5:45 PM when I was supposed to fly at 2 PM, and I'll arrive after my son's graduation. Perfect."
+
+Agent: "Sir, your ticket is refunded. The 5:45 PM flight is complimentary as a rebooked cancellation. You're not paying anything."
+
+Customer: "I don't care about the money! Stop talking about the money!"
+
+Agent: "I'm sorry. Is there anything else I can help you with?"
+
+Customer: "No. There's nothing you can help me with. You've already failed. Goodbye."
+
+Agent: "Goodbye, sir. And again, I'm very sorry."
+
+[Customer disconnects]
+
+---END OF CALL---
+Required Output Format (Follow strictly):
+1. Summary of the Call
+A concise 2 sentence overview of the issue, actions taken, and resolution status.
+2. Customer Tone
+Describe the customer’s tone (e.g., calm, upset, confused, angry, frustrated, appreciative, neutral).
+3. Customer Emotions (Explicit Only)
+List observable emotions based only on actual statements (e.g., frustration, worry, satisfaction).
+No guessing.
+4. Agent Tone
+Describe the agent’s tone (e.g., professional, empathetic, rushed, neutral).
+5. Agent Emotions (If Detectable)
+Only include emotions that the agent clearly expresses.
+If none: “The agent did not express explicit emotions.”
+6. Agent Score (0–100)
+Score based on:
+Friendliness
+Clarity
+Policy adherence
+Resolution effectiveness
+Empathy
+Include a 2–3 sentence justification.
+7. Agent Rating (1–5 stars)
+5 = Excellent
+4 = Very Good
+3 = Average
+2 = Poor
+1 = Very Poor
+Include a 1–2 sentence explanation.
+2025-12-04 16:28:51 - cc_ai_summarizer - DEBUG - Model used: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600 | Max sentences: 2
+2025-12-04 16:28:51 - cc_ai_summarizer - DEBUG - Transcript length: 9873 characters
+2025-12-04 16:28:57 - cc_ai_summarizer - INFO - Successfully generated summary (1609 characters)
+2025-12-04 16:28:57 - cc_ai_summarizer - DEBUG - Summary for airlinecancellationforconvocation.txt: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "January 20, 2025",
+  "conversationTime": "09:15 am",
+  "conversationlength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The customer called about a canceled flight scheduled for 2 pm to Boston, urgently needing to attend his son's graduation. The agent explained the cancellation due to operational issues, offered rebooking on a later flight, refunds, and credits, but the customer was unable to be satisfied and the issue remained unresolved.",
+  "issueCategory": "Flight Cancellation - Operational Issue",
+  "resolutionStatus": "Unresolved - Customer Unable To Attend Critical Event",
+  "customerTone": "Angry, frustrated, upset",
+  "customerEmotions": "Frustration, anger, disappointment, desperation",
+  "agentTone": "Professional, empathetic, apologetic",
+  "agentEmotions": "Frustration, empathy, apology",
+  "agentScore": 75,
+  "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly communicated policies and options, and adhered to company procedures. However, the resolution was limited by operational constraints beyond the agent's control, and the agent's repeated apologies and offers of compensation did not fully address the customer's urgent needs.",
+  "agentRating": 3,
+  "agentRatingReason": "The agent handled the call professionally and empathetically but was unable to resolve the customer's critical issue due to lack of available options, resulting in an average rating."
+}
+2025-12-04 16:28:57 - cc_ai_summarizer - INFO - Summary generated for airlinecancellationforconvocation.txt
+2025-12-04 16:28:57 - cc_ai_summarizer - INFO - Saved 1 summaries to output_data/bulk_summaries.json
+2025-12-04 16:28:57 - cc_ai_summarizer - INFO - Updated metadata: last_id=9
+2025-12-04 16:29:02 - cc_ai_summarizer - INFO - Saved chat history with 0 messages
+2025-12-04 16:29:22 - cc_ai_summarizer - INFO - Saved chat history with 2 messages
+2025-12-04 16:29:22 - cc_ai_summarizer - INFO - Chat query processed: what is this chat about which agent attended this call
+2025-12-04 16:29:51 - cc_ai_summarizer - INFO - Saved chat history with 4 messages
+2025-12-04 16:29:51 - cc_ai_summarizer - INFO - Chat query processed: what time did this happened
+2025-12-04 16:30:14 - cc_ai_summarizer - INFO - Saved chat history with 6 messages
+2025-12-04 16:30:14 - cc_ai_summarizer - INFO - Chat query processed: get me the call transcript
+2025-12-04 16:30:33 - cc_ai_summarizer - INFO - Saved chat history with 8 messages
+2025-12-04 16:30:33 - cc_ai_summarizer - INFO - Chat query processed: get me the summary then
+2025-12-04 16:31:18 - cc_ai_summarizer - INFO - Saved chat history with 10 messages
+2025-12-04 16:31:18 - cc_ai_summarizer - INFO - Chat query processed: what is agent last name
+2025-12-04 16:31:38 - cc_ai_summarizer - INFO - Saved chat history with 12 messages
+2025-12-04 16:31:38 - cc_ai_summarizer - INFO - Chat query processed: can you respond to my previous question
+2025-12-04 16:31:51 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:31:57 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:31:57 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:31:57 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:31:57 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:31:57 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:31:57 - cc_ai_summarizer - DEBUG - Chat history messages: 1
+2025-12-04 16:31:58 - cc_ai_summarizer - INFO - Successfully generated chat response (20 characters)
+2025-12-04 16:31:58 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 2 messages
+2025-12-04 16:31:58 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:32:01 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:32:01 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:32:01 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:32:01 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:32:01 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:32:01 - cc_ai_summarizer - DEBUG - Chat history messages: 3
+2025-12-04 16:32:02 - cc_ai_summarizer - INFO - Successfully generated chat response (20 characters)
+2025-12-04 16:32:02 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 4 messages
+2025-12-04 16:32:02 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:32:12 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:32:12 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:32:12 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:32:12 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:32:12 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:32:12 - cc_ai_summarizer - DEBUG - Chat history messages: 5
+2025-12-04 16:32:15 - cc_ai_summarizer - INFO - Successfully generated chat response (609 characters)
+2025-12-04 16:32:15 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 6 messages
+2025-12-04 16:32:15 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:32:44 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:32:44 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:32:44 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:32:44 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:32:44 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:32:44 - cc_ai_summarizer - DEBUG - Chat history messages: 7
+2025-12-04 16:32:46 - cc_ai_summarizer - INFO - Successfully generated chat response (555 characters)
+2025-12-04 16:32:46 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 8 messages
+2025-12-04 16:32:46 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:33:00 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:33:00 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:33:00 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:33:00 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:33:00 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:33:00 - cc_ai_summarizer - DEBUG - Chat history messages: 9
+2025-12-04 16:33:01 - cc_ai_summarizer - INFO - Successfully generated chat response (20 characters)
+2025-12-04 16:33:01 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 10 messages
+2025-12-04 16:33:01 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:33:18 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:33:18 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:33:18 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:33:18 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:33:18 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:33:18 - cc_ai_summarizer - DEBUG - Chat history messages: 11
+2025-12-04 16:33:20 - cc_ai_summarizer - INFO - Successfully generated chat response (555 characters)
+2025-12-04 16:33:20 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 12 messages
+2025-12-04 16:33:20 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:33:32 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:33:32 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:33:32 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:33:32 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:33:32 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:33:32 - cc_ai_summarizer - DEBUG - Chat history messages: 13
+2025-12-04 16:33:36 - cc_ai_summarizer - INFO - Successfully generated chat response (555 characters)
+2025-12-04 16:33:36 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 14 messages
+2025-12-04 16:33:36 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:33:47 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:34:04 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:34:13 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:34:22 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:34:23 - cc_ai_summarizer - INFO - Saved chat history with 15 messages
+2025-12-04 16:34:23 - cc_ai_summarizer - INFO - Chat query processed: can you respond to my last 2 questions
+2025-12-04 16:34:29 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:34:48 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:34:48 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:34:48 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:34:48 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:34:48 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:34:48 - cc_ai_summarizer - DEBUG - Chat history messages: 15
+2025-12-04 16:34:50 - cc_ai_summarizer - INFO - Successfully generated chat response (724 characters)
+2025-12-04 16:34:50 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 16 messages
+2025-12-04 16:34:50 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:35:01 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:35:01 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:35:01 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:35:01 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:35:01 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:35:01 - cc_ai_summarizer - DEBUG - Chat history messages: 17
+2025-12-04 16:35:04 - cc_ai_summarizer - INFO - Successfully generated chat response (745 characters)
+2025-12-04 16:35:04 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 18 messages
+2025-12-04 16:35:04 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:35:31 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:35:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-04 16:35:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-04 16:35:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-04 16:35:31 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.3 | Max tokens: 600
+2025-12-04 16:35:31 - cc_ai_summarizer - DEBUG - Chat history messages: 19
+2025-12-04 16:35:33 - cc_ai_summarizer - INFO - Successfully generated chat response (741 characters)
+2025-12-04 16:35:33 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 20 messages
+2025-12-04 16:35:33 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:35:38 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:36:23 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:36:23 - cc_ai_summarizer - INFO - Saved chat history with 0 messages
+2025-12-04 16:36:23 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:36:26 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:36:29 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:36:32 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:36:33 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:36:35 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:36:35 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 0 messages
+2025-12-04 16:36:35 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:36:39 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:36:39 - cc_ai_summarizer - INFO - Loaded bulk summary chat history with 0 messages
+2025-12-04 16:36:42 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:36:42 - cc_ai_summarizer - INFO - Loaded chat history with 42 messages
+2025-12-04 16:36:50 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:36:51 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:36:54 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:37:00 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:37:02 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt

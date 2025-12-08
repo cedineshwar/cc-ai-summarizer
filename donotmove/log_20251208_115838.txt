@@ -1,0 +1,37 @@
+2025-12-08 11:58:38 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251208_115838.txt
+2025-12-08 11:58:38 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-08 11:58:40 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-08 11:58:40 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-08 11:58:49 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-08 11:58:57 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:58:57 - cc_ai_summarizer - ERROR - Error loading bulk summary chat history: Expecting value: line 1 column 1 (char 0)
+2025-12-08 11:58:58 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:58:58 - cc_ai_summarizer - DEBUG - Prepared 5 documents for vector store
+2025-12-08 11:58:58 - cc_ai_summarizer - INFO - Creating FAISS vector store with 5 documents...
+2025-12-08 11:59:01 - cc_ai_summarizer - INFO - Vector store saved to output_data/vector_store
+2025-12-08 11:59:01 - cc_ai_summarizer - INFO - Vector store created and retriever initialized
+2025-12-08 11:59:01 - cc_ai_summarizer - INFO - RAG Chatbot initialized successfully
+2025-12-08 11:59:13 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:59:13 - cc_ai_summarizer - DEBUG - Retrieving 5 relevant documents...
+2025-12-08 11:59:15 - cc_ai_summarizer - DEBUG - Generating LLM response...
+2025-12-08 11:59:17 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 11:59:17 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 11:59:17 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:59:24 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:59:24 - cc_ai_summarizer - DEBUG - Retrieving 5 relevant documents...
+2025-12-08 11:59:24 - cc_ai_summarizer - DEBUG - Generating LLM response...
+2025-12-08 11:59:25 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 11:59:25 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 11:59:25 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:59:35 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:59:35 - cc_ai_summarizer - DEBUG - Retrieving 5 relevant documents...
+2025-12-08 11:59:36 - cc_ai_summarizer - DEBUG - Generating LLM response...
+2025-12-08 11:59:39 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 11:59:39 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 11:59:39 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:59:57 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-08 11:59:57 - cc_ai_summarizer - DEBUG - Retrieving 5 relevant documents...
+2025-12-08 11:59:58 - cc_ai_summarizer - DEBUG - Generating LLM response...
+2025-12-08 12:00:02 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 12:00:02 - cc_ai_summarizer - INFO - RAG response generated successfully
+2025-12-08 12:00:02 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json

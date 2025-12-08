@@ -1,0 +1,11 @@
+2025-12-07 17:36:50 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251207_173650.txt
+2025-12-07 17:36:50 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-07 17:36:50 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:36:50 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-07 17:36:53 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:36:53 - cc_ai_summarizer - ERROR - Error loading bulk summary chat history: Expecting value: line 1 column 1 (char 0)
+2025-12-07 17:36:57 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:37:00 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:37:01 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:37:24 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:37:24 - cc_ai_summarizer - INFO - Generated sentiment chart for user request

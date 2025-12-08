@@ -1,0 +1,5 @@
+2025-12-08 11:56:41 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251208_115641.txt
+2025-12-08 11:56:41 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-08 11:56:44 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-08 11:56:44 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-08 11:56:52 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt

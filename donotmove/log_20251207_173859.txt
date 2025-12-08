@@ -1,0 +1,53 @@
+2025-12-07 17:38:59 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251207_173859.txt
+2025-12-07 17:38:59 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-07 17:38:59 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:38:59 - cc_ai_summarizer - ERROR - Error loading bulk summary chat history: Expecting value: line 1 column 1 (char 0)
+2025-12-07 17:39:00 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:39:00 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-07 17:39:06 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:39:07 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:39:13 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:39:13 - cc_ai_summarizer - INFO - Generated resolution chart for user request
+2025-12-07 17:39:13 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 2 messages
+2025-12-07 17:39:30 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:39:30 - cc_ai_summarizer - INFO - Generated rating chart for user request
+2025-12-07 17:39:30 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 4 messages
+2025-12-07 17:39:44 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:39:44 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 0 messages
+2025-12-07 17:39:44 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:39:58 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:39:58 - cc_ai_summarizer - INFO - Generated resolution chart for user request
+2025-12-07 17:39:58 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 2 messages
+2025-12-07 17:40:14 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:40:15 - cc_ai_summarizer - INFO - Generated agent performance chart for user request
+2025-12-07 17:40:15 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 4 messages
+2025-12-07 17:40:49 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:40:49 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-07 17:40:49 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-07 17:40:49 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-07 17:40:49 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600
+2025-12-07 17:40:49 - cc_ai_summarizer - DEBUG - Chat history messages: 5
+2025-12-07 17:40:56 - cc_ai_summarizer - INFO - Successfully generated chat response (1511 characters)
+2025-12-07 17:40:56 - cc_ai_summarizer - INFO - LLM response generated successfully
+2025-12-07 17:40:56 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 6 messages
+2025-12-07 17:41:08 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:41:08 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-07 17:41:08 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-07 17:41:08 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-07 17:41:08 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600
+2025-12-07 17:41:08 - cc_ai_summarizer - DEBUG - Chat history messages: 7
+2025-12-07 17:41:16 - cc_ai_summarizer - INFO - Successfully generated chat response (1614 characters)
+2025-12-07 17:41:16 - cc_ai_summarizer - INFO - LLM response generated successfully
+2025-12-07 17:41:16 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 8 messages
+2025-12-07 17:41:30 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:41:30 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-07 17:41:30 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
+2025-12-07 17:41:30 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-07 17:41:30 - cc_ai_summarizer - DEBUG - Chat model: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600
+2025-12-07 17:41:30 - cc_ai_summarizer - DEBUG - Chat history messages: 9
+2025-12-07 17:41:34 - cc_ai_summarizer - INFO - Successfully generated chat response (812 characters)
+2025-12-07 17:41:34 - cc_ai_summarizer - INFO - LLM response generated successfully
+2025-12-07 17:41:34 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 10 messages
+2025-12-07 17:41:58 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:41:58 - cc_ai_summarizer - INFO - Generated rating chart for user request
+2025-12-07 17:41:58 - cc_ai_summarizer - INFO - Saved bulk summary chat history with 12 messages

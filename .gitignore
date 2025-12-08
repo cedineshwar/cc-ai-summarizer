@@ -6,7 +6,6 @@ __pycache__/
 
 # Data
 #sample_data/*.txt
-logs/*.*
 /input_data/synthetic_data/*.*
 
 #pages

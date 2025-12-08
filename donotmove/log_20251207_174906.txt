@@ -1,0 +1,6 @@
+2025-12-07 17:49:06 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251207_174906.txt
+2025-12-07 17:49:06 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-07 17:49:06 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:49:11 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:49:14 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:49:22 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt

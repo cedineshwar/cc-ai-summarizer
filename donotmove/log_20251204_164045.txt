@@ -1,0 +1,15 @@
+2025-12-04 16:40:45 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251204_164045.txt
+2025-12-04 16:40:45 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-04 16:40:47 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:40:47 - cc_ai_summarizer - INFO - Loaded chat history with 42 messages
+2025-12-04 16:41:00 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:41:02 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:41:02 - cc_ai_summarizer - INFO - Loaded bulk summary chat history with 0 messages
+2025-12-04 16:41:04 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:41:05 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:41:06 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:41:16 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:41:20 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:41:25 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-04 16:41:28 - cc_ai_summarizer - DEBUG - Loaded 9 summaries from output_data/bulk_summaries.json
+2025-12-04 16:41:29 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt

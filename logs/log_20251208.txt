@@ -1,0 +1,7 @@
+=== Log cleared at 2025-12-08 14:26:40 ===
+2025-12-08 14:26:46 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-08 14:26:46 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-08 14:26:52 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-08 14:26:57 - cc_ai_summarizer - DEBUG - Loaded 6 summaries from output_data/bulk_summaries.json
+2025-12-08 14:26:57 - cc_ai_summarizer - INFO - Bulk summary chat history file is empty, starting fresh
+2025-12-08 14:26:58 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt

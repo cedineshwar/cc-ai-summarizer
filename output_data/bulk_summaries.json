@@ -113,5 +113,28 @@
     "agentRatingReason": "The agent provided excellent customer service with clear guidance, empathy, and a positive resolution, resulting in a highly satisfactory customer experience.",
     "id": 5,
     "filename": "wificonnectivity_issue.txt"
+  },
+  {
+    "callId": "CC-2025-002741",
+    "conversationDate": "January 20, 2025",
+    "conversationTime": "09:15 - 10:02",
+    "conversationlength": "47 mins",
+    "agentName": "Jessica Chen",
+    "agentId": "AG-5634",
+    "department": "Customer Service",
+    "customerName": "Robert Williams",
+    "callSummary": "The customer called regarding the cancellation of his 2 PM flight to Boston, which he needed to attend his son's graduation. The agent explained the cancellation due to operational issues, offered rebooking on a later flight and compensation options, but the customer was unable to be satisfied and the issue remained unresolved.",
+    "issueCategory": "Flight Cancellation - Operational Issue",
+    "resolutionStatus": "Unresolved - Customer Unable To Attend Critical Event",
+    "customerTone": "Angry, frustrated, upset, and desperate",
+    "customerEmotions": "Frustration, anger, disappointment, desperation",
+    "agentTone": "Professional, empathetic, apologetic, patient",
+    "agentEmotions": "Frustration, empathy, apology",
+    "agentScore": 75,
+    "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly communicated policies and options, and apologized repeatedly for the inconvenience. However, the resolution was limited by operational constraints beyond the agent's control, and the agent was unable to provide a satisfactory solution to the customer's critical need.",
+    "agentRating": 3,
+    "agentRatingReason": "The agent handled the call with professionalism and empathy but was unable to resolve the customer's issue due to lack of available options, resulting in an average rating.",
+    "id": 6,
+    "filename": "airlinecancellationforconvocation.txt"
   }
 ]

@@ -8,6 +8,7 @@ from src.utils import save_bulk_summary, get_next_id, load_bulk_summary_chat_his
 from src.logger import logger
 from src.summarizer import chat_with_bulk_summaries
 from src.plotter import detect_chart_request, generate_chart
+from src.rag_chat import RAGChatbot
 
 def load_summaries(file_path):
     """Load summaries from a JSON file."""
@@ -27,45 +28,9 @@ def format_summaries_for_context(summaries: list) -> str:
     """Format summaries into JSON format for the LLM context."""
     return json.dumps(summaries, indent=2)
 
-# page refresh then clear chat history
-# if  st.rerun:    
-#     st.session_state.bulk_summary_chat_history = []
-#     save_bulk_summary_chat_history([])  
-    
-    
-def main():
-    st.title("View Summaries")
-    
-    summaries_file = os.path.join('output_data', 'bulk_summaries.json')
-    summaries = load_summaries(summaries_file)
-    
-    if not summaries:
-        st.info("No summaries available.")
-        return
-    
-    # ==================== TOP SECTION: SUMMARIES TABLE ====================
-    st.subheader("📊 Call Summaries")
-    
-    # Convert summaries to DataFrame for better display
-    df = pd.DataFrame(summaries)
-    
-    # Display the DataFrame with Streamlit
-    st.dataframe(df, width="stretch", hide_index=True)
-    
-    # Provide download option
-    csv = df.to_csv(index=False).encode('utf-8')
-    st.download_button(
-        label="Download summaries as CSV",
-        data=csv,
-        file_name='summaries.csv',
-        mime='text/csv',
-    )
-    
-    # Divider
-    st.divider()
-    
-    # ==================== BOTTOM SECTION: CHAT INTERFACE ====================
-    st.subheader("💬 Chat with Summaries")
+
+def _render_standard_chat(summaries):
+    """Render the standard chat interface with chart features."""
     
     # Initialize session state for bulk summary chat
     if 'bulk_summary_chat_history' not in st.session_state:
@@ -211,6 +176,185 @@ def main():
         save_bulk_summary_chat_history([])
         st.success("Chat history cleared!")
         st.rerun()
+
+
+def _render_rag_chat():
+    """Render the RAG-based chat interface with vector search."""
+    
+    # Get API key and model settings from session state
+    api_key = st.session_state.get('openai_api_key')
+    model = st.session_state.get('model_choice', 'gpt-4.1-mini-2025-04-14')
+    temperature = st.session_state.get('temperature', 0.0)
+    max_tokens = st.session_state.get('max_tokens', 600)
+    
+    # Check if API key is available
+    if not api_key or api_key.strip() == "" or api_key == "your_api_key_here":
+        st.warning("Please enter your OpenAI API key in the main app page first!")
+        return
+    
+    # Initialize RAG chatbot in session state
+    if 'rag_chatbot' not in st.session_state:
+        with st.spinner("Initializing RAG Chatbot and vector store..."):
+            rag_chatbot = RAGChatbot(api_key=api_key)
+            if rag_chatbot.initialize(model=model, temperature=temperature, max_tokens=max_tokens):
+                st.session_state.rag_chatbot = rag_chatbot
+                st.success("✅ RAG Chatbot initialized successfully!")
+            else:
+                st.error("❌ Failed to initialize RAG Chatbot. Please check API key and logs.")
+                return
+    
+    # Initialize RAG chat history in session state
+    if 'rag_chat_history' not in st.session_state:
+        st.session_state.rag_chat_history = []
+    
+    # Display chat history (scrollable)
+    with st.container(height=400, border=True):
+        for message in st.session_state.rag_chat_history:
+            with st.chat_message(message['role']):
+                st.markdown(message['content'])
+        
+        # Auto-scroll to bottom when new messages arrive
+        st.markdown("""
+        <script>
+        setTimeout(function() {
+            const scrollableContainer = window.parent.document.querySelector('[data-testid="stVerticalBlock"]');
+            if (scrollableContainer) {
+                scrollableContainer.scrollTop = scrollableContainer.scrollHeight;
+            }
+        }, 100);
+        </script>
+        """, unsafe_allow_html=True)
+    
+    # Chat input
+    prompt = st.chat_input("Ask anything about the call summaries (powered by vector search)...", key="rag_chat_input")
+    
+    # Predefined RAG questions
+    st.markdown("**Sample Questions:**")
+    col1, col2, col3 = st.columns(3)
+    
+    rag_questions = [
+        "Which agents have the highest scores?",
+        "What are common customer issues?",
+        "Summarize unresolved issues",
+        "What agent got the best ratings?",
+        "Analyze customer sentiment patterns",
+        "Which department needs improvement?",
+    ]
+    
+    question_clicked = None
+    
+    # Display questions in columns
+    for idx, question in enumerate(rag_questions):
+        col = col1 if idx % 3 == 0 else (col2 if idx % 3 == 1 else col3)
+        if col.button(question, key=f"rag_q_{idx}", use_container_width=True):
+            question_clicked = question
+    
+    # Use clicked question if available, otherwise use chat input
+    if question_clicked:
+        prompt = question_clicked
+    
+    # Process the prompt
+    if prompt:
+        # Add user message to history
+        st.session_state.rag_chat_history.append({
+            "role": "user",
+            "content": prompt
+        })
+        
+        # Get RAG response
+        rag_chatbot = st.session_state.get('rag_chatbot')
+        if rag_chatbot:
+            with st.spinner("Searching vector store and generating response..."):
+                response = rag_chatbot.get_rag_response(
+                    user_message=prompt,
+                    chat_history=st.session_state.rag_chat_history[:-1],
+                    num_retrieved_docs=5
+                )
+            
+            if response:
+                # Add assistant message to history
+                st.session_state.rag_chat_history.append({
+                    "role": "assistant",
+                    "content": response
+                })
+                
+                logger.info("RAG response generated successfully")
+            else:
+                error_msg = "Failed to generate RAG response. Please check logs."
+                st.session_state.rag_chat_history.append({
+                    "role": "assistant",
+                    "content": f"❌ {error_msg}"
+                })
+                logger.error(error_msg)
+        
+        # Rerun to display updated chat
+        st.rerun()
+    
+    # Refresh vector store button
+    col1, col2 = st.columns([3, 1])
+    with col2:
+        if st.button("🔄 Reload Vector Store", key="reload_vector_btn"):
+            rag_chatbot = st.session_state.get('rag_chatbot')
+            if rag_chatbot:
+                with st.spinner("Reloading vector store..."):
+                    if rag_chatbot.reload_vector_store():
+                        st.success("Vector store reloaded!")
+                    else:
+                        st.error("Failed to reload vector store")
+            st.rerun()
+    
+    # Clear chat history button
+    with col1:
+        if st.button("Clear RAG Chat History", key="clear_rag_chat_btn"):
+            st.session_state.rag_chat_history = []
+            st.success("RAG chat history cleared!")
+            st.rerun()  
+    
+    
+def main():
+    st.title("View Summaries")
+    
+    summaries_file = os.path.join('output_data', 'bulk_summaries.json')
+    summaries = load_summaries(summaries_file)
+    
+    if not summaries:
+        st.info("No summaries available.")
+        return
+    
+    # ==================== TOP SECTION: SUMMARIES TABLE ====================
+    st.subheader("📊 Call Summaries")
+    
+    # Convert summaries to DataFrame for better display
+    df = pd.DataFrame(summaries)
+    
+    # Display the DataFrame with Streamlit
+    st.dataframe(df, width="stretch", hide_index=True)
+    
+    # Provide download option
+    csv = df.to_csv(index=False).encode('utf-8')
+    st.download_button(
+        label="Download summaries as CSV",
+        data=csv,
+        file_name='summaries.csv',
+        mime='text/csv',
+    )
+    
+    # Divider
+    st.divider()
+    
+    # ==================== BOTTOM SECTION: CHAT INTERFACE WITH TABS ====================
+    st.subheader("💬 Chat with Summaries")
+    
+    # Create tabs for different chat modes
+    tab1, tab2 = st.tabs(["📊 Standard Chat (with Charts)", "🤖 RAG-Based Chat (Vector Search)"])
+    
+    # ==================== TAB 1: EXISTING CHAT WITH CHARTS ====================
+    with tab1:
+        _render_standard_chat(summaries)
+    
+    # ==================== TAB 2: RAG-BASED CHAT ====================
+    with tab2:
+        _render_rag_chat()
 
 if __name__ == "__main__":
     main()

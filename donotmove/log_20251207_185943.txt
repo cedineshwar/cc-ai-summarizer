@@ -1,0 +1,11 @@
+2025-12-07 18:59:43 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251207_185943.txt
+2025-12-07 18:59:43 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-07 18:59:43 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 18:59:43 - cc_ai_summarizer - INFO - Generated resolution chart for user request
+2025-12-07 18:59:43 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 18:59:50 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 18:59:50 - cc_ai_summarizer - INFO - Loaded bulk summary chat history with 12 messages
+2025-12-07 18:59:53 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 18:59:53 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-07 18:59:58 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 19:00:01 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json

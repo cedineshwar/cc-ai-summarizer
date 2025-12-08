@@ -1,0 +1,2 @@
+2025-12-04 15:20:32 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251204_152032.txt
+2025-12-04 15:20:32 - cc_ai_summarizer - INFO - Debug mode: True

@@ -17,6 +17,20 @@ load_dotenv()
 API_KEY = os.getenv("OPENAI_API_KEY")
 st.set_page_config(page_title="Call Center AI Summarizer")
 
+# Add CSS to make selectbox inputs read-only (disable text input)
+st.markdown(
+    """
+    <style>
+    /* Make selectbox inputs read-only by disabling text input */
+    [data-baseweb="combobox"] input {
+        pointer-events: none !important;
+        background-color: #f0f0f0 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Initialize session state variables if they don't exist
 if 'openai_api_key' not in st.session_state:
     st.session_state.openai_api_key = API_KEY

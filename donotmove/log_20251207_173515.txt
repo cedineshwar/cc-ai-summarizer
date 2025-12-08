@@ -1,0 +1,17 @@
+2025-12-07 17:35:15 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251207_173515.txt
+2025-12-07 17:35:15 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-07 17:35:18 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:35:18 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-07 17:35:21 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:35:23 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:35:24 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:35:24 - cc_ai_summarizer - ERROR - Error loading bulk summary chat history: Expecting value: line 1 column 1 (char 0)
+2025-12-07 17:35:33 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:35:34 - cc_ai_summarizer - INFO - Generated resolution chart for user request
+2025-12-07 17:35:52 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:35:52 - cc_ai_summarizer - ERROR - Error loading bulk summary chat history: Expecting value: line 1 column 1 (char 0)
+2025-12-07 17:35:55 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:35:55 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-07 17:35:58 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 17:36:00 - cc_ai_summarizer - DEBUG - Loaded 13 summaries from output_data/bulk_summaries.json
+2025-12-07 17:36:10 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt

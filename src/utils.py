@@ -104,12 +104,20 @@ def load_chat_history() -> list:
     try:
         if os.path.exists(chat_file):
             with open(chat_file, 'r', encoding='utf-8') as f:
-                history = json.load(f)
+                content = f.read().strip()
+                # Handle empty file
+                if not content:
+                    logger.info("Chat history file is empty, starting fresh")
+                    return []
+                history = json.loads(content)
                 logger.info(f"Loaded chat history with {len(history)} messages")
                 return history
         else:
             logger.info("No previous chat history found")
             return []
+    except json.JSONDecodeError as e:
+        logger.error(f"Error decoding chat history JSON: {e}")
+        return []
     except Exception as e:
         logger.error(f"Error loading chat history: {e}")
         return []
@@ -147,12 +155,20 @@ def load_bulk_summary_chat_history() -> list:
     try:
         if os.path.exists(chat_file):
             with open(chat_file, 'r', encoding='utf-8') as f:
-                history = json.load(f)
+                content = f.read().strip()
+                # Handle empty file
+                if not content:
+                    logger.info("Bulk summary chat history file is empty, starting fresh")
+                    return []
+                history = json.loads(content)
                 logger.info(f"Loaded bulk summary chat history with {len(history)} messages")
                 return history
         else:
             logger.info("No previous bulk summary chat history found")
             return []
+    except json.JSONDecodeError as e:
+        logger.error(f"Error decoding bulk summary chat history JSON: {e}")
+        return []
     except Exception as e:
         logger.error(f"Error loading bulk summary chat history: {e}")
         return []

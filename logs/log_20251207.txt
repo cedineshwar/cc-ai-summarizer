@@ -1,0 +1,3 @@
+2025-12-07 10:02:42 - cc_ai_summarizer - DEBUG - Loading file: airline_upgrade_happy_10min.txt
+2025-12-07 10:03:18 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251207.txt
+2025-12-07 10:04:22 - cc_ai_summarizer - INFO - Debug mode: True
