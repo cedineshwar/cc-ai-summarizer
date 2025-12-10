@@ -151,7 +151,7 @@ def _render_standard_chat(summaries):
     openai.api_key = api_key
     
     # Display chat history (scrollable) - with chart images
-    with st.container(height=400, border=True):
+    with st.container(height=600, border=True):
         for idx, message in enumerate(st.session_state.bulk_summary_chat_history):
             with st.chat_message(message['role']):
                 st.markdown(message['content'])
@@ -166,7 +166,7 @@ def _render_standard_chat(summaries):
                 # Check if this message has a chart image
                 if f"chart_{idx}" in st.session_state.chart_images:
                     chart_image = st.session_state.chart_images[f"chart_{idx}"]
-                    st.image(f"data:image/png;base64,{chart_image}", width="stretch")
+                    st.image(f"data:image/png;base64,{chart_image}", width=600)
         
         # Auto-scroll to bottom when new messages arrive
         st.markdown("""
@@ -385,7 +385,7 @@ def _render_rag_chat():
             st.error("❌ Failed to reload vector store. Please check logs and try again.")
     
     # Display chat history (scrollable)
-    with st.container(height=400, border=True):
+    with st.container(height=600, border=True):
         for message in st.session_state.rag_chat_history:
             with st.chat_message(message['role']):
                 st.markdown(message['content'])
@@ -435,7 +435,7 @@ def _render_rag_chat():
     # Display questions in columns
     for idx, question in enumerate(rag_questions):
         col = col1 if idx % 3 == 0 else (col2 if idx % 3 == 1 else col3)
-        if col.button(question, key=f"rag_q_{idx}", use_container_width=True):
+        if col.button(question, key=f"rag_q_{idx}", width="stretch"):
             question_clicked = question
     
     # Use clicked question if available, otherwise use chat input
@@ -500,7 +500,7 @@ def _render_rag_chat():
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        if st.button("Clear RAG Chat History", key="clear_rag_chat_btn", use_container_width=True):
+        if st.button("Clear RAG Chat History", key="clear_rag_chat_btn", width="stretch"):
             st.session_state.rag_chat_history = []
             st.session_state.vector_reload_status = None
             st.success("RAG chat history cleared!")
@@ -516,11 +516,11 @@ def _render_rag_chat():
                     file_name=f'rag_chat_history_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv',
                     mime='text/csv',
                     key="download_rag_chat_btn",
-                    use_container_width=True
+                    width="stretch"
                 )
     
     with col3:
-        if st.button("🔄 Reload Vector Store", key="reload_vector_btn", use_container_width=True):
+        if st.button("🔄 Reload Vector Store", key="reload_vector_btn", width="stretch"):
             try:
                 with st.spinner("🔄 Reloading vector store and indexing new summaries..."):
                     logger.info("=" * 70)
@@ -575,12 +575,13 @@ def _render_rag_chat():
         # if st.button(
         #     "🗑️ Clear Vector Store",
         #     key="clear_vector_btn",
-        #     use_container_width=True,
+        #     width="stretch",
         # ):
         #     _handle_clear_vector_store()
     
     
 def main():
+    st.set_page_config(page_title="View Summaries", page_icon="📋", layout="wide")
     st.title("View Summaries")
     
     summaries_file = os.path.join('output_data', 'bulk_summaries.json')
@@ -611,11 +612,11 @@ def main():
             data=csv,
             file_name='summaries.csv',
             mime='text/csv',
-            use_container_width=True
+            width="stretch"
         )
     
     with col2:
-        if st.button("🗑️ Clear All Summaries", key="clear_summaries_btn", use_container_width=True):
+        if st.button("🗑️ Clear All Summaries", key="clear_summaries_btn", width="stretch"):
             try:
                 # Delete the bulk_summaries.json file
                 summaries_file = os.path.join('output_data', 'bulk_summaries.json')

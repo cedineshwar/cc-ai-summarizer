@@ -1,6 +1,7 @@
 import streamlit as st
 from src.utils import load_file, load_sample_call
 
+st.set_page_config(page_title="Prompts Library", page_icon="📚", layout="wide")
 st.header("📚 Prompts Library")
 textarea_height = 500
 

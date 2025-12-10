@@ -36,7 +36,7 @@ def export_chat_history_to_csv(messages):
 load_dotenv()
 
 API_KEY = os.getenv("OPENAI_API_KEY")
-st.set_page_config(page_title="Call Center AI Summarizer")
+st.set_page_config(page_title="Call Center AI Summarizer", layout="wide")
 
 # Add CSS to make selectbox inputs read-only (disable text input)
 st.markdown(
@@ -164,7 +164,7 @@ elif sample:
     sample_transcript = load_sample_call()
     transcripts["sample_call.txt"] = sample_transcript
     st.subheader("Sample Transcript")
-    st.text_area("Transcript", value=sample_transcript, height=300, label_visibility="hidden", disabled=True)
+    st.text_area("Transcript", value=sample_transcript, height=300, label_visibility="hidden", disabled=False)
 
 elif cc_files:
     logger.debug(f"Loading file: {cc_files}")
@@ -329,7 +329,7 @@ if "bulk_summaries" in st.session_state and st.session_state.bulk_summaries:
 col1, col2, col3 = st.columns([3, 1, 0.3])
 
 with col3:
-    with st.popover("💬", use_container_width=True):
+    with st.popover("💬", width="stretch"):
         st.subheader("Chat About Summaries")
         
         # Initialize chat history
@@ -447,7 +447,7 @@ with col3:
             col1, col2 = st.columns(2)
             
             with col1:
-                if st.button("🗑️ Clear", key="clear_chat", use_container_width=True):
+                if st.button("🗑️ Clear", key="clear_chat", width="stretch"):
                     st.session_state.messages = []
                     save_chat_history([])
                     st.rerun()
@@ -462,5 +462,5 @@ with col3:
                             file_name=f'chat_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv',
                             mime='text/csv',
                             key="download_chat",
-                            use_container_width=True
+                            width="stretch"
                         )

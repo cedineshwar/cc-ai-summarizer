@@ -75,7 +75,8 @@ class VectorStoreManager:
             # Combine multiple fields for rich context
             content = f"""
                         Call Summary:
-                        Agent: {summary.get('agentName', 'Unknown')} (ID: {summary.get('agentId', 'N/A')})
+                        Call ID: {summary.get('callId', '')}
+                        Agent: {summary.get('agentName', 'Unknown')} (ID: {summary.get('agentId', 'N/A')}
                         Customer: {summary.get('customerName', 'Unknown')}
                         Date: {summary.get('conversationDate', 'N/A')} {summary.get('conversationTime', '')}
                         Duration: {summary.get('conversationlength', 'N/A')}
@@ -88,6 +89,7 @@ class VectorStoreManager:
                         Customer Emotions: {summary.get('customerEmotions', 'N/A')}
                         Agent Tone: {summary.get('agentTone', 'N/A')}
                         Agent Emotions: {summary.get('agentEmotions', 'N/A')}
+                        Sentiment: {summary.get('sentiment', '')}
 
                         Agent Performance Score: {summary.get('agentScore', 'N/A')}/100
                         Agent Rating: {summary.get('agentRating', 'N/A')}/5

@@ -172,7 +172,20 @@ class RAGChatbot:
                     - Reference specific call IDs and agent names
                     - Use exact metrics from the retrieved summaries
                     - Organize information clearly with bullet points or tables when appropriate
-                    - Provide actionable insights when possible"""
+                    - Provide actionable insights when possible
+                    - Remember to follow any guardrail instructions provided separately
+                    - Always maintain a professional and analytical tone.
+                    - Ensure your responses are relevant to call center operations and customer service excellence.
+                    - If no relevant information is found, respond with 'No relevant call summaries found.'
+                    - Avoid fabricating information not present in the summaries.
+                    - Adhere strictly to the guardrail instructions provided separately.
+                    - Your goal is to assist in improving call center performance through data-driven insights.
+                    - Stay within the context of call summaries and avoid deviating into unrelated topics.
+                    - Maintain confidentiality and professionalism in all responses.
+                    - Use the retrieved summaries as your sole source of information.
+                    - Always aim to provide value through your analysis and recommendations.
+                    - Remember previous interactions only if they are part of the provided chat history.
+                    - Greetings and pleasantries should be minimal; focus on delivering insights effectively."""
     
     def get_rag_response(self, user_message: str, 
                         chat_history: List[Dict] = None) -> Optional[str]:
