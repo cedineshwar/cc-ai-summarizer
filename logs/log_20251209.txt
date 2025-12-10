@@ -2124,3 +2124,12 @@ Include a 1–2 sentence explanation.
 2025-12-09 16:00:12 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_user_prompt.txt
 2025-12-09 16:00:12 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
 2025-12-09 16:00:12 - cc_ai_summarizer - DEBUG - Chat with 16 previous messages in conversation history
+2025-12-09 22:24:30 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251209.txt
+2025-12-09 22:24:30 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-09 22:24:34 - cc_ai_summarizer - DEBUG - Loaded 3 summaries from output_data/bulk_summaries.json
+2025-12-09 22:24:34 - cc_ai_summarizer - INFO - Loaded bulk summary chat history with 0 messages
+2025-12-09 22:24:36 - cc_ai_summarizer - DEBUG - Loaded 3 summaries from output_data/bulk_summaries.json
+2025-12-09 22:24:37 - cc_ai_summarizer - INFO - ✅ Bulk summaries file cleared successfully
+2025-12-09 22:24:37 - cc_ai_summarizer - INFO - ✅ Metadata reset: last_id set to 0
+2025-12-09 22:24:37 - cc_ai_summarizer - INFO - 🔄 Clearing vector store since summaries have been deleted...
+2025-12-09 22:24:37 - cc_ai_summarizer - ERROR - Summaries file not found: output_data/bulk_summaries.json

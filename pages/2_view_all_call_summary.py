@@ -623,6 +623,21 @@ def main():
                     os.remove(summaries_file)
                     logger.info("✅ Bulk summaries file cleared successfully")
                     
+                    # Reset last_id in metadata JSON
+                    metadata_file = os.path.join('output_data', 'bulk_summary_metadata.json')
+                    if os.path.exists(metadata_file):
+                        try:
+                            metadata = {
+                                "last_id": 0,
+                                "last_updated": datetime.now().isoformat(),
+                                "total_summaries": 0
+                            }
+                            with open(metadata_file, 'w', encoding='utf-8') as f:
+                                json.dump(metadata, f, indent=2)
+                            logger.info("✅ Metadata reset: last_id set to 0")
+                        except Exception as e:
+                            logger.error(f"Error resetting metadata: {str(e)}")
+                    
                     # Clear vector store since summaries are now gone
                     logger.info("🔄 Clearing vector store since summaries have been deleted...")
                     if 'rag_chatbot' in st.session_state:
@@ -638,7 +653,7 @@ def main():
                             logger.error("❌ Failed to clear vector store after clearing summaries")
                             st.session_state.vector_reload_status = 'error'
                     
-                    st.success("✅ All summaries and vector store cleared! You can now start fresh.")
+                    st.success("✅ All summaries, metadata, and vector store cleared! You can now start fresh.")
                     # Clear session state
                     if 'bulk_summaries' in st.session_state:
                         del st.session_state.bulk_summaries
