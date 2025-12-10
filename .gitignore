@@ -17,11 +17,14 @@ __pycache__/
 .vscode/
 .idea/
 
+# Folders
+Projects/capstone/cc-ai-summarizer/archive
+
 #.py files
 p1.py
 app_old.py  
 
 #files
-Projects/capstone/gitcommands.txt
+
 
 #/output_data/chat*.json

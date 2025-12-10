@@ -1,0 +1,95 @@
+CALL TRANSCRIPT
+===============
+Call ID: CC-2025-002156
+Date: January 17, 2025
+Time: 18:45 - 19:23 PST (38 minutes)
+Agent: David Rodriguez (ID: AG-3214)
+Customer: Patricia Mendez
+Issue Category: Order/Delivery Problem - Lost/Misdelivered Package
+Resolution Status: UNRESOLVED - CUSTOMER CANCELS SUBSCRIPTION
+
+---START OF CALL---
+
+Customer: "Yes, hello! I need to speak to someone RIGHT NOW about my delivery! This is absolutely unacceptable!"
+
+Agent: "Hi there, thank you for calling Amazon Support. My name is David. I can hear you're very upset. Can I get your name please?"
+
+Customer: "My name is Patricia Mendez and I am FURIOUS! My daughter's birthday is TODAY and her gift was supposed to arrive this morning. I paid extra for Prime delivery and it didn't show up! This is ruining her birthday!"
+
+Agent: "Oh no, Patricia. I'm truly sorry to hear that. A missed delivery is frustrating, especially on such an important day. Let me help you right away. Can you give me your order number?"
+
+Customer: "The order number is 123-4567890-9876543. I ordered a limited edition Nintendo Switch bundle. It was $450! This was her main birthday gift and now it's gone!"
+
+Agent: "Let me pull that up for you right now. Okay, I see the order here. It was scheduled for delivery today between 8 AM and 10 PM. Can you tell me - did you receive any delivery notification or did you not see the package at your door at all?"
+
+Customer: "That's the thing! I got a notification at 3 PM saying it was delivered, but when I went outside, there was NOTHING on my porch! Then I checked with my neighbors and one of them said they saw a delivery truck earlier but they didn't know if anything was left. I've been outside looking around the neighborhood for an hour!"
+
+Agent: "I understand. That's really concerning. Let me check the delivery details here. According to our tracking, the package was scanned as delivered at 2:47 PM at your address: 4521 Maple Street. Is that correct?"
+
+Customer: "YES! That's my address! But the package is NOT here! Either your driver left it somewhere else or it was stolen from my porch. Either way, I don't have my daughter's birthday gift and it's her birthday RIGHT NOW!"
+
+Agent: "Patricia, I sincerely apologize. This is really unfortunate timing. Let me investigate this further. I'm going to try to contact the delivery driver to see where exactly they left the package. Can you give me just a moment?"
+
+Customer: "How long is this going to take? It's already evening! My daughter's birthday party is in TWO HOURS! I promised her this gift!"
+
+Agent: "I understand the urgency completely. Let me try to reach the driver immediately. Can you hold for just a few minutes?"
+
+Customer: "Fine, but hurry please!"
+
+[Agent places customer on hold for 4 minutes]
+
+Agent: "Patricia? I'm back. Unfortunately, I wasn't able to reach the driver directly, but I checked with our logistics team. According to the driver's notes, the package was left at the side gate of your property at 2:47 PM. Do you have a side gate?"
+
+Customer: "A SIDE GATE?! Why would he leave a $450 package at the side gate?! That makes no sense! There's nothing visible from the street there! Did he just leave it exposed for anyone to steal?!"
+
+Agent: "I completely understand your frustration. That is not protocol for a high-value item. Drivers are supposed to leave packages in safe, visible locations. The driver should have taken a photo of the delivery location. Let me check if there's a photo attached to this delivery... unfortunately, there is no photo documentation, which is a clear violation of our procedures."
+
+Customer: "So what are you telling me? That your driver violated procedure and now my daughter's gift is missing? What are you going to do about this?"
+
+Agent: "You're absolutely right that this is unacceptable. Here's what I can do immediately: I'm going to file a formal lost package claim with Amazon. You'll be fully refunded the $450 for the Nintendo Switch bundle. That refund will show up in your account within 3 to 5 business days."
+
+Customer: "THREE TO FIVE BUSINESS DAYS?! Patricia's birthday is TODAY! In two hours! This doesn't help me at all! A refund doesn't give her a gift on her birthday! This is the worst customer service experience I've ever had!"
+
+Agent: "Patricia, I hear you, and I'm genuinely sorry. I understand that a refund doesn't solve the immediate problem of your daughter's birthday. Let me see what else I can do. One moment please."
+
+Customer: "This is insane. This company is supposed to be reliable and this is what I get? I've been a Prime member for SIX YEARS!"
+
+Agent: "I really appreciate your loyalty, Patricia. I can see you've been a Prime member since 2019. Let me check our available options... Patricia, here's what I can offer: In addition to the $450 refund, I'm going to add a $200 Amazon gift card to your account immediately, which you could use to purchase something else for your daughter's birthday. And I'm also going to refund your Prime membership fee - that's $139 - for this month as an apology."
+
+Customer: "A gift card? How is a gift card helpful right now? It's 6:47 PM on a Friday night! Nothing is going to arrive today! You're not listening to me! My daughter is going to be heartbroken when she finds out her main birthday gift is missing! And you're offering me a gift card?!"
+
+Agent: "You're right, and I apologize. I'm not solving the actual problem. Let me think about this differently. Are there any retail stores near you that sell Nintendo Switch bundles? I could potentially help you with an authorization to purchase from a store and submit the receipt for reimbursement."
+
+Customer: "At 6:47 PM on a Friday? Everything is closing! Best Buy closes at 9 PM but it's 30 minutes away and I'm not even sure they have this specific limited edition bundle in stock! And her party is in an hour and a half! There's no way!"
+
+Agent: "I understand. I'm truly sorry, Patricia. Unfortunately, the package was not at your address when you checked, and the driver did not follow proper protocol. Let me escalate this to my supervisor right now to see if there are any emergency options available."
+
+Customer: "Emergency options? It's too late for emergency options! The emergency was WHEN YOUR DRIVER LEFT A $450 PACKAGE AT A SIDE GATE!"
+
+Agent: "You're absolutely right. I apologize. Let me get my supervisor involved immediately."
+
+[Agent places customer on hold for 5 minutes]
+
+Agent: "Patricia? I've spoken with my supervisor. Unfortunately, we don't have an emergency same-day replacement program for lost packages. The best we can do is the $450 refund plus the $200 gift card and the $139 Prime refund, which totals $789 in compensation. We're also going to file a formal complaint against the driver and their delivery service."
+
+Customer: "Compensation? COMPENSATION?! You think money makes up for ruining my daughter's birthday? You think I care about a refund when she's going to be upset on her special day? This is the most insulting thing I've ever heard!"
+
+Agent: "Patricia, I understand you're extremely upset, and I know nothing I can say will fix what happened today. I'm genuinely sorry."
+
+Customer: "You know what? I'm done. I'm absolutely done with Amazon. This is unacceptable. I want to cancel my Prime membership effective immediately. I don't want your compensation. I don't want your gift card. I want a company that actually cares about delivering packages properly!"
+
+Agent: "Patricia, I completely understand your frustration. Are you sure you want to cancel your Prime membership? I can waive the cancellation fee and process it right now if that's what you want."
+
+Customer: "YES! Cancel it NOW! Cancel my membership! I've been loyal for six years and this is how you repay me? By losing my daughter's birthday gift? I'm done!"
+
+Agent: "Okay, Patricia. I'm processing the cancellation of your Prime membership right now. Your account will be downgraded effective immediately. You'll receive a confirmation email shortly. I've also noted on your account that this was due to the lost package incident and the driver's violation of protocol."
+
+Customer: "Fine. And you can keep your $789 in compensation. I don't want it. I just want nothing to do with this company anymore. My friends are going to hear all about this, and honestly, I'll be recommending they switch to other services."
+
+Agent: "I understand, Patricia. I'm truly sorry we let you down today. Is there anything else I can help you with?"
+
+Customer: "No. There's nothing you can do to fix this. My daughter's birthday is ruined because of your company's incompetence. Goodbye."
+
+Agent: "I'm very sorry, Patricia. Thank you for giving us the chance to help, and I hope you have a better experience with other services going forward."
+
+[Customer disconnects]

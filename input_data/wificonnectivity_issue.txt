@@ -1,0 +1,76 @@
+CALL TRANSCRIPT
+===============
+Call ID: CC-2025-001847
+Date: January 15, 2025
+Time: 14:32 - 14:58 PST (26 minutes)
+Agent: Sarah Mitchell (ID: AG-2847)
+Customer: Robert Thompson
+Issue Category: Technical Support - WiFi Connectivity
+Resolution Status: RESOLVED
+
+---START OF CALL---
+
+Agent: "Thank you for calling TechConnect Support. My name is Sarah. How can I help you today?"
+
+Customer: "Hi Sarah, yeah, I've been having issues with my WiFi for the past two hours. It just completely went down and I can't get it back up. I'm working from home and I have a meeting in 20 minutes. This is really frustrating!"
+
+Agent: "I completely understand, Robert. That sounds really stressful, especially with a meeting coming up. Let me help you get this resolved as quickly as possible. First, can you tell me - do you see any lights on your router right now?"
+
+Customer: "Yeah, the lights are on, but they're not blinking like they normally do. The internet light is red."
+
+Agent: "Okay, that's actually helpful information. The red light usually means the connection to our network has dropped. Let's try a few things. First, can you unplug the power cable from the back of your router and wait about 30 seconds?"
+
+Customer: "Okay, unplugging it now... alright, waiting... this better work, Sarah. I really don't have time for this."
+
+Agent: "I hear you. While we wait, let me pull up your account here. I can see you've been a customer with us for three years now, and I see this is actually your first technical support call. That's great! Okay, 30 seconds should be up. Can you plug it back in?"
+
+Customer: "Plugging it back in now... lights are still the same though. Still red."
+
+Agent: "Alright, let's try the next step. Can you locate the small reset button on the back of your router? It might be recessed."
+
+Customer: "Um, yeah, I see it. It's a tiny button."
+
+Agent: "Perfect. Now, I'm going to have you hold that down for about 10 seconds. This will reset the router to factory settings, but don't worry - your network name and password will still be there. I'm going to help you through this the whole way."
+
+Customer: "Okay, holding it... 10 seconds... done. Now what?"
+
+Agent: "Good job. Now let's wait about two minutes for the router to fully restart. While we wait, can you tell me - did anything change in your setup recently? Like a new device, or did you move the router?"
+
+Customer: "No, nothing changed. It was working fine this morning when I got online."
+
+Agent: "Got it. Okay, it should be almost ready now. Can you check those lights again?"
+
+Customer: "Oh! Oh wow, the internet light is now... it's green and it's blinking! I think it's coming back online!"
+
+Agent: "Excellent! That's exactly what we want to see. Now, let's verify everything is working properly. Can you try opening a web browser and going to a website?"
+
+Customer: "Yeah, sure... loading... okay, it's working! I'm getting a full connection. This is great!"
+
+Agent: "Wonderful! I'm so glad we got that sorted out for you. What we had there was actually a connection issue on our network infrastructure. We actually had a brief outage in your area that started around 2:15 PM, and it looks like your router needed to be reset to reconnect properly after that outage cleared."
+
+Customer: "Oh, okay. So it wasn't something I did wrong?"
+
+Agent: "Not at all! This is something that can happen occasionally with service interruptions. You actually did everything perfectly. I'm really impressed with how quickly you followed my instructions. Now, I want to make sure you're all set. Let me just do a quick speed test from your account here... yes, I'm seeing great speeds - 450 megabits down, which is excellent."
+
+Customer: "Wow, okay. That's actually faster than it usually is."
+
+Agent: "That's perfect then. Now, I do want to give you a heads up - we did have that brief outage today, and I'm going to add a courtesy credit of $5 to your account for the inconvenience. It should show up on your next bill."
+
+Customer: "Oh, that's... that's really nice of you. I appreciate that, Sarah. I'm sorry for being short with you earlier. You really helped me out here."
+
+Agent: "Robert, please don't apologize! I completely understand the stress you were under with that meeting coming up. It's my job to help, and I'm just glad we got you back online. You've got about 12 minutes before your meeting if you want to test out a video call or anything to make sure everything is working smoothly."
+
+Customer: "Actually, that's a great idea. Let me do a quick test call with my colleague. But I think we're good. The WiFi is holding strong."
+
+Agent: "Perfect! And just so you have it for future reference, if you ever have any issues again, you can always reach us at the number on your bill, or you can try that reset process we just did. But hopefully, you won't need to! Is there anything else I can help you with today?"
+
+Customer: "No, I think that's it. You've been amazing, Sarah. Really professional and patient. Thanks for saving my work day!"
+
+Agent: "That's very kind of you to say, Robert. Thank you so much for being such a great customer. We really appreciate your business, and we'll do our best to keep that WiFi running smoothly for you. Have a great meeting!"
+
+Customer: "Thanks, Sarah. Bye!"
+
+Agent: "Goodbye, Robert!"
+
+---END OF CALL---
+

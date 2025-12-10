@@ -1,0 +1,117 @@
+CALL TRANSCRIPT
+===============
+Call ID: CC-2025-002389
+Date: January 18, 2025
+Time: 14:20 - 15:04 PST (44 minutes)
+Agent: Kevin Harrison (ID: AG-4521)
+Customer: Michael Torres
+Issue Category: Order/Delivery Problem - Wrong Address Delivery
+Resolution Status: RESOLVED - BUT WITH SERVICE QUALITY ISSUES
+
+---START OF CALL---
+
+Customer: "Hi, yes, I'm calling about an order that was delivered to the wrong address! This is completely unacceptable!"
+
+Agent: "Okay, hold on. Can you please give me your order number? And try to stay calm - these things happen all the time."
+
+Customer: "Stay calm? My wife's anniversary gift was delivered to someone else's house! We celebrate our 25th anniversary TONIGHT! How is that something that 'happens all the time'?"
+
+Agent: "Look, sir, I understand you're upset, but I deal with this kind of thing constantly. Can you just give me the order number so I can look it up?"
+
+Customer: "The order number is WM-98765432101. I ordered a diamond tennis bracelet for $1,200! This was supposed to be special and romantic and now it's sitting on some stranger's porch!"
+
+Agent: "A diamond bracelet, huh? That's a lot of money. Let me pull this up... okay, I see it here. Order placed on January 15th. Scheduled delivery for today between 2 PM and 6 PM. Says here it was delivered at 1:47 PM."
+
+Customer: "Yes, that's today! And it was delivered to 4521 Oak Street, but I live at 4512 Oak Street! They're on the same street but different numbers! How hard is it to read an address?"
+
+Agent: "Well, sir, that's a driver error. We can file a claim for that. You'll have to wait 7 to 10 business days for an investigation and then we'll issue a refund or a replacement."
+
+Customer: "SEVEN TO TEN DAYS?! No! No, absolutely not! Our anniversary is TONIGHT! We're going out to dinner! This was going to be a surprise for my wife!"
+
+Agent: "Yeah, I get it. That's unfortunate timing. But the process is what it is. I can't speed that up."
+
+Customer: "Can't speed it up? Or won't? This is Walmart! One of the largest retailers in the world! You're telling me you can't help me get my wife a gift for our anniversary tonight?"
+
+Agent: "Sir, I'm not trying to be difficult here. The system has a process. I can file the claim right now and you can check on it in a week. That's really the best I can do."
+
+Customer: "This is absolutely ridiculous. Let me speak to your supervisor. Right now. I want to speak to someone who actually has the authority to help."
+
+Agent: "A supervisor? Look, I AM helping you. I'm filing the claim. What else do you want me to do?"
+
+Customer: "What else? How about showing some empathy? How about acknowledging that your company made a mistake and you're going to make it right? How about offering to resolve this TODAY instead of telling me to wait ten days?"
+
+Agent: "Sir, I've been doing this job for three years. I've heard all the special occasion stories. Birthday, anniversary, wedding, funeral - they all get the same process. The system treats everyone equally."
+
+Customer: "Are you KIDDING me right now? My 25-year marriage anniversary is the same as everyone else's? My wife doesn't care that I'm 'treated equally' with other people's problems! She cares that I promised her a gift and it's missing!"
+
+Agent: "Look... okay. I hear you. That came out wrong. I apologize. Let me see what I can do here."
+
+Customer: "Finally! Thank you. So what can you do?"
+
+Agent: "Alright, let me check our options. One second... you know what, let me try something. Can you call the address where it was delivered? 4521 Oak Street? Maybe the person there will still have the package and you can pick it up."
+
+Customer: "Are you serious? I don't know who lives there! I'm not going to show up at a stranger's house and ask for my package!"
+
+Agent: "I understand. That would be awkward. Okay, different approach. Let me see if I can contact the driver directly and see if he can help track it down or redeliver it."
+
+Customer: "Yes, thank you! That would be helpful!"
+
+[Agent is on hold for 6 minutes]
+
+Agent: "Okay, I'm back. I was able to get in touch with the driver. He says the package is no longer at that address - apparently the residents there brought it inside. He can't go back and retrieve it without explicit permission from the homeowners. That's a liability issue."
+
+Customer: "Oh my God. So now some stranger has my wife's $1,200 bracelet sitting in their house? How is this my problem?"
+
+Agent: "It's not your fault, sir. The driver made a mistake. But here's what I CAN do - and I have to be honest, I usually can't do this. Let me see if I can authorize an emergency same-day delivery with free shipping. That's normally a $150 charge, but given the circumstances... let me check if I can waive that."
+
+Customer: "Wait, really? You're going to replace it today?"
+
+Agent: "I'm going to TRY. But it depends on our warehouse inventory for that specific item and whether we can get it out on our same-day delivery route in your area. Your zip code is... 73301?"
+
+Customer: "Yes, that's correct. Can you check that?"
+
+Agent: "Checking now... okay, this is actually good news. We do have that exact bracelet - the diamond tennis bracelet, 14K white gold - in stock at our distribution center that serves your area. And I can see we have same-day delivery available in your zone."
+
+Customer: "Are you serious? You can really get it delivered today?"
+
+Agent: "Yes, I can. But I want to be honest - the window is tight. Same-day delivery has to go out within the next hour to make it before 6 PM. Can you be home to receive it?"
+
+Customer: "Yes! Absolutely! My wife and I aren't leaving until 7 PM for dinner. This would work perfectly!"
+
+Agent: "Okay, I'm going to process this right now. I'm authorizing an emergency replacement at no additional cost to you. That includes the $150 same-day delivery fee. I'm marking this as a critical priority delivery."
+
+Customer: "Thank you! Thank you so much! I really appreciate this! What's the reference number?"
+
+Agent: "Okay, let me get that for you. The replacement order number is WM-98765432102 - that's the same but with a 2 at the end. The delivery reference is ESD-20250118-4847. Can you repeat that back to me?"
+
+Customer: "WM-98765432102 and ESD-20250118-4847. Got it. So it will definitely arrive by 6 PM?"
+
+Agent: "I'm putting it on the priority list right now. Our warehouse is processing it immediately. Based on the timeline, you should see it between 4:30 PM and 5:45 PM. You'll get a text notification when the driver is 15 minutes away."
+
+Customer: "Okay, this is great. I'm really relieved. But I have to be honest - I'm frustrated with how this call started. You were really dismissive at first."
+
+Agent: "Yeah, look, I'm not going to make excuses. I was short with you, and that wasn't professional. You had a legitimate problem and you deserved better service from the start. I'm sorry about that. But I'm glad I could work it out for you in the end."
+
+Customer: "I appreciate the apology. It doesn't change how the call went, but I appreciate it. So just to confirm - the original order, the one that went to the wrong address, what happens with that?"
+
+Agent: "Good question. I'm going to file a claim against that delivery. Once we determine what happened to that package, we'll either retrieve it or issue you a full refund of $1,200. That process takes about 7 to 10 business days, but you're covered either way."
+
+Customer: "Okay, so I'm getting a replacement today AND I'll either get the original back or a refund?"
+
+Agent: "Exactly. And I'm also adding a $100 Walmart gift card to your account for the inconvenience and frustration you experienced. That should post to your account within 24 hours."
+
+Customer: "That's... that's actually really good. I'm pleased with how this ended up, even though the beginning was rough."
+
+Agent: "I understand. And again, I'm sorry about my attitude at the beginning. That wasn't right. But I'm glad we could make your anniversary special. Is there anything else I can help you with today?"
+
+Customer: "No, I think that's everything. Thank you for making this right, even if it took a little pushing. I hope my wife loves the bracelet."
+
+Agent: "I'm sure she will. A 25-year anniversary is something special. Congratulations, and I hope you both have a wonderful evening."
+
+Customer: "Thank you. Goodbye."
+
+Agent: "Goodbye, sir."
+
+[Customer disconnects]
+
+---END OF CALL---

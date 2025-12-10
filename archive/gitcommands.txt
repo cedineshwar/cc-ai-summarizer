@@ -1,0 +1,72 @@
+cd /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer && git status 2>&1
+
+git log --oneline -5 2>&1
+
+git ls-files | head -20
+
+git status
+
+git add app.py
+
+git commit -m "Your commit message"
+
+git diff app.py
+
+git add app.py && git commit -m "Update model choices to latest versions" && git log --oneline -3
+
+git remote -v
+
+git push origin main -v
+
+git pull origin main --rebase
+
+git push origin main
+
+
+other commands
+
+source .venv/bin/activate && pip install --only-binary :all: streamlit pandas openai python-dotenv PyYAML numpy
+
+which python && python --version && python -c "import streamlit; print(streamlit.__version__)"
+
+cd /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer && python -m streamlit run app.py --logger.level=debug 2>&1 | head -50
+
+python -c "import sys; print(sys.executable)"
+
+/Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/.venv/bin/python -c "import streamlit; print('Streamlit version:', streamlit.__version__)"
+
+
+
+Prompt Questions:
+hi get me the agent id and names
+
+can you get me the top 10 agent list
+
+
+get me agent vs conversation count in bar graph
+
+
+can you do a pie chart with score distribution for each agent
+
+top performer in Jan 2025
+
+can you create Agent Top Performance Board where it should list all agent name and ID year wise
+
+can you update hunter agent record with score of 65
+
+what you can do
+
+what you cannot do
+
+Chat Plot Prompts:
+show agent performance chart
+Generate bar chart showing agent performance scores.
+Generate pie chart showing distribution of agent scores by performance level.
+Generate bar chart showing conversation durations.
+Generate bar chart showing number of conversations per agent.
+Generate pie chart showing customer sentiment distribution.
+Generate bar chart showing distribution of agent ratings (1-5 stars).
+Generate pie chart showing resolution status of calls.
+Detect if user is requesting a chart/graph and return the type.
+Generate appropriate chart based on type requested."
+

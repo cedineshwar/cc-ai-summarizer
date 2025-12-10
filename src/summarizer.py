@@ -1,6 +1,8 @@
 import openai
 import os
 from src.logger import logger
+from src.config import Config
+
 
 def load_prompt(prompt_file):
     """Load prompt text from a file in the prompt_store folder."""
@@ -14,7 +16,12 @@ def load_prompt(prompt_file):
         logger.error(f"Prompt file not found: {prompt_path}")
         return None
 
-def summarize_call(transcript, model="gpt-4.1-nano-2025-04-14", max_sentences=3, temperature=0.0, max_tokens=600):
+def summarize_call(transcript, model=None, max_sentences=3, temperature=None, max_tokens=None):
+    # Use Config defaults if parameters not provided
+    model = model or Config.MODEL_NAME
+    temperature = temperature if temperature is not None else Config.TEMPERATURE
+    max_tokens = max_tokens or Config.MAX_TOKENS
+    
     # Load prompts from files
     system_prompt = load_prompt('summarize_system_prompt.txt')
     user_prompt_template = load_prompt('summarize_user_prompt.txt')
@@ -59,7 +66,7 @@ def summarize_call(transcript, model="gpt-4.1-nano-2025-04-14", max_sentences=3,
         return None
 
 
-def chat_with_bulk_summaries(user_message: str, chat_history: list, summaries_context: str, model: str = "gpt-4.1-mini-2025-04-14", temperature: float = 0.0, max_tokens: int = 600) -> str:
+def chat_with_bulk_summaries(user_message: str, chat_history: list, summaries_context: str, model: str = None, temperature: float = None, max_tokens: int = None) -> str:
     """
     Send a message to the LLM with full conversation history context.
     
@@ -67,34 +74,45 @@ def chat_with_bulk_summaries(user_message: str, chat_history: list, summaries_co
         user_message: The current user message
         chat_history: List of previous messages in the conversation (excluding current message)
         summaries_context: JSON context of all summaries
-        model: The model to use
-        temperature: Temperature setting for the LLM
-        max_tokens: Maximum tokens for the response
+        model: The model to use (uses Config default if None)
+        temperature: Temperature setting for the LLM (uses Config default if None)
+        max_tokens: Maximum tokens for the response (uses Config default if None)
     
     Returns:
         The assistant's response or None if an error occurs
     """
+    # Use Config defaults if parameters not provided
+    model = model or Config.MODEL_NAME
+    temperature = temperature if temperature is not None else Config.TEMPERATURE
+    max_tokens = max_tokens or Config.MAX_TOKENS
+    
+    # Load chat prompts
+    chat_system_prompt = load_prompt('chat_system_prompt.txt')
+    chat_user_prompt = load_prompt('chat_user_prompt.txt')
+    chat_guardrail_prompt = load_prompt('chat_guardrail_prompt.txt')
+    
+    if not chat_system_prompt or not chat_user_prompt or not chat_guardrail_prompt:
+        logger.error("Could not load required chat prompt files")
+        return None
+    
+    # Format user prompt with summaries context
+    formatted_user_prompt = chat_user_prompt.replace('{{PASTE ENTIRE SUMMARY HERE}}', summaries_context)
+    
+    # Combine system and guardrail prompts
+    full_system_prompt = f"{chat_system_prompt}\n\n{chat_guardrail_prompt}"
+    
     try:
-        # Build system message with summaries context
-        system_message = f"""You are a helpful assistant that analyzes call center summaries. 
-You have access to the following summaries data:
-
-{summaries_context}
-
-Answer questions about these summaries accurately and concisely. 
-Remember the context of the entire conversation and maintain continuity in your responses.
-Refer back to previous messages when relevant."""
-        
         # Build messages list with system message, history, and current user message
-        messages = [{"role": "system", "content": system_message}]
+        messages = [{"role": "system", "content": full_system_prompt}]
         
         # Add entire conversation history
         messages.extend(chat_history)
         
-        # Add current user message
-        messages.append({"role": "user", "content": user_message})
+        # Add formatted user message with summaries context
+        messages.append({"role": "user", "content": f"{formatted_user_prompt}\n\nUser Question: {user_message}"})
         
-        logger.debug(f"Chat request with {len(chat_history)} previous messages")
+        logger.debug(f"Chat request with {len(chat_history)} previous messages and chat prompts applied")
+        logger.debug(f"Model used: {model} | Temperature: {temperature} | Max tokens: {max_tokens}")
         
         response = openai.chat.completions.create(
             model=model,
