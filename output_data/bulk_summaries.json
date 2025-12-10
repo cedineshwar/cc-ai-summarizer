@@ -1,0 +1,25 @@
+[
+  {
+    "callId": "CC-2025-002741",
+    "conversationDate": "January 20, 2025",
+    "conversationTime": "09:15 - 10:02",
+    "conversationlength": "47 mins",
+    "agentName": "Jessica Chen",
+    "agentId": "AG-5634",
+    "department": "Customer Service",
+    "customerName": "Robert Williams",
+    "callSummary": "The customer called regarding the cancellation of his 2 PM flight to Boston, which he needed to attend his son's graduation. The agent explained the cancellation due to operational issues, offered rebooking on a later flight, refund, and travel credits, but the issue remained unresolved as the customer could not attend the event on time.",
+    "issueCategory": "Flight Cancellation - Operational Issue",
+    "resolutionStatus": "Unresolved - Customer Unable To Attend Critical Event",
+    "customerTone": "Angry, frustrated, upset, and desperate",
+    "customerEmotions": "Frustration, anger, disappointment, desperation",
+    "agentTone": "Professional, empathetic, apologetic, patient",
+    "agentEmotions": "Frustration, empathy, apology",
+    "agentScore": 75,
+    "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly communicated policies and options, and apologized sincerely. However, the resolution was limited by operational constraints beyond the agent's control, and the agent was unable to provide a satisfactory solution to the customer's critical need.",
+    "agentRating": 3,
+    "agentRatingReason": "The agent handled the call with professionalism and empathy but was unable to resolve the customer's urgent issue, resulting in an average rating due to limited resolution effectiveness despite good communication.",
+    "id": 1,
+    "filename": "airlinecancellationforconvocation.txt"
+  }
+]

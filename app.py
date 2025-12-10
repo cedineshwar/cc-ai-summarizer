@@ -345,6 +345,13 @@ with col3:
                 for message in st.session_state.messages:
                     with st.chat_message(message["role"]):
                         st.markdown(message["content"])
+                        
+                        # Display timestamp and response time if available
+                        if "timestamp" in message:
+                            if "response_time" in message:
+                                st.caption(f"🕐 {message['timestamp']} | ⏱️ Response time: {message['response_time']:.2f}s")
+                            else:
+                                st.caption(f"🕐 {message['timestamp']}")
             else:
                 st.info("Start chatting! Press Enter to send messages.")
             
@@ -363,6 +370,7 @@ with col3:
                 # Display user message immediately
                 with st.chat_message("user"):
                     st.markdown(user_input)
+                    st.caption(f"🕐 {user_timestamp}")
                 
                 # Prepare summaries context
                 summaries_context = json.dumps(st.session_state.bulk_summaries, indent=2)
@@ -424,6 +432,7 @@ with col3:
                         
                         with st.chat_message("assistant"):
                             st.markdown(assistant_message)
+                            st.caption(f"🕐 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | ⏱️ Response time: {response_time:.2f}s")
                         
                         # Save history
                         #save_chat_history(st.session_state.messages)
