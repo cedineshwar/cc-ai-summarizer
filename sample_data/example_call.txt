@@ -2,7 +2,7 @@ CALL TRANSCRIPT
 ===============
 Call ID: CC-2025-002741
 Date: January 20, 2025
-Time: 09:15 - 10:02 (47 minutes)
+Time: 9:15 - 10:02 (47 minutes)
 Agent: Jessica Chen (ID: AG-5634)
 Customer: Robert Williams
 Issue Category: Flight Cancellation - Operational Issue

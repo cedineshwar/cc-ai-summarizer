@@ -4,7 +4,7 @@ Analyze the conversation and return ONLY a valid JSON object with the following 
 {
   "callId": "A unique identifier for this call",
   "conversationDate": "Date in YYYY-MM-DD format",
-  "conversationTime": "Time in HH:MM am/pm format",
+  "conversationTime": "Start Time in HH:MM am/pm format - End Time in H:MM am/pm format",
   "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
   "agentName": "Agent name in Title Case",
   "agentId": "Agent ID or employee number",

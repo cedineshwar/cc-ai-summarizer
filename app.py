@@ -237,9 +237,16 @@ if uploaded_files:
 
 elif sample:
     sample_transcript = load_sample_call()
-    transcripts["sample_call.txt"] = sample_transcript
     st.subheader("Sample Transcript")
-    st.text_area("Transcript", value=sample_transcript, height=300, label_visibility="hidden", disabled=False)
+    # Allow user to edit the sample transcript
+    edited_transcript = st.text_area("Transcript", value=sample_transcript, height=300, label_visibility="hidden", disabled=False)
+    # Use the edited transcript (either original or modified by user)
+    if edited_transcript.strip() is not None and edited_transcript.strip() != "":
+        transcripts["sample_call.txt"] = edited_transcript
+    else:
+        # Throw the error message if user clears the sample transcript
+        st.error("Transcript cannot be empty. Please provide a valid transcript or re-enable the sample data option.")
+
 
 elif cc_files:
     logger.debug(f"Loading file: {cc_files}")

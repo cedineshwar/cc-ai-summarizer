@@ -1,0 +1,1343 @@
+2025-12-11 11:23:46 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251211.txt
+2025-12-11 11:23:46 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-11 11:23:49 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:23:49 - cc_ai_summarizer - DEBUG - Loading file: airlinecancellationforconvocation.txt
+2025-12-11 11:23:49 - cc_ai_summarizer - INFO - Loaded chat history with 0 messages
+2025-12-11 11:23:53 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:24:00 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:24:02 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:24:02 - cc_ai_summarizer - INFO - Starting summarization for file: sample_call.txt
+2025-12-11 11:24:02 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_system_prompt.txt
+2025-12-11 11:24:02 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_user_prompt.txt
+2025-12-11 11:24:02 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_guardrail_prompt.txt
+2025-12-11 11:24:02 - cc_ai_summarizer - DEBUG - User prompt after replacing the strings:  Below is a call-center conversation between an agent and a customer.
+Analyze the conversation and return ONLY a valid JSON object with the following structure. Do not include any text, explanations, or markdown. Return only the JSON.
+
+{
+  "callId": "A unique identifier for this call",
+  "conversationDate": "Date in YYYY-MM-DD format",
+  "conversationTime": "Time in HH:MM am/pm format",
+  "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
+  "agentName": "Agent name in Title Case",
+  "agentId": "Agent ID or employee number",
+  "department": "Department name in Title Case",
+  "customerName": "Customer name in Title Case",
+  "callSummary": "A concise 2 sentence overview of the issue, actions taken, and resolution status",
+  "issueCategory": "Category in Title Case",
+  "resolutionStatus": "Resolved or Unresolved",
+  "customerTone": "Comma-separated values like 'Calm, Appreciative'",
+  "customerEmotions": "Observable emotions only, comma-separated. If none: 'Not Expressed'",
+  "agentTone": "Comma-separated values like 'Professional, Empathetic'",
+  "agentEmotions": "Expressed emotions comma-separated. If none: 'Not Expressed'",
+  "agentScore": 85,
+  "agentScoreReason": "2-3 sentence justification based on Friendliness, Clarity, Policy Adherence, Resolution Effectiveness, and Empathy",
+  "agentRating": 4,
+  "agentRatingReason": "1-2 sentence explanation (1=Very Poor, 2=Poor, 3=Average, 4=Very Good, 5=Excellent)"
+}
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no markdown code blocks, no explanations, no extra text
+2. All fields are mandatory and must have non-empty string values (except agentScore and agentRating which are numbers)
+3. agentScore must be a number 0-100
+4. agentRating must be a number 1-5
+5. Do NOT wrap in markdown code blocks
+6. Do NOT add text before or after the JSON
+
+Conversation:
+CALL TRANSCRIPT
+===============
+Call ID: CC-2025-002741
+Date: January 20, 2025
+Time: 9:15 - 10:02 (47 minutes)
+Agent: Jessica Chen (ID: AG-5634)
+Customer: Robert Williams
+Issue Category: Flight Cancellation - Operational Issue
+Resolution Status: UNRESOLVED - CUSTOMER UNABLE TO ATTEND CRITICAL EVENT
+
+---START OF CALL---
+
+Customer: "Hello? Yes, I need to speak to someone about flight 447 departing at 2 PM today! It just got canceled! I need to get to Boston TODAY!"
+
+Agent: "Hi, welcome to SkyLine Airways. Can I get your confirmation number please?"
+
+Customer: "The confirmation number is SK-B47X9K2. This is absolutely ridiculous! My flight was supposed to depart in FIVE HOURS and I just got a notification it's canceled! How is this possible?"
+
+Agent: "Let me pull that up... okay, I see it. Flight SL447 Boston departure at 2:15 PM. You're right, that flight has been canceled due to operational maintenance issues. I can rebook you on another flight."
+
+Customer: "ANOTHER FLIGHT?! When? I need to be in Boston TODAY! This is not optional! My son is graduating today! His convocation ceremony is at 6 PM and I promised him I would be there!"
+
+Agent: "I understand. Let me check available flights... we have one departing at 5:45 PM that gets into Boston at 8:20 PM."
+
+Customer: "5:45 PM?! That lands at 8:20 PM! The ceremony is at 6 PM! I'll miss it!"
+
+Agent: "That's the only available flight we have today on SkyLine Airways. You could also look at other carriers, but that would be a separate booking."
+
+Customer: "Are you KIDDING me? Your airline canceled MY flight and now you're telling me the only option gets me there AFTER my son's graduation?"
+
+Agent: "Sir, I understand you're upset. These operational cancellations are beyond our control. We do have the 5:45 PM flight available—"
+
+Customer: "Beyond your control? You're an airline! Your job IS to control operations! This is unacceptable! I paid $850 for this flight specifically because it got me there in time!"
+
+Agent: "I understand your frustration. We can rebook you on the 5:45 PM flight at no additional charge, or you can wait for tomorrow's flights."
+
+Customer: "Tomorrow? Tomorrow is too late! The ceremony is TODAY! Can you not understand that?!"
+
+Agent: "Sir, I hear you. But that's all I have available on SkyLine Airways today. If you want to explore other carriers—"
+
+Customer: "No! I want MY flight back! I want the 2 PM flight that I paid for! I want to get to Boston on time! That's what I paid you $850 for!"
+
+Agent: "I understand, but the flight has been canceled. We cannot operate it. I can rebook you on the 5:45 PM—"
+
+Customer: "You keep saying the same thing! You're not listening to me! My SON is graduating TODAY and I will not miss it! What are you going to do to make this right?"
+
+Agent: "Sir, I apologize. I know this is frustrating. Regarding compensation, we can offer you a full refund of your ticket price or a travel credit for a future flight."
+
+Customer: "A REFUND?! Or a TRAVEL CREDIT?! I don't need money! I need to GET TO BOSTON! How does a refund help me attend my son's graduation in FOUR HOURS?!"
+
+Agent: "I understand. Unfortunately, the only option for you to get to Boston today is the 5:45 PM flight. There's no other way around that."
+
+Customer: "This is the worst customer service I've ever experienced! Can I speak to a supervisor? RIGHT NOW!"
+
+Agent: "Hold on one moment, sir."
+
+[Agent places customer on hold for 8 minutes while background noise shows multiple phones ringing and agents talking urgently]
+
+Agent: "Sir? I'm back. I've spoken with my supervisor. Unfortunately, we don't have any other flights available today. The 5:45 PM is genuinely the only option."
+
+Customer: "So you're telling me there's nothing you can do? Nothing at all? My son's graduation is in a few hours and you can't help me?"
+
+Agent: "I'm sorry, sir. What I CAN do is put you on a standby list for any earlier flights if there's a cancellation or if we can get another aircraft, but I can't guarantee anything."
+
+Customer: "A standby list? So I'm supposed to just SIT HERE and HOPE that maybe, possibly, by some miracle, something opens up? This is insane!"
+
+Agent: "I understand how you feel. But given the operational situation today, we're dealing with multiple canceled flights and very limited options. I really wish I could do more."
+
+Customer: "Multiple canceled flights? What's going on? Is this an airline-wide issue?"
+
+Agent: "We've had weather issues combined with some unexpected maintenance failures. It's been a difficult day. We've had approximately 23 flight cancellations across our network today, and we're completely overwhelmed with call volume."
+
+Customer: "So YOU'RE overwhelmed? I'M the one missing my son's graduation! Your overwhelming day is not my problem!"
+
+Agent: "You're right. That was unprofessional of me. I'm sorry. But the fact is, I don't have a magical solution here. There is no earlier flight available."
+
+Customer: "Can you do ANYTHING? Upgrade me to first class on the 5:45 PM? Comp my entire ticket? Get me a connecting flight through another airline at your expense? ANYTHING?"
+
+Agent: "Sir, let me be honest. I'm looking at our system right now and I can offer you: full refund of $850, a $200 travel credit for future flights, and a complimentary upgrade to first class on the 5:45 PM flight. But that doesn't get you there by 6 PM."
+
+Customer: "So nothing actually solves my problem. It's just money. Money doesn't bring me to my son's graduation. Money doesn't make me a father who kept his promise."
+
+Agent: "I understand. And I'm genuinely sorry. But operationally, I cannot make a flight appear that doesn't exist."
+
+Customer: "You know what? Forget the 5:45 PM. I'm going to rent a car and drive to Boston. How far is that?"
+
+Agent: "I think Boston is about 3.5 to 4 hours from here, depending on where you are."
+
+Customer: "3.5 hours? And my ceremony is in... [checks time] ...3 hours and 45 minutes. So I can't even make it by driving."
+
+Agent: "I'm sorry, sir."
+
+Customer: "You know what's the worst part? The worst part is I booked with YOUR airline specifically because you had the direct flight at the right time. I had other options but I chose SkyLine Airways because of that 2 PM flight. And now you're telling me you can't operate it."
+
+Agent: "Sir, I genuinely apologize. These operational failures are not acceptable. You made the right choice - our 2 PM flight WAS the right option. We just failed to deliver."
+
+Customer: "You failed. Yes. You absolutely failed. And now my son is going to have his graduation ceremony and his father won't be there because SkyLine Airways failed."
+
+Agent: "I know this doesn't help, but I want to make sure you get something out of this. Let me add another $300 travel credit to your account. So you have $500 in total credits plus the $850 refund."
+
+Customer: "Stop offering me money! I don't want your money! I want to go back in time and choose a different airline! I want to have made a different choice! But I can't! I made the choice to trust SkyLine Airways and you let me down!"
+
+Agent: "Sir, I understand. You have every right to be angry. I'm genuinely sorry."
+
+Customer: "Are you though? Are you genuinely sorry? Or are you just saying that because you've probably said it 50 times today because your airline has been a disaster?"
+
+Agent: "You're right. I have said it many times today. And honestly, I'm frustrated too. We've been completely overwhelmed. But that's not your fault. You're right to be angry."
+
+Customer: "I don't care if you're frustrated. I don't care about your day. I care about MY son's graduation. And I'm going to miss it. And that's on SkyLine Airways."
+
+Agent: "Yes. That's on us. And I'm sorry."
+
+Customer: "So what happens now? Do I just... accept that I'm not going?"
+
+Agent: "You still have the 5:45 PM option. You won't make the 6 PM ceremony, but you could potentially catch a late dinner or celebration after. Or you can take the refund and try another airline for tomorrow. But for today, those are your only options."
+
+Customer: "There is no celebrating after a missed graduation ceremony. That's not how this works. Missing the ceremony means missing the memory. It means not being there for my son on one of the most important days of his life."
+
+Agent: "I know. And I'm sorry I can't fix that."
+
+Customer: "You can't fix it. That's right. SkyLine Airways broke something you can't fix. And that's the most frustrating part."
+
+[Long pause]
+
+Customer: "I'm going to take the 5:45 PM flight. I'll be late, but at least I'll be in Boston. And then I'm going to file a formal complaint. And I'm going to look for a different airline for all my future bookings."
+
+Agent: "I understand. Would you like me to confirm the 5:45 PM flight for you?"
+
+Customer: "Yes. Confirm it. And just... understand that you've lost a loyal customer today. I've flown SkyLine Airways for five years. And this is how you treat me when there's a crisis."
+
+Agent: "I understand. And I'm truly sorry. Let me just confirm your booking... okay, you're confirmed on flight SL482 departing at 5:45 PM, first class, arriving Boston Logan at 8:20 PM. Your confirmation number is SK-48Z7J9K. You'll receive a notification with your refund and travel credits within 48 hours."
+
+Customer: "So I'm paying to fly at 5:45 PM when I was supposed to fly at 2 PM, and I'll arrive after my son's graduation. Perfect."
+
+Agent: "Sir, your ticket is refunded. The 5:45 PM flight is complimentary as a rebooked cancellation. You're not paying anything."
+
+Customer: "I don't care about the money! Stop talking about the money!"
+
+Agent: "I'm sorry. Is there anything else I can help you with?"
+
+Customer: "No. There's nothing you can help me with. You've already failed. Goodbye."
+
+Agent: "Goodbye, sir. And again, I'm very sorry."
+
+[Customer disconnects]
+
+---END OF CALL---
+2025-12-11 11:24:02 - cc_ai_summarizer - DEBUG - Model used: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600 | Max sentences: 2
+2025-12-11 11:24:02 - cc_ai_summarizer - DEBUG - Transcript length: 9872 characters
+2025-12-11 11:24:08 - cc_ai_summarizer - INFO - Successfully generated summary (1350 characters)
+2025-12-11 11:24:08 - cc_ai_summarizer - DEBUG - Summary preview: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The customer calle...
+2025-12-11 11:24:08 - cc_ai_summarizer - DEBUG - Summary for sample_call.txt: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The customer called about a canceled flight that prevented him from attending his son's graduation. The agent offered rebooking options, refunds, and travel credits, but the issue remained unresolved as no earlier flights were available.",
+  "issueCategory": "Flight Cancellation - Operational Issue",
+  "resolutionStatus": "Unresolved",
+  "customerTone": "Frustrated, Angry, Desperate",
+  "customerEmotions": "Frustration, Anger, Disappointment, Desperation",
+  "agentTone": "Professional, Empathetic, Apologetic",
+  "agentEmotions": "Empathy, Frustration, Apology",
+  "agentScore": 75,
+  "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly explained policies and options, and apologized sincerely. However, the agent was limited by company policies and operational constraints, which affected resolution effectiveness.",
+  "agentRating": 4,
+  "agentRatingReason": "The agent was very good in handling the customer's emotions and providing clear information, though the unresolved issue impacted overall satisfaction."
+}
+2025-12-11 11:24:08 - cc_ai_summarizer - DEBUG - Extracted JSON from response text (length: 1350)
+2025-12-11 11:24:08 - cc_ai_summarizer - DEBUG - Extracted JSON: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "depart...
+2025-12-11 11:24:08 - cc_ai_summarizer - INFO - Summary generated for sample_call.txt in 5.79s
+2025-12-11 11:24:08 - cc_ai_summarizer - INFO - Saved 1 summaries to output_data/bulk_summaries.json
+2025-12-11 11:24:08 - cc_ai_summarizer - INFO - Updated metadata: last_id=1
+2025-12-11 11:24:08 - cc_ai_summarizer - INFO - ✅ Total summarization time: 5.79s for 1 files
+2025-12-11 11:25:17 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:25:17 - cc_ai_summarizer - DEBUG - Loading file: airlinecancellationforconvocation.txt
+2025-12-11 11:25:20 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:25:23 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:25:23 - cc_ai_summarizer - INFO - Starting summarization for file: sample_call.txt
+2025-12-11 11:25:23 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_system_prompt.txt
+2025-12-11 11:25:23 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_user_prompt.txt
+2025-12-11 11:25:23 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_guardrail_prompt.txt
+2025-12-11 11:25:23 - cc_ai_summarizer - DEBUG - User prompt after replacing the strings:  Below is a call-center conversation between an agent and a customer.
+Analyze the conversation and return ONLY a valid JSON object with the following structure. Do not include any text, explanations, or markdown. Return only the JSON.
+
+{
+  "callId": "A unique identifier for this call",
+  "conversationDate": "Date in YYYY-MM-DD format",
+  "conversationTime": "Start Time in HH:MM am/pm format - End Time in H:MM am/pm format",
+  "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
+  "agentName": "Agent name in Title Case",
+  "agentId": "Agent ID or employee number",
+  "department": "Department name in Title Case",
+  "customerName": "Customer name in Title Case",
+  "callSummary": "A concise 2 sentence overview of the issue, actions taken, and resolution status",
+  "issueCategory": "Category in Title Case",
+  "resolutionStatus": "Resolved or Unresolved",
+  "customerTone": "Comma-separated values like 'Calm, Appreciative'",
+  "customerEmotions": "Observable emotions only, comma-separated. If none: 'Not Expressed'",
+  "agentTone": "Comma-separated values like 'Professional, Empathetic'",
+  "agentEmotions": "Expressed emotions comma-separated. If none: 'Not Expressed'",
+  "agentScore": 85,
+  "agentScoreReason": "2-3 sentence justification based on Friendliness, Clarity, Policy Adherence, Resolution Effectiveness, and Empathy",
+  "agentRating": 4,
+  "agentRatingReason": "1-2 sentence explanation (1=Very Poor, 2=Poor, 3=Average, 4=Very Good, 5=Excellent)"
+}
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no markdown code blocks, no explanations, no extra text
+2. All fields are mandatory and must have non-empty string values (except agentScore and agentRating which are numbers)
+3. agentScore must be a number 0-100
+4. agentRating must be a number 1-5
+5. Do NOT wrap in markdown code blocks
+6. Do NOT add text before or after the JSON
+
+Conversation:
+CALL TRANSCRIPT
+===============
+Call ID: CC-2025-002741
+Date: January 20, 2025
+Time: 9:15 - 10:02 (47 minutes)
+Agent: Jessica Chen (ID: AG-5634)
+Customer: Robert Williams
+Issue Category: Flight Cancellation - Operational Issue
+Resolution Status: UNRESOLVED - CUSTOMER UNABLE TO ATTEND CRITICAL EVENT
+
+---START OF CALL---
+
+Customer: "Hello? Yes, I need to speak to someone about flight 447 departing at 2 PM today! It just got canceled! I need to get to Boston TODAY!"
+
+Agent: "Hi, welcome to SkyLine Airways. Can I get your confirmation number please?"
+
+Customer: "The confirmation number is SK-B47X9K2. This is absolutely ridiculous! My flight was supposed to depart in FIVE HOURS and I just got a notification it's canceled! How is this possible?"
+
+Agent: "Let me pull that up... okay, I see it. Flight SL447 Boston departure at 2:15 PM. You're right, that flight has been canceled due to operational maintenance issues. I can rebook you on another flight."
+
+Customer: "ANOTHER FLIGHT?! When? I need to be in Boston TODAY! This is not optional! My son is graduating today! His convocation ceremony is at 6 PM and I promised him I would be there!"
+
+Agent: "I understand. Let me check available flights... we have one departing at 5:45 PM that gets into Boston at 8:20 PM."
+
+Customer: "5:45 PM?! That lands at 8:20 PM! The ceremony is at 6 PM! I'll miss it!"
+
+Agent: "That's the only available flight we have today on SkyLine Airways. You could also look at other carriers, but that would be a separate booking."
+
+Customer: "Are you KIDDING me? Your airline canceled MY flight and now you're telling me the only option gets me there AFTER my son's graduation?"
+
+Agent: "Sir, I understand you're upset. These operational cancellations are beyond our control. We do have the 5:45 PM flight available—"
+
+Customer: "Beyond your control? You're an airline! Your job IS to control operations! This is unacceptable! I paid $850 for this flight specifically because it got me there in time!"
+
+Agent: "I understand your frustration. We can rebook you on the 5:45 PM flight at no additional charge, or you can wait for tomorrow's flights."
+
+Customer: "Tomorrow? Tomorrow is too late! The ceremony is TODAY! Can you not understand that?!"
+
+Agent: "Sir, I hear you. But that's all I have available on SkyLine Airways today. If you want to explore other carriers—"
+
+Customer: "No! I want MY flight back! I want the 2 PM flight that I paid for! I want to get to Boston on time! That's what I paid you $850 for!"
+
+Agent: "I understand, but the flight has been canceled. We cannot operate it. I can rebook you on the 5:45 PM—"
+
+Customer: "You keep saying the same thing! You're not listening to me! My SON is graduating TODAY and I will not miss it! What are you going to do to make this right?"
+
+Agent: "Sir, I apologize. I know this is frustrating. Regarding compensation, we can offer you a full refund of your ticket price or a travel credit for a future flight."
+
+Customer: "A REFUND?! Or a TRAVEL CREDIT?! I don't need money! I need to GET TO BOSTON! How does a refund help me attend my son's graduation in FOUR HOURS?!"
+
+Agent: "I understand. Unfortunately, the only option for you to get to Boston today is the 5:45 PM flight. There's no other way around that."
+
+Customer: "This is the worst customer service I've ever experienced! Can I speak to a supervisor? RIGHT NOW!"
+
+Agent: "Hold on one moment, sir."
+
+[Agent places customer on hold for 8 minutes while background noise shows multiple phones ringing and agents talking urgently]
+
+Agent: "Sir? I'm back. I've spoken with my supervisor. Unfortunately, we don't have any other flights available today. The 5:45 PM is genuinely the only option."
+
+Customer: "So you're telling me there's nothing you can do? Nothing at all? My son's graduation is in a few hours and you can't help me?"
+
+Agent: "I'm sorry, sir. What I CAN do is put you on a standby list for any earlier flights if there's a cancellation or if we can get another aircraft, but I can't guarantee anything."
+
+Customer: "A standby list? So I'm supposed to just SIT HERE and HOPE that maybe, possibly, by some miracle, something opens up? This is insane!"
+
+Agent: "I understand how you feel. But given the operational situation today, we're dealing with multiple canceled flights and very limited options. I really wish I could do more."
+
+Customer: "Multiple canceled flights? What's going on? Is this an airline-wide issue?"
+
+Agent: "We've had weather issues combined with some unexpected maintenance failures. It's been a difficult day. We've had approximately 23 flight cancellations across our network today, and we're completely overwhelmed with call volume."
+
+Customer: "So YOU'RE overwhelmed? I'M the one missing my son's graduation! Your overwhelming day is not my problem!"
+
+Agent: "You're right. That was unprofessional of me. I'm sorry. But the fact is, I don't have a magical solution here. There is no earlier flight available."
+
+Customer: "Can you do ANYTHING? Upgrade me to first class on the 5:45 PM? Comp my entire ticket? Get me a connecting flight through another airline at your expense? ANYTHING?"
+
+Agent: "Sir, let me be honest. I'm looking at our system right now and I can offer you: full refund of $850, a $200 travel credit for future flights, and a complimentary upgrade to first class on the 5:45 PM flight. But that doesn't get you there by 6 PM."
+
+Customer: "So nothing actually solves my problem. It's just money. Money doesn't bring me to my son's graduation. Money doesn't make me a father who kept his promise."
+
+Agent: "I understand. And I'm genuinely sorry. But operationally, I cannot make a flight appear that doesn't exist."
+
+Customer: "You know what? Forget the 5:45 PM. I'm going to rent a car and drive to Boston. How far is that?"
+
+Agent: "I think Boston is about 3.5 to 4 hours from here, depending on where you are."
+
+Customer: "3.5 hours? And my ceremony is in... [checks time] ...3 hours and 45 minutes. So I can't even make it by driving."
+
+Agent: "I'm sorry, sir."
+
+Customer: "You know what's the worst part? The worst part is I booked with YOUR airline specifically because you had the direct flight at the right time. I had other options but I chose SkyLine Airways because of that 2 PM flight. And now you're telling me you can't operate it."
+
+Agent: "Sir, I genuinely apologize. These operational failures are not acceptable. You made the right choice - our 2 PM flight WAS the right option. We just failed to deliver."
+
+Customer: "You failed. Yes. You absolutely failed. And now my son is going to have his graduation ceremony and his father won't be there because SkyLine Airways failed."
+
+Agent: "I know this doesn't help, but I want to make sure you get something out of this. Let me add another $300 travel credit to your account. So you have $500 in total credits plus the $850 refund."
+
+Customer: "Stop offering me money! I don't want your money! I want to go back in time and choose a different airline! I want to have made a different choice! But I can't! I made the choice to trust SkyLine Airways and you let me down!"
+
+Agent: "Sir, I understand. You have every right to be angry. I'm genuinely sorry."
+
+Customer: "Are you though? Are you genuinely sorry? Or are you just saying that because you've probably said it 50 times today because your airline has been a disaster?"
+
+Agent: "You're right. I have said it many times today. And honestly, I'm frustrated too. We've been completely overwhelmed. But that's not your fault. You're right to be angry."
+
+Customer: "I don't care if you're frustrated. I don't care about your day. I care about MY son's graduation. And I'm going to miss it. And that's on SkyLine Airways."
+
+Agent: "Yes. That's on us. And I'm sorry."
+
+Customer: "So what happens now? Do I just... accept that I'm not going?"
+
+Agent: "You still have the 5:45 PM option. You won't make the 6 PM ceremony, but you could potentially catch a late dinner or celebration after. Or you can take the refund and try another airline for tomorrow. But for today, those are your only options."
+
+Customer: "There is no celebrating after a missed graduation ceremony. That's not how this works. Missing the ceremony means missing the memory. It means not being there for my son on one of the most important days of his life."
+
+Agent: "I know. And I'm sorry I can't fix that."
+
+Customer: "You can't fix it. That's right. SkyLine Airways broke something you can't fix. And that's the most frustrating part."
+
+[Long pause]
+
+Customer: "I'm going to take the 5:45 PM flight. I'll be late, but at least I'll be in Boston. And then I'm going to file a formal complaint. And I'm going to look for a different airline for all my future bookings."
+
+Agent: "I understand. Would you like me to confirm the 5:45 PM flight for you?"
+
+Customer: "Yes. Confirm it. And just... understand that you've lost a loyal customer today. I've flown SkyLine Airways for five years. And this is how you treat me when there's a crisis."
+
+Agent: "I understand. And I'm truly sorry. Let me just confirm your booking... okay, you're confirmed on flight SL482 departing at 5:45 PM, first class, arriving Boston Logan at 8:20 PM. Your confirmation number is SK-48Z7J9K. You'll receive a notification with your refund and travel credits within 48 hours."
+
+Customer: "So I'm paying to fly at 5:45 PM when I was supposed to fly at 2 PM, and I'll arrive after my son's graduation. Perfect."
+
+Agent: "Sir, your ticket is refunded. The 5:45 PM flight is complimentary as a rebooked cancellation. You're not paying anything."
+
+Customer: "I don't care about the money! Stop talking about the money!"
+
+Agent: "I'm sorry. Is there anything else I can help you with?"
+
+Customer: "No. There's nothing you can help me with. You've already failed. Goodbye."
+
+Agent: "Goodbye, sir. And again, I'm very sorry."
+
+[Customer disconnects]
+
+---END OF CALL---
+2025-12-11 11:25:23 - cc_ai_summarizer - DEBUG - Model used: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600 | Max sentences: 2
+2025-12-11 11:25:23 - cc_ai_summarizer - DEBUG - Transcript length: 9872 characters
+2025-12-11 11:25:29 - cc_ai_summarizer - INFO - Successfully generated summary (1456 characters)
+2025-12-11 11:25:29 - cc_ai_summarizer - DEBUG - Summary preview: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The cus...
+2025-12-11 11:25:29 - cc_ai_summarizer - DEBUG - Summary for sample_call.txt: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The customer called about a canceled flight that prevented him from attending his son's graduation on time. The agent offered rebooking on a later flight, a refund, travel credits, and a standby list, but the issue remained unresolved as no earlier flights were available.",
+  "issueCategory": "Flight Cancellation - Operational Issue",
+  "resolutionStatus": "Unresolved",
+  "customerTone": "Frustrated, Angry, Desperate",
+  "customerEmotions": "Frustration, Anger, Disappointment, Desperation",
+  "agentTone": "Professional, Empathetic, Apologetic",
+  "agentEmotions": "Empathy, Frustration, Apology",
+  "agentScore": 75,
+  "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly explained the situation and options, and adhered to company policies. However, the agent was limited by operational constraints and could not fully resolve the customer's issue, which affected overall effectiveness.",
+  "agentRating": 4,
+  "agentRatingReason": "The agent was very good in handling the customer's emotions and providing clear information, though the resolution was not possible due to circumstances beyond their control."
+}
+2025-12-11 11:25:29 - cc_ai_summarizer - DEBUG - Extracted JSON from response text (length: 1456)
+2025-12-11 11:25:29 - cc_ai_summarizer - DEBUG - Extracted JSON: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634"...
+2025-12-11 11:25:29 - cc_ai_summarizer - INFO - Summary generated for sample_call.txt in 6.11s
+2025-12-11 11:25:29 - cc_ai_summarizer - INFO - Saved 1 summaries to output_data/bulk_summaries.json
+2025-12-11 11:25:29 - cc_ai_summarizer - INFO - Updated metadata: last_id=2
+2025-12-11 11:25:29 - cc_ai_summarizer - INFO - ✅ Total summarization time: 6.11s for 1 files
+2025-12-11 11:25:35 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 11:25:35 - cc_ai_summarizer - DEBUG - Loading file: airlinecancellationforconvocation.txt
+2025-12-11 13:16:52 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:16:55 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:16:55 - cc_ai_summarizer - DEBUG - Loading file: airlinecancellationforconvocation.txt
+2025-12-11 13:16:56 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:18:31 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:18:31 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:18:31 - cc_ai_summarizer - INFO - Starting summarization for file: sample_call.txt
+2025-12-11 13:18:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_system_prompt.txt
+2025-12-11 13:18:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_user_prompt.txt
+2025-12-11 13:18:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_guardrail_prompt.txt
+2025-12-11 13:18:31 - cc_ai_summarizer - DEBUG - User prompt after replacing the strings:  Below is a call-center conversation between an agent and a customer.
+Analyze the conversation and return ONLY a valid JSON object with the following structure. Do not include any text, explanations, or markdown. Return only the JSON.
+
+{
+  "callId": "A unique identifier for this call",
+  "conversationDate": "Date in YYYY-MM-DD format",
+  "conversationTime": "Start Time in HH:MM am/pm format - End Time in H:MM am/pm format",
+  "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
+  "agentName": "Agent name in Title Case",
+  "agentId": "Agent ID or employee number",
+  "department": "Department name in Title Case",
+  "customerName": "Customer name in Title Case",
+  "callSummary": "A concise 2 sentence overview of the issue, actions taken, and resolution status",
+  "issueCategory": "Category in Title Case",
+  "resolutionStatus": "Resolved or Unresolved",
+  "customerTone": "Comma-separated values like 'Calm, Appreciative'",
+  "customerEmotions": "Observable emotions only, comma-separated. If none: 'Not Expressed'",
+  "agentTone": "Comma-separated values like 'Professional, Empathetic'",
+  "agentEmotions": "Expressed emotions comma-separated. If none: 'Not Expressed'",
+  "agentScore": 85,
+  "agentScoreReason": "2-3 sentence justification based on Friendliness, Clarity, Policy Adherence, Resolution Effectiveness, and Empathy",
+  "agentRating": 4,
+  "agentRatingReason": "1-2 sentence explanation (1=Very Poor, 2=Poor, 3=Average, 4=Very Good, 5=Excellent)"
+}
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no markdown code blocks, no explanations, no extra text
+2. All fields are mandatory and must have non-empty string values (except agentScore and agentRating which are numbers)
+3. agentScore must be a number 0-100
+4. agentRating must be a number 1-5
+5. Do NOT wrap in markdown code blocks
+6. Do NOT add text before or after the JSON
+
+Conversation:
+CALL TRANSCRIPT
+===============
+Call ID: CC-2025-002741
+Date: January 20, 2025
+Time: 9:15 - 10:02 (47 minutes)
+Agent: Jessica Chen (ID: AG-5634)
+Customer: Robert Williams
+Issue Category: Flight Cancellation - Operational Issue
+Resolution Status: UNRESOLVED - CUSTOMER UNABLE TO ATTEND CRITICAL EVENT
+
+---START OF CALL---
+
+Customer: "Hello? Yes, I need to speak to someone about flight 447 departing at 2 PM today! It just got canceled! I need to get to Boston TODAY!"
+
+Agent: "Hi, welcome to SkyLine Airways. Can I get your confirmation number please?"
+
+Customer: "The confirmation number is SK-B47X9K2. This is absolutely ridiculous! My flight was supposed to depart in FIVE HOURS and I just got a notification it's canceled! How is this possible?"
+
+Agent: "Let me pull that up... okay, I see it. Flight SL447 Boston departure at 2:15 PM. You're right, that flight has been canceled due to operational maintenance issues. I can rebook you on another flight."
+
+Customer: "ANOTHER FLIGHT?! When? I need to be in Boston TODAY! This is not optional! My son is graduating today! His convocation ceremony is at 6 PM and I promised him I would be there!"
+
+Agent: "I understand. Let me check available flights... we have one departing at 5:45 PM that gets into Boston at 8:20 PM."
+
+Customer: "5:45 PM?! That lands at 8:20 PM! The ceremony is at 6 PM! I'll miss it!"
+
+Agent: "That's the only available flight we have today on SkyLine Airways. You could also look at other carriers, but that would be a separate booking."
+
+Customer: "Are you KIDDING me? Your airline canceled MY flight and now you're telling me the only option gets me there AFTER my son's graduation?"
+
+Agent: "Sir, I understand you're upset. These operational cancellations are beyond our control. We do have the 5:45 PM flight available—"
+
+Customer: "Beyond your control? You're an airline! Your job IS to control operations! This is unacceptable! I paid $850 for this flight specifically because it got me there in time!"
+
+Agent: "I understand your frustration. We can rebook you on the 5:45 PM flight at no additional charge, or you can wait for tomorrow's flights."
+
+Customer: "Tomorrow? Tomorrow is too late! The ceremony is TODAY! Can you not understand that?!"
+
+Agent: "Sir, I hear you. But that's all I have available on SkyLine Airways today. If you want to explore other carriers—"
+
+Customer: "No! I want MY flight back! I want the 2 PM flight that I paid for! I want to get to Boston on time! That's what I paid you $850 for!"
+
+Agent: "I understand, but the flight has been canceled. We cannot operate it. I can rebook you on the 5:45 PM—"
+
+Customer: "You keep saying the same thing! You're not listening to me! My SON is graduating TODAY and I will not miss it! What are you going to do to make this right?"
+
+Agent: "Sir, I apologize. I know this is frustrating. Regarding compensation, we can offer you a full refund of your ticket price or a travel credit for a future flight."
+
+Customer: "A REFUND?! Or a TRAVEL CREDIT?! I don't need money! I need to GET TO BOSTON! How does a refund help me attend my son's graduation in FOUR HOURS?!"
+
+Agent: "I understand. Unfortunately, the only option for you to get to Boston today is the 5:45 PM flight. There's no other way around that."
+
+Customer: "This is the worst customer service I've ever experienced! Can I speak to a supervisor? RIGHT NOW!"
+
+Agent: "Hold on one moment, sir."
+
+[Agent places customer on hold for 8 minutes while background noise shows multiple phones ringing and agents talking urgently]
+
+Agent: "Sir? I'm back. I've spoken with my supervisor. Unfortunately, we don't have any other flights available today. The 5:45 PM is genuinely the only option."
+
+Customer: "So you're telling me there's nothing you can do? Nothing at all? My son's graduation is in a few hours and you can't help me?"
+
+Agent: "I'm sorry, sir. What I CAN do is put you on a standby list for any earlier flights if there's a cancellation or if we can get another aircraft, but I can't guarantee anything."
+
+Customer: "A standby list? So I'm supposed to just SIT HERE and HOPE that maybe, possibly, by some miracle, something opens up? This is insane!"
+
+Agent: "I understand how you feel. But given the operational situation today, we're dealing with multiple canceled flights and very limited options. I really wish I could do more."
+
+Customer: "Multiple canceled flights? What's going on? Is this an airline-wide issue?"
+
+Agent: "We've had weather issues combined with some unexpected maintenance failures. It's been a difficult day. We've had approximately 23 flight cancellations across our network today, and we're completely overwhelmed with call volume."
+
+Customer: "So YOU'RE overwhelmed? I'M the one missing my son's graduation! Your overwhelming day is not my problem!"
+
+Agent: "You're right. That was unprofessional of me. I'm sorry. But the fact is, I don't have a magical solution here. There is no earlier flight available."
+
+Customer: "Can you do ANYTHING? Upgrade me to first class on the 5:45 PM? Comp my entire ticket? Get me a connecting flight through another airline at your expense? ANYTHING?"
+
+Agent: "Sir, let me be honest. I'm looking at our system right now and I can offer you: full refund of $850, a $200 travel credit for future flights, and a complimentary upgrade to first class on the 5:45 PM flight. But that doesn't get you there by 6 PM."
+
+Customer: "So nothing actually solves my problem. It's just money. Money doesn't bring me to my son's graduation. Money doesn't make me a father who kept his promise."
+
+Agent: "I understand. And I'm genuinely sorry. But operationally, I cannot make a flight appear that doesn't exist."
+
+Customer: "You know what? Forget the 5:45 PM. I'm going to rent a car and drive to Boston. How far is that?"
+
+Agent: "I think Boston is about 3.5 to 4 hours from here, depending on where you are."
+
+Customer: "3.5 hours? And my ceremony is in... [checks time] ...3 hours and 45 minutes. So I can't even make it by driving."
+
+Agent: "I'm sorry, sir."
+
+Customer: "You know what's the worst part? The worst part is I booked with YOUR airline specifically because you had the direct flight at the right time. I had other options but I chose SkyLine Airways because of that 2 PM flight. And now you're telling me you can't operate it."
+
+Agent: "Sir, I genuinely apologize. These operational failures are not acceptable. You made the right choice - our 2 PM flight WAS the right option. We just failed to deliver."
+
+Customer: "You failed. Yes. You absolutely failed. And now my son is going to have his graduation ceremony and his father won't be there because SkyLine Airways failed."
+
+Agent: "I know this doesn't help, but I want to make sure you get something out of this. Let me add another $300 travel credit to your account. So you have $500 in total credits plus the $850 refund."
+
+Customer: "Stop offering me money! I don't want your money! I want to go back in time and choose a different airline! I want to have made a different choice! But I can't! I made the choice to trust SkyLine Airways and you let me down!"
+
+Agent: "Sir, I understand. You have every right to be angry. I'm genuinely sorry."
+
+Customer: "Are you though? Are you genuinely sorry? Or are you just saying that because you've probably said it 50 times today because your airline has been a disaster?"
+
+Agent: "You're right. I have said it many times today. And honestly, I'm frustrated too. We've been completely overwhelmed. But that's not your fault. You're right to be angry."
+
+Customer: "I don't care if you're frustrated. I don't care about your day. I care about MY son's graduation. And I'm going to miss it. And that's on SkyLine Airways."
+
+Agent: "Yes. That's on us. And I'm sorry."
+
+Customer: "So what happens now? Do I just... accept that I'm not going?"
+
+Agent: "You still have the 5:45 PM option. You won't make the 6 PM ceremony, but you could potentially catch a late dinner or celebration after. Or you can take the refund and try another airline for tomorrow. But for today, those are your only options."
+
+Customer: "There is no celebrating after a missed graduation ceremony. That's not how this works. Missing the ceremony means missing the memory. It means not being there for my son on one of the most important days of his life."
+
+Agent: "I know. And I'm sorry I can't fix that."
+
+Customer: "You can't fix it. That's right. SkyLine Airways broke something you can't fix. And that's the most frustrating part."
+
+[Long pause]
+
+Customer: "I'm going to take the 5:45 PM flight. I'll be late, but at least I'll be in Boston. And then I'm going to file a formal complaint. And I'm going to look for a different airline for all my future bookings."
+
+Agent: "I understand. Would you like me to confirm the 5:45 PM flight for you?"
+
+Customer: "Yes. Confirm it. And just... understand that you've lost a loyal customer today. I've flown SkyLine Airways for five years. And this is how you treat me when there's a crisis."
+
+Agent: "I understand. And I'm truly sorry. Let me just confirm your booking... okay, you're confirmed on flight SL482 departing at 5:45 PM, first class, arriving Boston Logan at 8:20 PM. Your confirmation number is SK-48Z7J9K. You'll receive a notification with your refund and travel credits within 48 hours."
+
+Customer: "So I'm paying to fly at 5:45 PM when I was supposed to fly at 2 PM, and I'll arrive after my son's graduation. Perfect."
+
+Agent: "Sir, your ticket is refunded. The 5:45 PM flight is complimentary as a rebooked cancellation. You're not paying anything."
+
+Customer: "I don't care about the money! Stop talking about the money!"
+
+Agent: "I'm sorry. Is there anything else I can help you with?"
+
+Customer: "No. There's nothing you can help me with. You've already failed. Goodbye."
+
+Agent: "Goodbye, sir. And again, I'm very sorry."
+
+[Customer disconnects]
+
+---END OF CALL---
+2025-12-11 13:18:31 - cc_ai_summarizer - DEBUG - Model used: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600 | Max sentences: 2
+2025-12-11 13:18:31 - cc_ai_summarizer - DEBUG - Transcript length: 9872 characters
+2025-12-11 13:18:39 - cc_ai_summarizer - INFO - Successfully generated summary (1456 characters)
+2025-12-11 13:18:39 - cc_ai_summarizer - DEBUG - Summary preview: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The cus...
+2025-12-11 13:18:39 - cc_ai_summarizer - DEBUG - Summary for sample_call.txt: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The customer called about a canceled flight that prevented him from attending his son's graduation on time. The agent offered rebooking on a later flight, a refund, travel credits, and a standby list, but the issue remained unresolved as no earlier flights were available.",
+  "issueCategory": "Flight Cancellation - Operational Issue",
+  "resolutionStatus": "Unresolved",
+  "customerTone": "Frustrated, Angry, Desperate",
+  "customerEmotions": "Frustration, Anger, Disappointment, Desperation",
+  "agentTone": "Professional, Empathetic, Apologetic",
+  "agentEmotions": "Empathy, Frustration, Apology",
+  "agentScore": 75,
+  "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly explained the situation and options, and adhered to company policies. However, the agent was limited by operational constraints and could not fully resolve the customer's issue, which affected the overall effectiveness.",
+  "agentRating": 4,
+  "agentRatingReason": "The agent was very good in handling the customer's emotions and providing clear information, but the unresolved issue and limited solutions prevented an excellent rating."
+}
+2025-12-11 13:18:39 - cc_ai_summarizer - DEBUG - Extracted JSON from response text (length: 1456)
+2025-12-11 13:18:39 - cc_ai_summarizer - DEBUG - Extracted JSON: {
+  "callId": "CC-2025-002741",
+  "conversationDate": "2025-01-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Jessica Chen",
+  "agentId": "AG-5634"...
+2025-12-11 13:18:39 - cc_ai_summarizer - INFO - Summary generated for sample_call.txt in 7.87s
+2025-12-11 13:18:39 - cc_ai_summarizer - INFO - Saved 1 summaries to output_data/bulk_summaries.json
+2025-12-11 13:18:39 - cc_ai_summarizer - INFO - Updated metadata: last_id=3
+2025-12-11 13:18:39 - cc_ai_summarizer - INFO - ✅ Total summarization time: 7.87s for 1 files
+2025-12-11 13:21:31 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251211.txt
+2025-12-11 13:21:31 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-11 13:21:31 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:21:31 - cc_ai_summarizer - INFO - Starting summarization for file: sample_call.txt
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_system_prompt.txt
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_user_prompt.txt
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_guardrail_prompt.txt
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - User prompt after replacing the strings:  Below is a call-center conversation between an agent and a customer.
+Analyze the conversation and return ONLY a valid JSON object with the following structure. Do not include any text, explanations, or markdown. Return only the JSON.
+
+{
+  "callId": "A unique identifier for this call",
+  "conversationDate": "Date in YYYY-MM-DD format",
+  "conversationTime": "Start Time in HH:MM am/pm format - End Time in H:MM am/pm format",
+  "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
+  "agentName": "Agent name in Title Case",
+  "agentId": "Agent ID or employee number",
+  "department": "Department name in Title Case",
+  "customerName": "Customer name in Title Case",
+  "callSummary": "A concise 2 sentence overview of the issue, actions taken, and resolution status",
+  "issueCategory": "Category in Title Case",
+  "resolutionStatus": "Resolved or Unresolved",
+  "customerTone": "Comma-separated values like 'Calm, Appreciative'",
+  "customerEmotions": "Observable emotions only, comma-separated. If none: 'Not Expressed'",
+  "agentTone": "Comma-separated values like 'Professional, Empathetic'",
+  "agentEmotions": "Expressed emotions comma-separated. If none: 'Not Expressed'",
+  "agentScore": 85,
+  "agentScoreReason": "2-3 sentence justification based on Friendliness, Clarity, Policy Adherence, Resolution Effectiveness, and Empathy",
+  "agentRating": 4,
+  "agentRatingReason": "1-2 sentence explanation (1=Very Poor, 2=Poor, 3=Average, 4=Very Good, 5=Excellent)"
+}
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no markdown code blocks, no explanations, no extra text
+2. All fields are mandatory and must have non-empty string values (except agentScore and agentRating which are numbers)
+3. agentScore must be a number 0-100
+4. agentRating must be a number 1-5
+5. Do NOT wrap in markdown code blocks
+6. Do NOT add text before or after the JSON
+
+Conversation:
+
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Model used: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600 | Max sentences: 2
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Transcript length: 0 characters
+2025-12-11 13:21:31 - cc_ai_summarizer - INFO - Successfully generated summary (20 characters)
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Summary preview: Sorry, I don’t know....
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Summary for sample_call.txt: Sorry, I don’t know.
+2025-12-11 13:21:31 - cc_ai_summarizer - WARNING - Could not extract valid JSON from response, returning original
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Extracted JSON: Sorry, I don’t know....
+2025-12-11 13:21:31 - cc_ai_summarizer - ERROR - JSON decoding error for sample_call.txt: Expecting value: line 1 column 1 (char 0)
+2025-12-11 13:21:31 - cc_ai_summarizer - DEBUG - Failed response text (first 1000 chars): Sorry, I don’t know.
+2025-12-11 13:22:17 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:22:18 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:22:18 - cc_ai_summarizer - INFO - Starting summarization for file: sample_call.txt
+2025-12-11 13:22:18 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_system_prompt.txt
+2025-12-11 13:22:18 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_user_prompt.txt
+2025-12-11 13:22:18 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_guardrail_prompt.txt
+2025-12-11 13:22:18 - cc_ai_summarizer - DEBUG - User prompt after replacing the strings:  Below is a call-center conversation between an agent and a customer.
+Analyze the conversation and return ONLY a valid JSON object with the following structure. Do not include any text, explanations, or markdown. Return only the JSON.
+
+{
+  "callId": "A unique identifier for this call",
+  "conversationDate": "Date in YYYY-MM-DD format",
+  "conversationTime": "Start Time in HH:MM am/pm format - End Time in H:MM am/pm format",
+  "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
+  "agentName": "Agent name in Title Case",
+  "agentId": "Agent ID or employee number",
+  "department": "Department name in Title Case",
+  "customerName": "Customer name in Title Case",
+  "callSummary": "A concise 2 sentence overview of the issue, actions taken, and resolution status",
+  "issueCategory": "Category in Title Case",
+  "resolutionStatus": "Resolved or Unresolved",
+  "customerTone": "Comma-separated values like 'Calm, Appreciative'",
+  "customerEmotions": "Observable emotions only, comma-separated. If none: 'Not Expressed'",
+  "agentTone": "Comma-separated values like 'Professional, Empathetic'",
+  "agentEmotions": "Expressed emotions comma-separated. If none: 'Not Expressed'",
+  "agentScore": 85,
+  "agentScoreReason": "2-3 sentence justification based on Friendliness, Clarity, Policy Adherence, Resolution Effectiveness, and Empathy",
+  "agentRating": 4,
+  "agentRatingReason": "1-2 sentence explanation (1=Very Poor, 2=Poor, 3=Average, 4=Very Good, 5=Excellent)"
+}
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no markdown code blocks, no explanations, no extra text
+2. All fields are mandatory and must have non-empty string values (except agentScore and agentRating which are numbers)
+3. agentScore must be a number 0-100
+4. agentRating must be a number 1-5
+5. Do NOT wrap in markdown code blocks
+6. Do NOT add text before or after the JSON
+
+Conversation:
+CALL TRANSCRIPT
+===============
+Call ID: CC-2024-002720
+Date: January 20, 2024
+Time: 10:15 - 11:02 (47 minutes)
+Agent: Rebecca Tuan (ID: AG-5634)
+Customer: Robert Williams
+Issue Category: Flight Cancellation - Operational Issue
+Resolution Status: UNRESOLVED - CUSTOMER UNABLE TO ATTEND CRITICAL EVENT
+
+---START OF CALL---
+
+Customer: "Hello? Yes, I need to speak to someone about flight 447 departing at 2 PM today! It just got canceled! I need to get to Boston TODAY!"
+
+Agent: "Hi, welcome to SkyLine Airways. Can I get your confirmation number please?"
+
+Customer: "The confirmation number is SK-B47X9K2. This is absolutely ridiculous! My flight was supposed to depart in FIVE HOURS and I just got a notification it's canceled! How is this possible?"
+
+Agent: "Let me pull that up... okay, I see it. Flight SL447 Boston departure at 2:15 PM. You're right, that flight has been canceled due to operational maintenance issues. I can rebook you on another flight."
+
+Customer: "ANOTHER FLIGHT?! When? I need to be in Boston TODAY! This is not optional! My son is graduating today! His convocation ceremony is at 6 PM and I promised him I would be there!"
+
+Agent: "I understand. Let me check available flights... we have one departing at 5:45 PM that gets into Boston at 8:20 PM."
+
+Customer: "5:45 PM?! That lands at 8:20 PM! The ceremony is at 6 PM! I'll miss it!"
+
+Agent: "That's the only available flight we have today on SkyLine Airways. You could also look at other carriers, but that would be a separate booking."
+
+Customer: "Are you KIDDING me? Your airline canceled MY flight and now you're telling me the only option gets me there AFTER my son's graduation?"
+
+Agent: "Sir, I understand you're upset. These operational cancellations are beyond our control. We do have the 5:45 PM flight available—"
+
+Customer: "Beyond your control? You're an airline! Your job IS to control operations! This is unacceptable! I paid $850 for this flight specifically because it got me there in time!"
+
+Agent: "I understand your frustration. We can rebook you on the 5:45 PM flight at no additional charge, or you can wait for tomorrow's flights."
+
+Customer: "Tomorrow? Tomorrow is too late! The ceremony is TODAY! Can you not understand that?!"
+
+Agent: "Sir, I hear you. But that's all I have available on SkyLine Airways today. If you want to explore other carriers—"
+
+Customer: "No! I want MY flight back! I want the 2 PM flight that I paid for! I want to get to Boston on time! That's what I paid you $850 for!"
+
+Agent: "I understand, but the flight has been canceled. We cannot operate it. I can rebook you on the 5:45 PM—"
+
+Customer: "You keep saying the same thing! You're not listening to me! My SON is graduating TODAY and I will not miss it! What are you going to do to make this right?"
+
+Agent: "Sir, I apologize. I know this is frustrating. Regarding compensation, we can offer you a full refund of your ticket price or a travel credit for a future flight."
+
+Customer: "A REFUND?! Or a TRAVEL CREDIT?! I don't need money! I need to GET TO BOSTON! How does a refund help me attend my son's graduation in FOUR HOURS?!"
+
+Agent: "I understand. Unfortunately, the only option for you to get to Boston today is the 5:45 PM flight. There's no other way around that."
+
+Customer: "This is the worst customer service I've ever experienced! Can I speak to a supervisor? RIGHT NOW!"
+
+Agent: "Hold on one moment, sir."
+
+[Agent places customer on hold for 8 minutes while background noise shows multiple phones ringing and agents talking urgently]
+
+Agent: "Sir? I'm back. I've spoken with my supervisor. Unfortunately, we don't have any other flights available today. The 5:45 PM is genuinely the only option."
+
+Customer: "So you're telling me there's nothing you can do? Nothing at all? My son's graduation is in a few hours and you can't help me?"
+
+Agent: "I'm sorry, sir. What I CAN do is put you on a standby list for any earlier flights if there's a cancellation or if we can get another aircraft, but I can't guarantee anything."
+
+Customer: "A standby list? So I'm supposed to just SIT HERE and HOPE that maybe, possibly, by some miracle, something opens up? This is insane!"
+
+Agent: "I understand how you feel. But given the operational situation today, we're dealing with multiple canceled flights and very limited options. I really wish I could do more."
+
+Customer: "Multiple canceled flights? What's going on? Is this an airline-wide issue?"
+
+Agent: "We've had weather issues combined with some unexpected maintenance failures. It's been a difficult day. We've had approximately 23 flight cancellations across our network today, and we're completely overwhelmed with call volume."
+
+Customer: "So YOU'RE overwhelmed? I'M the one missing my son's graduation! Your overwhelming day is not my problem!"
+
+Agent: "You're right. That was unprofessional of me. I'm sorry. But the fact is, I don't have a magical solution here. There is no earlier flight available."
+
+Customer: "Can you do ANYTHING? Upgrade me to first class on the 5:45 PM? Comp my entire ticket? Get me a connecting flight through another airline at your expense? ANYTHING?"
+
+Agent: "Sir, let me be honest. I'm looking at our system right now and I can offer you: full refund of $850, a $200 travel credit for future flights, and a complimentary upgrade to first class on the 5:45 PM flight. But that doesn't get you there by 6 PM."
+
+Customer: "So nothing actually solves my problem. It's just money. Money doesn't bring me to my son's graduation. Money doesn't make me a father who kept his promise."
+
+Agent: "I understand. And I'm genuinely sorry. But operationally, I cannot make a flight appear that doesn't exist."
+
+Customer: "You know what? Forget the 5:45 PM. I'm going to rent a car and drive to Boston. How far is that?"
+
+Agent: "I think Boston is about 3.5 to 4 hours from here, depending on where you are."
+
+Customer: "3.5 hours? And my ceremony is in... [checks time] ...3 hours and 45 minutes. So I can't even make it by driving."
+
+Agent: "I'm sorry, sir."
+
+Customer: "You know what's the worst part? The worst part is I booked with YOUR airline specifically because you had the direct flight at the right time. I had other options but I chose SkyLine Airways because of that 2 PM flight. And now you're telling me you can't operate it."
+
+Agent: "Sir, I genuinely apologize. These operational failures are not acceptable. You made the right choice - our 2 PM flight WAS the right option. We just failed to deliver."
+
+Customer: "You failed. Yes. You absolutely failed. And now my son is going to have his graduation ceremony and his father won't be there because SkyLine Airways failed."
+
+Agent: "I know this doesn't help, but I want to make sure you get something out of this. Let me add another $300 travel credit to your account. So you have $500 in total credits plus the $850 refund."
+
+Customer: "Stop offering me money! I don't want your money! I want to go back in time and choose a different airline! I want to have made a different choice! But I can't! I made the choice to trust SkyLine Airways and you let me down!"
+
+Agent: "Sir, I understand. You have every right to be angry. I'm genuinely sorry."
+
+Customer: "Are you though? Are you genuinely sorry? Or are you just saying that because you've probably said it 50 times today because your airline has been a disaster?"
+
+Agent: "You're right. I have said it many times today. And honestly, I'm frustrated too. We've been completely overwhelmed. But that's not your fault. You're right to be angry."
+
+Customer: "I don't care if you're frustrated. I don't care about your day. I care about MY son's graduation. And I'm going to miss it. And that's on SkyLine Airways."
+
+Agent: "Yes. That's on us. And I'm sorry."
+
+Customer: "So what happens now? Do I just... accept that I'm not going?"
+
+Agent: "You still have the 5:45 PM option. You won't make the 6 PM ceremony, but you could potentially catch a late dinner or celebration after. Or you can take the refund and try another airline for tomorrow. But for today, those are your only options."
+
+Customer: "There is no celebrating after a missed graduation ceremony. That's not how this works. Missing the ceremony means missing the memory. It means not being there for my son on one of the most important days of his life."
+
+Agent: "I know. And I'm sorry I can't fix that."
+
+Customer: "You can't fix it. That's right. SkyLine Airways broke something you can't fix. And that's the most frustrating part."
+
+[Long pause]
+
+Customer: "I'm going to take the 5:45 PM flight. I'll be late, but at least I'll be in Boston. And then I'm going to file a formal complaint. And I'm going to look for a different airline for all my future bookings."
+
+Agent: "I understand. Would you like me to confirm the 5:45 PM flight for you?"
+
+Customer: "Yes. Confirm it. And just... understand that you've lost a loyal customer today. I've flown SkyLine Airways for five years. And this is how you treat me when there's a crisis."
+
+Agent: "I understand. And I'm truly sorry. Let me just confirm your booking... okay, you're confirmed on flight SL482 departing at 5:45 PM, first class, arriving Boston Logan at 8:20 PM. Your confirmation number is SK-48Z7J9K. You'll receive a notification with your refund and travel credits within 48 hours."
+
+Customer: "So I'm paying to fly at 5:45 PM when I was supposed to fly at 2 PM, and I'll arrive after my son's graduation. Perfect."
+
+Agent: "Sir, your ticket is refunded. The 5:45 PM flight is complimentary as a rebooked cancellation. You're not paying anything."
+
+Customer: "I don't care about the money! Stop talking about the money!"
+
+Agent: "I'm sorry. Is there anything else I can help you with?"
+
+Customer: "No. There's nothing you can help me with. You've already failed. Goodbye."
+
+Agent: "Goodbye, sir. And again, I'm very sorry."
+
+[Customer disconnects]
+
+---END OF CALL---
+2025-12-11 13:22:18 - cc_ai_summarizer - DEBUG - Model used: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600 | Max sentences: 2
+2025-12-11 13:22:18 - cc_ai_summarizer - DEBUG - Transcript length: 9873 characters
+2025-12-11 13:22:24 - cc_ai_summarizer - INFO - Successfully generated summary (1426 characters)
+2025-12-11 13:22:24 - cc_ai_summarizer - DEBUG - Summary preview: {
+  "callId": "CC-2024-002720",
+  "conversationDate": "2024-01-20",
+  "conversationTime": "10:15 am - 11:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Rebecca Tuan",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The cu...
+2025-12-11 13:22:24 - cc_ai_summarizer - DEBUG - Summary for sample_call.txt: {
+  "callId": "CC-2024-002720",
+  "conversationDate": "2024-01-20",
+  "conversationTime": "10:15 am - 11:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Rebecca Tuan",
+  "agentId": "AG-5634",
+  "department": "Customer Service",
+  "customerName": "Robert Williams",
+  "callSummary": "The customer called about a canceled flight that prevented him from attending his son's graduation on time. The agent offered rebooking options, refunds, and travel credits, but the issue remained unresolved as no earlier flights were available.",
+  "issueCategory": "Flight Cancellation - Operational Issue",
+  "resolutionStatus": "Unresolved",
+  "customerTone": "Frustrated, Angry, Desperate",
+  "customerEmotions": "Frustration, Anger, Disappointment, Desperation",
+  "agentTone": "Professional, Empathetic, Apologetic",
+  "agentEmotions": "Empathy, Frustration, Apology",
+  "agentScore": 75,
+  "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly explained the situation and options, and adhered to company policies. However, the agent was limited by operational constraints and could not fully resolve the customer's issue, which affected overall effectiveness.",
+  "agentRating": 4,
+  "agentRatingReason": "The agent was very good in handling the customer's emotions and providing clear information, but the unresolved issue and limited solutions prevented an excellent rating."
+}
+2025-12-11 13:22:24 - cc_ai_summarizer - DEBUG - Extracted JSON from response text (length: 1426)
+2025-12-11 13:22:24 - cc_ai_summarizer - DEBUG - Extracted JSON: {
+  "callId": "CC-2024-002720",
+  "conversationDate": "2024-01-20",
+  "conversationTime": "10:15 am - 11:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Rebecca Tuan",
+  "agentId": "AG-5634...
+2025-12-11 13:22:24 - cc_ai_summarizer - INFO - Summary generated for sample_call.txt in 5.95s
+2025-12-11 13:22:24 - cc_ai_summarizer - INFO - Saved 1 summaries to output_data/bulk_summaries.json
+2025-12-11 13:22:24 - cc_ai_summarizer - INFO - Updated metadata: last_id=4
+2025-12-11 13:22:24 - cc_ai_summarizer - INFO - ✅ Total summarization time: 5.95s for 1 files
+2025-12-11 13:24:47 - cc_ai_summarizer - INFO - Logger initialized. Log file: /Users/dineshwar.elanchezhian/Documents/Dev/Python/IK/Projects/capstone/cc-ai-summarizer/src/../logs/log_20251211.txt
+2025-12-11 13:24:47 - cc_ai_summarizer - INFO - Debug mode: True
+2025-12-11 13:24:47 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:24:53 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:24:53 - cc_ai_summarizer - DEBUG - Loading file: airlinecancellationforconvocation.txt
+2025-12-11 13:24:56 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:25:02 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:25:04 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:25:04 - cc_ai_summarizer - DEBUG - Loading file: airlinecancellationforconvocation.txt
+2025-12-11 13:25:05 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:25:50 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:25:50 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:25:50 - cc_ai_summarizer - INFO - Starting summarization for file: sample_call.txt
+2025-12-11 13:25:50 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_system_prompt.txt
+2025-12-11 13:25:50 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_user_prompt.txt
+2025-12-11 13:25:50 - cc_ai_summarizer - DEBUG - Loaded prompt file: summarize_guardrail_prompt.txt
+2025-12-11 13:25:50 - cc_ai_summarizer - DEBUG - User prompt after replacing the strings:  Below is a call-center conversation between an agent and a customer.
+Analyze the conversation and return ONLY a valid JSON object with the following structure. Do not include any text, explanations, or markdown. Return only the JSON.
+
+{
+  "callId": "A unique identifier for this call",
+  "conversationDate": "Date in YYYY-MM-DD format",
+  "conversationTime": "Start Time in HH:MM am/pm format - End Time in H:MM am/pm format",
+  "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
+  "agentName": "Agent name in Title Case",
+  "agentId": "Agent ID or employee number",
+  "department": "Department name in Title Case",
+  "customerName": "Customer name in Title Case",
+  "callSummary": "A concise 2 sentence overview of the issue, actions taken, and resolution status",
+  "issueCategory": "Category in Title Case",
+  "resolutionStatus": "Resolved or Unresolved",
+  "customerTone": "Comma-separated values like 'Calm, Appreciative'",
+  "customerEmotions": "Observable emotions only, comma-separated. If none: 'Not Expressed'",
+  "agentTone": "Comma-separated values like 'Professional, Empathetic'",
+  "agentEmotions": "Expressed emotions comma-separated. If none: 'Not Expressed'",
+  "agentScore": 85,
+  "agentScoreReason": "2-3 sentence justification based on Friendliness, Clarity, Policy Adherence, Resolution Effectiveness, and Empathy",
+  "agentRating": 4,
+  "agentRatingReason": "1-2 sentence explanation (1=Very Poor, 2=Poor, 3=Average, 4=Very Good, 5=Excellent)"
+}
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no markdown code blocks, no explanations, no extra text
+2. All fields are mandatory and must have non-empty string values (except agentScore and agentRating which are numbers)
+3. agentScore must be a number 0-100
+4. agentRating must be a number 1-5
+5. Do NOT wrap in markdown code blocks
+6. Do NOT add text before or after the JSON
+
+Conversation:
+CALL TRANSCRIPT
+===============
+Call ID: CC-2024-002841
+Date: Febuarary 20, 2024
+Time: 9:15 - 10:02 (47 minutes)
+Agent: Robert Chau  (ID: AG-5999)
+Customer: Will Smith
+Issue Category: Flight Cancellation - Operational Issue
+Resolution Status: UNRESOLVED - CUSTOMER UNABLE TO ATTEND CRITICAL EVENT
+
+---START OF CALL---
+
+Customer: "Hello? Yes, I need to speak to someone about flight 447 departing at 2 PM today! It just got canceled! I need to get to Boston TODAY!"
+
+Agent: "Hi, welcome to SkyLine Airways. Can I get your confirmation number please?"
+
+Customer: "The confirmation number is SK-B47X9K2. This is absolutely ridiculous! My flight was supposed to depart in FIVE HOURS and I just got a notification it's canceled! How is this possible?"
+
+Agent: "Let me pull that up... okay, I see it. Flight SL447 Boston departure at 2:15 PM. You're right, that flight has been canceled due to operational maintenance issues. I can rebook you on another flight."
+
+Customer: "ANOTHER FLIGHT?! When? I need to be in Boston TODAY! This is not optional! My son is graduating today! His convocation ceremony is at 6 PM and I promised him I would be there!"
+
+Agent: "I understand. Let me check available flights... we have one departing at 5:45 PM that gets into Boston at 8:20 PM."
+
+Customer: "5:45 PM?! That lands at 8:20 PM! The ceremony is at 6 PM! I'll miss it!"
+
+Agent: "That's the only available flight we have today on SkyLine Airways. You could also look at other carriers, but that would be a separate booking."
+
+Customer: "Are you KIDDING me? Your airline canceled MY flight and now you're telling me the only option gets me there AFTER my son's graduation?"
+
+Agent: "Sir, I understand you're upset. These operational cancellations are beyond our control. We do have the 5:45 PM flight available—"
+
+Customer: "Beyond your control? You're an airline! Your job IS to control operations! This is unacceptable! I paid $850 for this flight specifically because it got me there in time!"
+
+Agent: "I understand your frustration. We can rebook you on the 5:45 PM flight at no additional charge, or you can wait for tomorrow's flights."
+
+Customer: "Tomorrow? Tomorrow is too late! The ceremony is TODAY! Can you not understand that?!"
+
+Agent: "Sir, I hear you. But that's all I have available on SkyLine Airways today. If you want to explore other carriers—"
+
+Customer: "No! I want MY flight back! I want the 2 PM flight that I paid for! I want to get to Boston on time! That's what I paid you $850 for!"
+
+Agent: "I understand, but the flight has been canceled. We cannot operate it. I can rebook you on the 5:45 PM—"
+
+Customer: "You keep saying the same thing! You're not listening to me! My SON is graduating TODAY and I will not miss it! What are you going to do to make this right?"
+
+Agent: "Sir, I apologize. I know this is frustrating. Regarding compensation, we can offer you a full refund of your ticket price or a travel credit for a future flight."
+
+Customer: "A REFUND?! Or a TRAVEL CREDIT?! I don't need money! I need to GET TO BOSTON! How does a refund help me attend my son's graduation in FOUR HOURS?!"
+
+Agent: "I understand. Unfortunately, the only option for you to get to Boston today is the 5:45 PM flight. There's no other way around that."
+
+Customer: "This is the worst customer service I've ever experienced! Can I speak to a supervisor? RIGHT NOW!"
+
+Agent: "Hold on one moment, sir."
+
+[Agent places customer on hold for 8 minutes while background noise shows multiple phones ringing and agents talking urgently]
+
+Agent: "Sir? I'm back. I've spoken with my supervisor. Unfortunately, we don't have any other flights available today. The 5:45 PM is genuinely the only option."
+
+Customer: "So you're telling me there's nothing you can do? Nothing at all? My son's graduation is in a few hours and you can't help me?"
+
+Agent: "I'm sorry, sir. What I CAN do is put you on a standby list for any earlier flights if there's a cancellation or if we can get another aircraft, but I can't guarantee anything."
+
+Customer: "A standby list? So I'm supposed to just SIT HERE and HOPE that maybe, possibly, by some miracle, something opens up? This is insane!"
+
+Agent: "I understand how you feel. But given the operational situation today, we're dealing with multiple canceled flights and very limited options. I really wish I could do more."
+
+Customer: "Multiple canceled flights? What's going on? Is this an airline-wide issue?"
+
+Agent: "We've had weather issues combined with some unexpected maintenance failures. It's been a difficult day. We've had approximately 23 flight cancellations across our network today, and we're completely overwhelmed with call volume."
+
+Customer: "So YOU'RE overwhelmed? I'M the one missing my son's graduation! Your overwhelming day is not my problem!"
+
+Agent: "You're right. That was unprofessional of me. I'm sorry. But the fact is, I don't have a magical solution here. There is no earlier flight available."
+
+Customer: "Can you do ANYTHING? Upgrade me to first class on the 5:45 PM? Comp my entire ticket? Get me a connecting flight through another airline at your expense? ANYTHING?"
+
+Agent: "Sir, let me be honest. I'm looking at our system right now and I can offer you: full refund of $850, a $200 travel credit for future flights, and a complimentary upgrade to first class on the 5:45 PM flight. But that doesn't get you there by 6 PM."
+
+Customer: "So nothing actually solves my problem. It's just money. Money doesn't bring me to my son's graduation. Money doesn't make me a father who kept his promise."
+
+Agent: "I understand. And I'm genuinely sorry. But operationally, I cannot make a flight appear that doesn't exist."
+
+Customer: "You know what? Forget the 5:45 PM. I'm going to rent a car and drive to Boston. How far is that?"
+
+Agent: "I think Boston is about 3.5 to 4 hours from here, depending on where you are."
+
+Customer: "3.5 hours? And my ceremony is in... [checks time] ...3 hours and 45 minutes. So I can't even make it by driving."
+
+Agent: "I'm sorry, sir."
+
+Customer: "You know what's the worst part? The worst part is I booked with YOUR airline specifically because you had the direct flight at the right time. I had other options but I chose SkyLine Airways because of that 2 PM flight. And now you're telling me you can't operate it."
+
+Agent: "Sir, I genuinely apologize. These operational failures are not acceptable. You made the right choice - our 2 PM flight WAS the right option. We just failed to deliver."
+
+Customer: "You failed. Yes. You absolutely failed. And now my son is going to have his graduation ceremony and his father won't be there because SkyLine Airways failed."
+
+Agent: "I know this doesn't help, but I want to make sure you get something out of this. Let me add another $300 travel credit to your account. So you have $500 in total credits plus the $850 refund."
+
+Customer: "Stop offering me money! I don't want your money! I want to go back in time and choose a different airline! I want to have made a different choice! But I can't! I made the choice to trust SkyLine Airways and you let me down!"
+
+Agent: "Sir, I understand. You have every right to be angry. I'm genuinely sorry."
+
+Customer: "Are you though? Are you genuinely sorry? Or are you just saying that because you've probably said it 50 times today because your airline has been a disaster?"
+
+Agent: "You're right. I have said it many times today. And honestly, I'm frustrated too. We've been completely overwhelmed. But that's not your fault. You're right to be angry."
+
+Customer: "I don't care if you're frustrated. I don't care about your day. I care about MY son's graduation. And I'm going to miss it. And that's on SkyLine Airways."
+
+Agent: "Yes. That's on us. And I'm sorry."
+
+Customer: "So what happens now? Do I just... accept that I'm not going?"
+
+Agent: "You still have the 5:45 PM option. You won't make the 6 PM ceremony, but you could potentially catch a late dinner or celebration after. Or you can take the refund and try another airline for tomorrow. But for today, those are your only options."
+
+Customer: "There is no celebrating after a missed graduation ceremony. That's not how this works. Missing the ceremony means missing the memory. It means not being there for my son on one of the most important days of his life."
+
+Agent: "I know. And I'm sorry I can't fix that."
+
+Customer: "You can't fix it. That's right. SkyLine Airways broke something you can't fix. And that's the most frustrating part."
+
+[Long pause]
+
+Customer: "I'm going to take the 5:45 PM flight. I'll be late, but at least I'll be in Boston. And then I'm going to file a formal complaint. And I'm going to look for a different airline for all my future bookings."
+
+Agent: "I understand. Would you like me to confirm the 5:45 PM flight for you?"
+
+Customer: "Yes. Confirm it. And just... understand that you've lost a loyal customer today. I've flown SkyLine Airways for five years. And this is how you treat me when there's a crisis."
+
+Agent: "I understand. And I'm truly sorry. Let me just confirm your booking... okay, you're confirmed on flight SL482 departing at 5:45 PM, first class, arriving Boston Logan at 8:20 PM. Your confirmation number is SK-48Z7J9K. You'll receive a notification with your refund and travel credits within 48 hours."
+
+Customer: "So I'm paying to fly at 5:45 PM when I was supposed to fly at 2 PM, and I'll arrive after my son's graduation. Perfect."
+
+Agent: "Sir, your ticket is refunded. The 5:45 PM flight is complimentary as a rebooked cancellation. You're not paying anything."
+
+Customer: "I don't care about the money! Stop talking about the money!"
+
+Agent: "I'm sorry. Is there anything else I can help you with?"
+
+Customer: "No. There's nothing you can help me with. You've already failed. Goodbye."
+
+Agent: "Goodbye, sir. And again, I'm very sorry."
+
+[Customer disconnects]
+
+---END OF CALL---
+2025-12-11 13:25:50 - cc_ai_summarizer - DEBUG - Model used: gpt-4.1-mini-2025-04-14 | Temperature: 0.0 | Max tokens: 600 | Max sentences: 2
+2025-12-11 13:25:50 - cc_ai_summarizer - DEBUG - Transcript length: 9869 characters
+2025-12-11 13:25:57 - cc_ai_summarizer - INFO - Successfully generated summary (1444 characters)
+2025-12-11 13:25:57 - cc_ai_summarizer - DEBUG - Summary preview: {
+  "callId": "CC-2024-002841",
+  "conversationDate": "2024-02-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Robert Chau",
+  "agentId": "AG-5999",
+  "department": "Customer Service",
+  "customerName": "Will Smith",
+  "callSummary": "The customer ...
+2025-12-11 13:25:57 - cc_ai_summarizer - DEBUG - Summary for sample_call.txt: {
+  "callId": "CC-2024-002841",
+  "conversationDate": "2024-02-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Robert Chau",
+  "agentId": "AG-5999",
+  "department": "Customer Service",
+  "customerName": "Will Smith",
+  "callSummary": "The customer called about a canceled flight that prevented him from attending his son's graduation. The agent offered rebooking options, refunds, and travel credits, but the customer was dissatisfied as no solution allowed timely arrival; the issue remained unresolved.",
+  "issueCategory": "Flight Cancellation - Operational Issue",
+  "resolutionStatus": "Unresolved",
+  "customerTone": "Frustrated, Angry, Desperate",
+  "customerEmotions": "Frustration, Anger, Disappointment, Desperation",
+  "agentTone": "Professional, Empathetic, Apologetic",
+  "agentEmotions": "Apologetic, Frustrated",
+  "agentScore": 75,
+  "agentScoreReason": "The agent maintained professionalism and empathy throughout the call, clearly explained policies and options, and apologized sincerely. However, the agent was limited by company policies and operational constraints, and while empathetic, could not fully satisfy the customer’s urgent needs.",
+  "agentRating": 4,
+  "agentRatingReason": "The agent handled the difficult situation well with empathy and clarity, though the resolution was not possible; this reflects very good performance under challenging circumstances."
+}
+2025-12-11 13:25:57 - cc_ai_summarizer - DEBUG - Extracted JSON from response text (length: 1444)
+2025-12-11 13:25:57 - cc_ai_summarizer - DEBUG - Extracted JSON: {
+  "callId": "CC-2024-002841",
+  "conversationDate": "2024-02-20",
+  "conversationTime": "9:15 am - 10:02 am",
+  "conversationLength": "47 mins",
+  "agentName": "Robert Chau",
+  "agentId": "AG-5999",...
+2025-12-11 13:25:57 - cc_ai_summarizer - INFO - Summary generated for sample_call.txt in 7.50s
+2025-12-11 13:25:57 - cc_ai_summarizer - INFO - Saved 1 summaries to output_data/bulk_summaries.json
+2025-12-11 13:25:57 - cc_ai_summarizer - INFO - Updated metadata: last_id=5
+2025-12-11 13:25:57 - cc_ai_summarizer - INFO - ✅ Total summarization time: 7.50s for 1 files
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - Loaded bulk summary chat history with 0 messages
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - ======================================================================
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 🆕 FIRST TIME RAG INITIALIZATION - Creating RAG chatbot and vector store
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - ======================================================================
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 🚀 RAG Chatbot initialization starting (force_recreate=False)...
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 📦 Creating/loading vector store...
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 🚀 Starting vector store creation (force_recreate=False)...
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 📌 Initializing OpenAI embeddings...
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - ✅ Embeddings initialized successfully with model: text-embedding-3-small
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 📖 Loading summaries from JSON...
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - ✅ Successfully loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG -    First summary callId: CC-2025-002741
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG -    Last summary callId: CC-2024-002841
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 📝 Preparing 5 documents for embedding...
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 📝 Starting document preparation for 5 summaries...
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG -    📄 Doc 1: CC-2025-002741 - Jessica Chen
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG -    📄 Doc 2: CC-2025-002741 - Jessica Chen
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG -    📄 Doc 3: CC-2025-002741 - Jessica Chen
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG -    📄 Doc 4: CC-2024-002720 - Rebecca Tuan
+2025-12-11 13:26:07 - cc_ai_summarizer - DEBUG -    📄 Doc 5: CC-2024-002841 - Robert Chau
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - ✅ Prepared 5 documents for vector store embedding
+2025-12-11 13:26:07 - cc_ai_summarizer - INFO - 🔧 Creating FAISS vector store with 5 documents and embeddings...
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ FAISS vector store created with 5 documents indexed (expected: 5)
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ All 5 documents successfully indexed in FAISS
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - 💾 Saving vector store to output_data/vector_store...
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ Vector store saved to output_data/vector_store
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - 🔍 Creating retriever for semantic search...
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ Vector store created and retriever initialized successfully (k=100 - retrieves up to 100 docs)
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ Vector store ready
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - 🤖 Initializing LLM (model=gpt-4.1-mini-2025-04-14, temp=0.0, max_tokens=600)...
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ LLM initialized successfully
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ RAG Chatbot initialized successfully!
+2025-12-11 13:26:08 - cc_ai_summarizer - INFO - ✅ RAG Chatbot created and stored in session state
+2025-12-11 13:26:31 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:26:31 - cc_ai_summarizer - INFO - Generated agent performance chart for user request in 0.35s
+2025-12-11 13:26:31 - cc_ai_summarizer - DEBUG - ✅ Using existing RAG chatbot from session state (no recreation needed)
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG - ✅ Using existing RAG chatbot from session state (no recreation needed)
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - ======================================================================
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 🔄 VECTOR STORE RELOAD INITIATED BY USER
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - ======================================================================
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 🔄 Reloading vector store in existing chatbot instance...
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 🚀 Starting vector store creation (force_recreate=True)...
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 📌 Initializing OpenAI embeddings...
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - ✅ Embeddings initialized successfully with model: text-embedding-3-small
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 🗑️  Deleting existing vector store at output_data/vector_store
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - ✅ Old vector store deleted successfully
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 📖 Loading summaries from JSON...
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - ✅ Successfully loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG -    First summary callId: CC-2025-002741
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG -    Last summary callId: CC-2024-002841
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 📝 Preparing 5 documents for embedding...
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 📝 Starting document preparation for 5 summaries...
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG -    📄 Doc 1: CC-2025-002741 - Jessica Chen
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG -    📄 Doc 2: CC-2025-002741 - Jessica Chen
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG -    📄 Doc 3: CC-2025-002741 - Jessica Chen
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG -    📄 Doc 4: CC-2024-002720 - Rebecca Tuan
+2025-12-11 13:26:53 - cc_ai_summarizer - DEBUG -    📄 Doc 5: CC-2024-002841 - Robert Chau
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - ✅ Prepared 5 documents for vector store embedding
+2025-12-11 13:26:53 - cc_ai_summarizer - INFO - 🔧 Creating FAISS vector store with 5 documents and embeddings...
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ✅ FAISS vector store created with 5 documents indexed (expected: 5)
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ✅ All 5 documents successfully indexed in FAISS
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - 💾 Saving vector store to output_data/vector_store...
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ✅ Vector store saved to output_data/vector_store
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - 🔍 Creating retriever for semantic search...
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ✅ Vector store created and retriever initialized successfully (k=100 - retrieves up to 100 docs)
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ✅ Vector store reloaded successfully
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - 📊 Vector Store Info: 5 documents indexed
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - 📊 Vector Store after reload: {'status': 'initialized', 'document_count': 5, 'retriever_available': True}
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ======================================================================
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ✅ VECTOR STORE RELOAD COMPLETE - 5 documents indexed!
+2025-12-11 13:26:54 - cc_ai_summarizer - INFO - ======================================================================
+2025-12-11 13:26:54 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:26:54 - cc_ai_summarizer - DEBUG - ✅ Using existing RAG chatbot from session state (no recreation needed)
+2025-12-11 13:26:57 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:26:57 - cc_ai_summarizer - DEBUG - ✅ Using existing RAG chatbot from session state (no recreation needed)
+2025-12-11 13:26:57 - cc_ai_summarizer - DEBUG - ✅ Retriever available - ready for semantic search
+2025-12-11 13:26:57 - cc_ai_summarizer - INFO - 🔍 Retrieving documents for query: 'Which agents have the highest scores?...'
+2025-12-11 13:26:57 - cc_ai_summarizer - INFO - ✅ Retrieved 5 documents (k=100)
+2025-12-11 13:26:57 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-11 13:26:57 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-11 13:26:57 - cc_ai_summarizer - DEBUG - Generating streaming LLM response...
+2025-12-11 13:27:02 - cc_ai_summarizer - INFO - RAG streaming response generated successfully
+2025-12-11 13:27:02 - cc_ai_summarizer - INFO - RAG streaming response generated successfully
+2025-12-11 13:27:09 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:27:09 - cc_ai_summarizer - DEBUG - ✅ Using existing RAG chatbot from session state (no recreation needed)
+2025-12-11 13:27:09 - cc_ai_summarizer - DEBUG - ✅ Retriever available - ready for semantic search
+2025-12-11 13:27:09 - cc_ai_summarizer - INFO - 🔍 Retrieving documents for query: 'Analyze customer sentiment patterns...'
+2025-12-11 13:27:11 - cc_ai_summarizer - INFO - ✅ Retrieved 5 documents (k=100)
+2025-12-11 13:27:11 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_system_prompt.txt
+2025-12-11 13:27:11 - cc_ai_summarizer - DEBUG - Loaded prompt file: chat_guardrail_prompt.txt
+2025-12-11 13:27:11 - cc_ai_summarizer - DEBUG - Generating streaming LLM response...
+2025-12-11 13:27:18 - cc_ai_summarizer - INFO - RAG streaming response generated successfully
+2025-12-11 13:27:19 - cc_ai_summarizer - INFO - RAG streaming response generated successfully
+2025-12-11 13:27:32 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:27:32 - cc_ai_summarizer - INFO - Generated rating chart for user request in 0.24s
+2025-12-11 13:27:32 - cc_ai_summarizer - DEBUG - ✅ Using existing RAG chatbot from session state (no recreation needed)
+2025-12-11 13:28:20 - cc_ai_summarizer - INFO - 📊 Using Model: gpt-4.1-mini-2025-04-14 | Temp: 0.0 | Tokens: 600
+2025-12-11 13:28:20 - cc_ai_summarizer - DEBUG - Loading file: airlinecancellationforconvocation.txt
+2025-12-11 13:28:22 - cc_ai_summarizer - DEBUG - Loaded 5 summaries from output_data/bulk_summaries.json
+2025-12-11 13:28:22 - cc_ai_summarizer - DEBUG - ✅ Using existing RAG chatbot from session state (no recreation needed)
