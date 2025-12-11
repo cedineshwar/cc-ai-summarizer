@@ -233,12 +233,17 @@ def _render_standard_chat(summaries):
         chart_type = detect_chart_request(prompt)
         
         if chart_type:
-            # Generate chart
-            with st.spinner("Generating chart..."):
-                chart_start = time.time()
+            # Generate chart (non-blocking, direct display)
+            chart_start = time.time()
+            
+            # Show progress indicator
+            chart_status = st.status("Generating chart...", expanded=True)
+            with chart_status:
+                st.write("Creating visualization...")
                 chart_image, chart_summary = generate_chart(chart_type, summaries)
-                chart_end = time.time()
-                chart_time = chart_end - chart_start
+            
+            chart_end = time.time()
+            chart_time = chart_end - chart_start
             
             if chart_image:
                 # Store chart image with message index
@@ -247,6 +252,13 @@ def _render_standard_chat(summaries):
                 
                 # Get current timestamp for chart response
                 chart_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                # Display chart immediately in container without streaming
+                with chat_container:
+                    with st.chat_message("assistant"):
+                        st.markdown(f"📊 **{chart_type.title()} Chart**\n\n{chart_summary}")
+                        st.image(f"data:image/png;base64,{chart_image}", width=600)
+                        st.caption(f"🕐 {chart_timestamp} | ⏱️ Response time: {chart_time:.2f}s")
                 
                 # Add to history with chart marker, timestamp, and response time
                 st.session_state.bulk_summary_chat_history.append({
@@ -260,6 +272,12 @@ def _render_standard_chat(summaries):
             else:
                 # Add error message to history with timestamp
                 error_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                with chat_container:
+                    with st.chat_message("assistant"):
+                        st.markdown(f"❌ Could not generate chart: {chart_summary}")
+                        st.caption(f"🕐 {error_timestamp}")
+                
                 st.session_state.bulk_summary_chat_history.append({
                     "role": "assistant",
                     "content": f"❌ Could not generate chart: {chart_summary}",
