@@ -19,7 +19,7 @@ from src.utils import (
     save_bulk_summary_chat_history,
 )
 from src.logger import logger
-from src.summarizer import chat_with_bulk_summaries
+from src.summarizer import chat_with_bulk_summaries, load_prompt
 from src.plotter import detect_chart_request, generate_chart
 from src.rag_chat import RAGChatbot
 from src.config import Config, get_retriever_k
@@ -151,7 +151,8 @@ def _render_standard_chat(summaries):
     openai.api_key = api_key
     
     # Display chat history (scrollable) - with chart images
-    with st.container(height=600, border=True):
+    chat_container = st.container(height=600, border=True)
+    with chat_container:
         for idx, message in enumerate(st.session_state.bulk_summary_chat_history):
             with st.chat_message(message['role']):
                 st.markdown(message['content'])
@@ -218,6 +219,12 @@ def _render_standard_chat(summaries):
             "timestamp": user_timestamp
         })
         
+        # Display user message in container
+        with chat_container:
+            with st.chat_message("user"):
+                st.markdown(prompt)
+                st.caption(f"🕐 {user_timestamp}")
+        
         # Get summaries context for LLM
         summaries_context = format_summaries_for_context(summaries)
         
@@ -258,54 +265,70 @@ def _render_standard_chat(summaries):
                     "timestamp": error_timestamp
                 })
         else:
-            # Get response from LLM using chat prompts with full conversation history
-            with st.spinner("Analyzing summaries..."):
-                # Track response time
-                response_start = time.time()
-                
-                # Build clean chat history for LLM (excluding current user message and metadata)
-                clean_chat_history = []
-                for msg in st.session_state.bulk_summary_chat_history[:-1]:
-                    clean_chat_history.append({
-                        "role": msg["role"],
-                        "content": msg["content"]
-                    })
-                
-                response = chat_with_bulk_summaries(
-                    user_message=prompt,
-                    chat_history=clean_chat_history,  # Include full conversation history for context
-                    summaries_context=summaries_context,
-                    model=model,
-                    temperature=temperature,
-                    max_tokens=max_tokens
-                )
-                
-                logger.debug(f"LLM chat with {len(clean_chat_history)} previous messages in history")
-                
-                response_end = time.time()
-                response_time = response_end - response_start
+            # Get response from LLM using chat prompts with full conversation history with streaming
+            # Track response time
+            response_start = time.time()
             
-            if response:
-                # Get current timestamp for assistant response
-                response_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                
-                # Add assistant message to history with timestamp and response time
-                st.session_state.bulk_summary_chat_history.append({
-                    "role": "assistant",
-                    "content": response,
-                    "timestamp": response_timestamp,
-                    "response_time": response_time
+            # Build clean chat history for LLM (excluding current user message and metadata)
+            clean_chat_history = []
+            for msg in st.session_state.bulk_summary_chat_history[:-1]:
+                clean_chat_history.append({
+                    "role": msg["role"],
+                    "content": msg["content"]
                 })
-                
-                logger.info("LLM response generated successfully")
-            else:
-                st.error("Failed to get response from LLM. Please check logs.")
-        
-        # Save updated history
-        # save_bulk_summary_chat_history(st.session_state.bulk_summary_chat_history)
-        
-        # Rerun to display updated chat
-        st.rerun()
+            
+            # Get current timestamp for assistant response
+            response_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            logger.debug(f"LLM chat with {len(clean_chat_history)} previous messages in history")
+            
+            # Build messages for streaming
+            chat_system_prompt = load_prompt('chat_system_prompt.txt')
+            chat_user_prompt = load_prompt('chat_user_prompt.txt')
+            chat_guardrail_prompt = load_prompt('chat_guardrail_prompt.txt')
+            formatted_user_prompt = chat_user_prompt.replace('{{PASTE ENTIRE SUMMARY HERE}}', summaries_context) if chat_user_prompt else summaries_context
+            full_system_prompt = f"{chat_system_prompt}\n\n{chat_guardrail_prompt}" if chat_system_prompt and chat_guardrail_prompt else chat_system_prompt
+            
+            messages = [{"role": "system", "content": full_system_prompt}]
+            messages.extend(clean_chat_history)
+            messages.append({"role": "user", "content": f"{formatted_user_prompt}\n\nUser Question: {prompt}"})
+            
+            # Display streaming response inside container
+            with chat_container:
+                with st.chat_message("assistant"):
+                    message_placeholder = st.empty()
+                    full_response = ""
+                    
+                    # Stream the response
+                    stream = openai.chat.completions.create(
+                        model=model,
+                        messages=messages,
+                        temperature=temperature,
+                        max_tokens=max_tokens,
+                        stream=True
+                    )
+                    
+                    for chunk in stream:
+                        if chunk.choices[0].delta.content is not None:
+                            full_response += chunk.choices[0].delta.content
+                            message_placeholder.markdown(full_response + "▌")
+                    
+                    # Final response without cursor
+                    message_placeholder.markdown(full_response)
+                    
+                    # Calculate response time and display metadata
+                    response_time = time.time() - response_start
+                    st.caption(f"🕐 {response_timestamp} | ⏱️ Response time: {response_time:.2f}s")
+            
+            # Add to history
+            st.session_state.bulk_summary_chat_history.append({
+                "role": "assistant",
+                "content": full_response,
+                "timestamp": response_timestamp,
+                "response_time": response_time
+            })
+            
+            logger.info("LLM streaming response generated successfully")
     
     # Chat history management buttons
     col1, col2, col3 = st.columns(3)
@@ -385,7 +408,8 @@ def _render_rag_chat():
             st.error("❌ Failed to reload vector store. Please check logs and try again.")
     
     # Display chat history (scrollable)
-    with st.container(height=600, border=True):
+    rag_chat_container = st.container(height=600, border=True)
+    with rag_chat_container:
         for message in st.session_state.rag_chat_history:
             with st.chat_message(message['role']):
                 st.markdown(message['content'])
@@ -455,46 +479,79 @@ def _render_rag_chat():
             "timestamp": user_timestamp
         })
         
-        # Get RAG response
+        # Display user message in container
+        with rag_chat_container:
+            with st.chat_message("user"):
+                st.markdown(prompt)
+                st.caption(f"🕐 {user_timestamp}")
+        
+        # Get RAG response with streaming
         rag_chatbot = st.session_state.get('rag_chatbot')
         if rag_chatbot:
-            with st.spinner("Searching vector store and generating response..."):
-                # Track response time
-                response_start = time.time()
-                
-                response = rag_chatbot.get_rag_response(
-                    user_message=prompt,
-                    chat_history=st.session_state.rag_chat_history[:-1]
-                )
-                
-                response_end = time.time()
-                response_time = response_end - response_start
+            # Track response time
+            response_start = time.time()
             
-            if response:
-                # Get current timestamp for assistant response
-                response_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            # Get current timestamp for assistant response
+            response_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            try:
+                # Display streaming response inside container
+                with rag_chat_container:
+                    with st.chat_message("assistant"):
+                        message_placeholder = st.empty()
+                        full_response = ""
+                        
+                        # Get streaming response from RAG chatbot
+                        stream = rag_chatbot.get_rag_response_stream(
+                            user_message=prompt,
+                            chat_history=st.session_state.rag_chat_history[:-1]
+                        )
+                        
+                        for chunk in stream:
+                            full_response += chunk
+                            message_placeholder.markdown(full_response + "▌")
+                        
+                        # Final response without cursor
+                        message_placeholder.markdown(full_response)
+                        
+                        # Calculate response time and display metadata
+                        response_time = time.time() - response_start
+                        st.caption(f"🕐 {response_timestamp} | ⏱️ Response time: {response_time:.2f}s")
                 
-                # Add assistant message to history with timestamp and response time
+                # Add to history
                 st.session_state.rag_chat_history.append({
                     "role": "assistant",
-                    "content": response,
+                    "content": full_response,
                     "timestamp": response_timestamp,
                     "response_time": response_time
                 })
                 
-                logger.info("RAG response generated successfully")
-            else:
-                error_msg = "Failed to generate RAG response. Please check logs."
-                error_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                st.session_state.rag_chat_history.append({
-                    "role": "assistant",
-                    "content": f"❌ {error_msg}",
-                    "timestamp": error_timestamp
-                })
-                logger.error(error_msg)
-        
-        # Rerun to display updated chat
-        st.rerun()
+                logger.info("RAG streaming response generated successfully")
+            except AttributeError:
+                # Fallback to non-streaming if get_rag_response_stream is not available
+                with st.spinner("Searching vector store and generating response..."):
+                    response = rag_chatbot.get_rag_response(
+                        user_message=prompt,
+                        chat_history=st.session_state.rag_chat_history[:-1]
+                    )
+                    response_time = time.time() - response_start
+                
+                if response:
+                    st.session_state.rag_chat_history.append({
+                        "role": "assistant",
+                        "content": response,
+                        "timestamp": response_timestamp,
+                        "response_time": response_time
+                    })
+                    logger.info("RAG response generated successfully (non-streaming fallback)")
+                else:
+                    error_msg = "Failed to generate RAG response. Please check logs."
+                    st.session_state.rag_chat_history.append({
+                        "role": "assistant",
+                        "content": f"❌ {error_msg}",
+                        "timestamp": response_timestamp
+                    })
+                    logger.error(error_msg)
     
     # Chat history and vector store management buttons
     col1, col2, col3, col4 = st.columns(4)

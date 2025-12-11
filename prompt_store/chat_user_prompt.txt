@@ -4,7 +4,7 @@ This is how the structure of the call summary, and it is multiple array so you w
   "callId": "",
   "conversationDate": "",
   "conversationTime": "", 
-  "conversationlength": "",
+  "conversationLength": "",
   "agentName": "",
   "agentId": "",
   "department": "",

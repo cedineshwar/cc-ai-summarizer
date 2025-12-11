@@ -73,6 +73,7 @@ with st.sidebar:
     with st.expander("⚙️ Configuration Info", expanded=False):
         st.markdown("**Current Settings from .env**")
         st.markdown(f"🤖 **Model:** `{Config.MODEL_NAME}`")
+        st.markdown(f"🧠 **Embedding Model:** `{Config.EMBEDDING_MODEL}`")
         st.markdown(f"🌡️ **Temperature:** `{Config.TEMPERATURE}`")
         st.markdown(f"📝 **Max Tokens:** `{Config.MAX_TOKENS}`")
         st.markdown(f"🔍 **Retriever K:** `{Config.RETRIEVER_K}`")
@@ -90,7 +91,9 @@ uploaded_files = st.sidebar.file_uploader("Upload call transcripts (.txt)", type
 
 models_list = [
     "gpt-4.1-mini-2025-04-14",
-    "gpt-4.1-nano",
+    "gpt-4o-mini",
+    "gpt-4o",
+    "gpt-3.5-turbo",
 ]
 st.markdown(
     """
@@ -125,6 +128,26 @@ model_choice = st.sidebar.selectbox(
 
 # Store model choice in session state for access across all pages
 st.session_state.model_choice = model_choice
+
+# Embedding Model Selection
+embedding_models_list = [
+    "text-embedding-3-small",
+    "text-embedding-3-large",
+    "text-embedding-ada-002"
+]
+
+if 'embedding_model_choice' not in st.session_state:
+    st.session_state.embedding_model_choice = Config.EMBEDDING_MODEL
+
+embedding_model_choice = st.sidebar.selectbox(
+    "Embedding model (for RAG)",
+    embedding_models_list,
+    index=embedding_models_list.index(st.session_state.embedding_model_choice) if st.session_state.embedding_model_choice in embedding_models_list else 0,
+    help=f"Default from config: {Config.EMBEDDING_MODEL}"
+)
+
+# Store embedding model choice in session state
+st.session_state.embedding_model_choice = embedding_model_choice
 
 temperature = st.sidebar.slider(
     "Temperature", 
@@ -410,29 +433,43 @@ with col3:
                         
                         logger.debug(f"Chat with {len(messages)-2} previous messages in conversation history")
                         
-                        # Get response
-                        with st.spinner("Thinking..."):
-                            response = openai.chat.completions.create(
+                        # Display assistant message container with streaming
+                        response_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        with st.chat_message("assistant"):
+                            message_placeholder = st.empty()
+                            full_response = ""
+                            
+                            # Stream the response
+                            response_start_stream = time.time()
+                            stream = openai.chat.completions.create(
                                 model=model_choice,
                                 messages=messages,
                                 temperature=st.session_state.temperature,
-                                max_tokens=st.session_state.max_tokens
+                                max_tokens=st.session_state.max_tokens,
+                                stream=True
                             )
+                            
+                            for chunk in stream:
+                                if chunk.choices[0].delta.content is not None:
+                                    full_response += chunk.choices[0].delta.content
+                                    message_placeholder.markdown(full_response + "▌")
+                            
+                            # Final response without cursor
+                            message_placeholder.markdown(full_response)
+                            
+                            # Calculate response time
+                            response_time = time.time() - response_start
+                            
+                            # Display timestamp and response time
+                            st.caption(f"🕐 {response_timestamp} | ⏱️ Response time: {response_time:.2f}s")
                         
-                        response_time = time.time() - response_start
-                        assistant_message = response.choices[0].message.content
-                        
-                        # Add to history and display
+                        # Add to history
                         st.session_state.messages.append({
                             "role": "assistant",
-                            "content": assistant_message,
-                            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            "content": full_response,
+                            "timestamp": response_timestamp,
                             "response_time": response_time
                         })
-                        
-                        with st.chat_message("assistant"):
-                            st.markdown(assistant_message)
-                            st.caption(f"🕐 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | ⏱️ Response time: {response_time:.2f}s")
                         
                         # Save history
                         #save_chat_history(st.session_state.messages)

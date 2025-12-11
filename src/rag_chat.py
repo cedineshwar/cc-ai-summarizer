@@ -284,6 +284,85 @@ class RAGChatbot:
             logger.error(f"Error generating RAG response: {str(e)}")
             return None
     
+    def get_rag_response_stream(self, user_message: str, 
+                                chat_history: List[Dict] = None):
+        """
+        Generate RAG-based response using vector retrieval and LLM with streaming.
+        
+        Args:
+            user_message: User's question about summaries
+            chat_history: Previous conversation messages for context
+            
+        Yields:
+            Chunks of the LLM response as they stream
+        """
+        if not self.is_initialized:
+            logger.error("❌ RAG Chatbot not initialized")
+            return
+        
+        try:
+            # Retrieve relevant summaries using vector similarity
+            retriever = self.vector_store_manager.get_retriever()
+            
+            if retriever is None:
+                logger.error("❌ Retriever not available - vector store may not be initialized")
+                return
+            
+            # Get relevant documents using LangChain retriever.invoke() method
+            logger.info(f"🔍 Retrieving documents for query: '{user_message[:100]}...'")
+            retrieved_docs = retriever.invoke(user_message)
+            logger.info(f"✅ Retrieved {len(retrieved_docs)} documents (k={self.vector_store_manager.retriever_k})")
+            
+            # Convert Document objects to dicts for formatting
+            retrieved_results = [
+                {
+                    "content": doc.page_content,
+                    "metadata": doc.metadata
+                }
+                for doc in retrieved_docs
+            ]
+            
+            context = self._format_retrieved_context(retrieved_results)
+            
+            # Load system prompt
+            system_prompt = self._load_system_prompt()
+            
+            # Load guardrail prompt to append to system prompt
+            guardrail_prompt = load_chat_prompt('chat_guardrail_prompt.txt')
+            full_system_prompt = f"{system_prompt}\n\n{guardrail_prompt}" if guardrail_prompt else system_prompt
+            
+            # Build messages for LLM
+            messages = [SystemMessage(content=full_system_prompt)]
+            
+            # Add chat history if available
+            if chat_history:
+                for msg in chat_history:
+                    if msg['role'] == 'user':
+                        messages.append(HumanMessage(content=msg['content']))
+                    elif msg['role'] == 'assistant':
+                        messages.append(AIMessage(content=msg['content']))
+            
+            # Add context and current user message
+            full_message = f"""{context}
+
+                            User Question: {user_message}
+
+                            Please answer the question based on the retrieved call summaries above."""
+            
+            messages.append(HumanMessage(content=full_message))
+            
+            # Get streaming response from LLM
+            logger.debug("Generating streaming LLM response...")
+            stream = self.llm.stream(messages)
+            
+            for chunk in stream:
+                yield chunk.content
+            
+            logger.info("RAG streaming response generated successfully")
+            
+        except Exception as e:
+            logger.error(f"Error generating streaming RAG response: {str(e)}")
+    
     def reload_vector_store(self) -> bool:
         """
         Reload vector store to pick up new summaries.

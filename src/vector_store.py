@@ -135,9 +135,9 @@ class VectorStoreManager:
             logger.info("📌 Initializing OpenAI embeddings...")
             self.embeddings = OpenAIEmbeddings(
                 openai_api_key=api_key,
-                model="text-embedding-3-small"
+                model=Config.EMBEDDING_MODEL
             )
-            logger.info("✅ Embeddings initialized successfully")
+            logger.info(f"✅ Embeddings initialized successfully with model: {Config.EMBEDDING_MODEL}")
             
             # If forcing recreation, delete existing vector store first
             if force_recreate and os.path.exists(self.vector_store_path):

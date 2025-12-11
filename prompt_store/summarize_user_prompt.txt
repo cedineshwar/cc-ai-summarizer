@@ -4,7 +4,7 @@ Please summarize it using the exact structure provided and get me the JSON struc
   "callId": "",
   "conversationDate": "",
   "conversationTime": "", 
-  "conversationlength": "",
+  "conversationLength": "",
   "agentName": "",
   "agentId": "",
   "department": "",
@@ -16,19 +16,21 @@ Please summarize it using the exact structure provided and get me the JSON struc
   "customerEmotions": "",
   "agentTone": "",
   "agentEmotions": "",
-  "agentScore": 85,
+  "agentScore": number,
   "agentScoreReason": "",
-  "agentRating": 4,
+  "agentRating": number,
   "agentRatingReason": "",
 }
 Value Rules:
-Please keep all values in the json as init case. 
+All the json fields are mandatory and cannot have empty values
+All values for the json key should be initcase. if all words are in upper case make it initcase.
 For timezone alone keep it all upper case. 
 For time like AM or PM, keep it as am or pm. 
 For noon change it to pm.
 For HOURS or Hours or hours, keep it hrs.
 For MINUTES or Minutes or minutes, keep it mins.
 For SECONDS or Seconds or seconds, keep it secs.
+customerTone, customerEmotions, agentTone, agentEmotions cannot be list, if there are more than one value, have it comma ',' separated
 
 Conversation:
 {{PASTE TRANSCRIPT HERE}}

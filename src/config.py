@@ -23,6 +23,7 @@ class Config:
     
     # LLM Configuration
     MODEL_NAME = os.getenv('MODEL_NAME', 'gpt-4.1-mini-2025-04-14')
+    EMBEDDING_MODEL = os.getenv('EMBEDDING_MODEL', 'text-embedding-3-small')
     TEMPERATURE = float(os.getenv('TEMPERATURE', '0.0'))
     MAX_TOKENS = int(os.getenv('MAX_TOKENS', '600'))
     
@@ -40,6 +41,7 @@ class Config:
         logger.info(f"📊 Summaries File: {cls.SUMMARIES_FILE}")
         logger.info(f"🗂️  Vector Store Path: {cls.VECTOR_STORE_PATH}")
         logger.info(f"🤖 Model: {cls.MODEL_NAME}")
+        logger.info(f"🧠 Embedding Model: {cls.EMBEDDING_MODEL}")
         logger.info(f"🌡️  Temperature: {cls.TEMPERATURE}")
         logger.info(f"📝 Max Tokens: {cls.MAX_TOKENS}")
         logger.info(f"📍 Log Level: {cls.LOG_LEVEL}")
