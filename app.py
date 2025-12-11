@@ -1,6 +1,6 @@
 import streamlit as st
 from dotenv import load_dotenv
-from src.utils import load_sample_call, load_file, list_files, get_next_id, save_bulk_summary, load_chat_history, save_chat_history
+from src.utils import load_sample_call, load_file, list_files, get_next_id, save_bulk_summary, load_chat_history, save_chat_history, add_footer
 from src.summarizer import summarize_call, load_prompt
 from src.logger import logger
 from src.config import Config
@@ -558,3 +558,6 @@ with col3:
                             key="download_chat",
                             width="stretch"
                         )
+
+# Add footer to the page
+add_footer()

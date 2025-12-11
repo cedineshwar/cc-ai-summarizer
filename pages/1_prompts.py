@@ -1,5 +1,5 @@
 import streamlit as st
-from src.utils import load_file, load_sample_call
+from src.utils import load_file, load_sample_call, add_footer
 
 st.set_page_config(page_title="Prompts Library", page_icon="📚", layout="wide")
 st.header("📚 Prompts Library")
@@ -163,3 +163,6 @@ with main_tabs[1]:
 # {transcript}
 # """)
 # st.write("This prompt is used for generating a concise summary of the entire call transcript.") 
+
+# Add footer to the page
+add_footer()

@@ -17,6 +17,7 @@ from src.utils import (
     get_next_id,
     load_bulk_summary_chat_history,
     save_bulk_summary_chat_history,
+    add_footer,
 )
 from src.logger import logger
 from src.summarizer import chat_with_bulk_summaries, load_prompt
@@ -741,4 +742,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Add footer to the page
+add_footer()
+
 

@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from src.utils import add_footer
 
 st.markdown("# Plotting Demo 📈")
 st.write("This page demonstrates plotting capabilities.")
@@ -11,3 +12,6 @@ chart_data = pd.DataFrame(
     columns=['a', 'b', 'c']
 )
 st.line_chart(chart_data)
+
+# Add footer to the page
+add_footer()

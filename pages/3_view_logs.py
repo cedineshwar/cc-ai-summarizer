@@ -12,6 +12,7 @@ import streamlit as st
 import os
 from datetime import datetime
 from src.logger import get_logs_dir, get_all_log_files, get_today_log_file, clear_today_log
+from src.utils import add_footer
 
 
 def load_log_file(log_filepath: str) -> str:
@@ -272,3 +273,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Add footer to the page
+add_footer()
+

@@ -193,3 +193,33 @@ def save_bulk_summary_chat_history(messages: list) -> None:
         
     except Exception as e:
         logger.error(f"Error saving bulk summary chat history: {e}", exc_info=True)
+
+
+def add_footer():
+    """
+    Add a dynamic footer to the page with current year, app name, and author.
+    """
+    import streamlit as st
+    
+    current_year = datetime.now().year
+    
+    # Add some spacing
+    st.divider()
+    
+    # Create footer with centered text
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.markdown(
+            f"""
+            <div style="
+                text-align: center;
+                padding: 20px 0;
+                font-size: 12px;
+                color: #999;
+            ">
+                © {current_year} CC AI Summarizer | Dineshwar Elanchezhian
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
