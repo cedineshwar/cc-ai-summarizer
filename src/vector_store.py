@@ -94,6 +94,7 @@ class VectorStoreManager:
                         Agent Performance Score: {summary.get('agentScore', 'N/A')}/100
                         Agent Rating: {summary.get('agentRating', 'N/A')}/5
                         Resolution Status: {summary.get('resolutionStatus', 'N/A')}
+                        File Name : {summary.get('filename', 'N/A')}
                     """
             
             # Create metadata with important fields for filtering
@@ -108,6 +109,7 @@ class VectorStoreManager:
                 "issue_category": summary.get('issueCategory', ''),
                 "department": summary.get('department', ''),
                 "sentiment": summary.get('sentiment', ''),
+                "filename": summary.get('filename', '')
             }
             
             doc = Document(page_content=content.strip(), metadata=metadata)

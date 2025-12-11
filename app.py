@@ -11,6 +11,58 @@ import json
 import numpy as np
 import time
 from datetime import datetime
+import re
+
+
+def extract_json_from_response(response_text: str) -> str:
+    """
+    Extract valid JSON from LLM response that might contain markdown code blocks,
+    extra text, or other formatting.
+    
+    Args:
+        response_text: Raw response from LLM
+        
+    Returns:
+        JSON string if found, otherwise returns original response
+    """
+    if not response_text or not response_text.strip():
+        return response_text
+    
+    # Try to extract JSON from markdown code blocks (```json ... ```)
+    json_blocks = re.findall(r'```(?:json)?\s*([\s\S]*?)```', response_text)
+    if json_blocks:
+        for block in json_blocks:
+            block = block.strip()
+            if block:
+                try:
+                    json.loads(block)
+                    logger.debug(f"Extracted JSON from markdown code block (length: {len(block)})")
+                    return block
+                except json.JSONDecodeError:
+                    pass
+    
+    # Try to find and extract the first valid JSON object in the response
+    # Look for patterns like { ... }
+    brace_start = response_text.find('{')
+    if brace_start != -1:
+        # Try to find matching closing brace
+        brace_count = 0
+        for i in range(brace_start, len(response_text)):
+            if response_text[i] == '{':
+                brace_count += 1
+            elif response_text[i] == '}':
+                brace_count -= 1
+                if brace_count == 0:
+                    potential_json = response_text[brace_start:i+1]
+                    try:
+                        json.loads(potential_json)
+                        logger.debug(f"Extracted JSON from response text (length: {len(potential_json)})")
+                        return potential_json
+                    except json.JSONDecodeError:
+                        continue
+    
+    logger.warning("Could not extract valid JSON from response, returning original")
+    return response_text
 
 
 def export_chat_history_to_csv(messages):
@@ -236,16 +288,21 @@ if st.button("Generate Summary"):
                 logger.debug(f"Summary for {filename}: {summary}")
                 if summary and summary.strip():
                     try:
-                        summary_json = json.loads(summary)
+                        # Extract JSON from response (handles markdown blocks, extra text, etc.)
+                        extracted_json = extract_json_from_response(summary)
+                        logger.debug(f"Extracted JSON: {extracted_json[:200]}...")
+                        summary_json = json.loads(extracted_json)
                         summary_json['id'] = start_id + idx
                         summary_json['filename'] = filename
                         all_summaries.append(summary_json)
                         logger.info(f"Summary generated for {filename} in {file_time:.2f}s")
                     except json.JSONDecodeError as e:
                         logger.error(f"JSON decoding error for {filename}: {e}")
+                        logger.debug(f"Failed response text (first 1000 chars): {summary[:1000]}")
                         st.error(f"Failed to parse summary for {filename}")
                 else:
-                    logger.error(f"Failed to generate summary for {filename}")
+                    logger.error(f"Empty or None response for {filename}")
+                    logger.debug(f"Summary value: {repr(summary)}")
                     st.error(f"Failed to generate summary for {filename}")
         
         summarization_end = time.time()

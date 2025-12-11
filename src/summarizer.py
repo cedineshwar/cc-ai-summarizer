@@ -58,6 +58,7 @@ def summarize_call(transcript, model=None, max_sentences=3, temperature=None, ma
 
         summary = response.choices[0].message.content.strip()
         logger.info(f"Successfully generated summary ({len(summary)} characters)")
+        logger.debug(f"Summary preview: {summary[:300]}...")
         
         return summary
     

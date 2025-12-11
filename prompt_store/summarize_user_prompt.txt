@@ -1,64 +1,35 @@
 Below is a call-center conversation between an agent and a customer.
-Please summarize it using the exact structure provided and get me the JSON structure with key value pair like given below and strictly follow the format of the json structure
+Analyze the conversation and return ONLY a valid JSON object with the following structure. Do not include any text, explanations, or markdown. Return only the JSON.
+
 {
-  "callId": "",
-  "conversationDate": "",
-  "conversationTime": "", 
-  "conversationLength": "",
-  "agentName": "",
-  "agentId": "",
-  "department": "",
-  "customerName": "",
-  "callSummary": "",
-  "issueCategory": "",
-  "resolutionStatus": "",
-  "customerTone": "",
-  "customerEmotions": "",
-  "agentTone": "",
-  "agentEmotions": "",
-  "agentScore": number,
-  "agentScoreReason": "",
-  "agentRating": number,
-  "agentRatingReason": "",
+  "callId": "A unique identifier for this call",
+  "conversationDate": "Date in YYYY-MM-DD format",
+  "conversationTime": "Time in HH:MM am/pm format",
+  "conversationLength": "Duration like '5 mins 30 secs' or '1 hr 2 mins'",
+  "agentName": "Agent name in Title Case",
+  "agentId": "Agent ID or employee number",
+  "department": "Department name in Title Case",
+  "customerName": "Customer name in Title Case",
+  "callSummary": "A concise {{max_summary_length}} sentence overview of the issue, actions taken, and resolution status",
+  "issueCategory": "Category in Title Case",
+  "resolutionStatus": "Resolved or Unresolved",
+  "customerTone": "Comma-separated values like 'Calm, Appreciative'",
+  "customerEmotions": "Observable emotions only, comma-separated. If none: 'Not Expressed'",
+  "agentTone": "Comma-separated values like 'Professional, Empathetic'",
+  "agentEmotions": "Expressed emotions comma-separated. If none: 'Not Expressed'",
+  "agentScore": 85,
+  "agentScoreReason": "2-3 sentence justification based on Friendliness, Clarity, Policy Adherence, Resolution Effectiveness, and Empathy",
+  "agentRating": 4,
+  "agentRatingReason": "1-2 sentence explanation (1=Very Poor, 2=Poor, 3=Average, 4=Very Good, 5=Excellent)"
 }
-Value Rules:
-All the json fields are mandatory and cannot have empty values
-All values for the json key should be initcase. if all words are in upper case make it initcase.
-For timezone alone keep it all upper case. 
-For time like AM or PM, keep it as am or pm. 
-For noon change it to pm.
-For HOURS or Hours or hours, keep it hrs.
-For MINUTES or Minutes or minutes, keep it mins.
-For SECONDS or Seconds or seconds, keep it secs.
-customerTone, customerEmotions, agentTone, agentEmotions cannot be list, if there are more than one value, have it comma ',' separated
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no markdown code blocks, no explanations, no extra text
+2. All fields are mandatory and must have non-empty string values (except agentScore and agentRating which are numbers)
+3. agentScore must be a number 0-100
+4. agentRating must be a number 1-5
+5. Do NOT wrap in markdown code blocks
+6. Do NOT add text before or after the JSON
 
 Conversation:
 {{PASTE TRANSCRIPT HERE}}
-Required Output Format (Follow strictly):
-1. Summary of the Call
-A concise {{max_summary_length}} sentence overview of the issue, actions taken, and resolution status.
-2. Customer Tone
-Describe the customer’s tone (e.g., calm, upset, confused, angry, frustrated, appreciative, neutral).
-3. Customer Emotions (Explicit Only)
-List observable emotions based only on actual statements (e.g., frustration, worry, satisfaction).
-No guessing.
-4. Agent Tone
-Describe the agent’s tone (e.g., professional, empathetic, rushed, neutral).
-5. Agent Emotions (If Detectable)
-Only include emotions that the agent clearly expresses.
-If none: “The agent did not express explicit emotions.”
-6. Agent Score (0–100)
-Score based on:
-Friendliness
-Clarity
-Policy adherence
-Resolution effectiveness
-Empathy
-Include a 2–3 sentence justification.
-7. Agent Rating (1–5 stars)
-5 = Excellent
-4 = Very Good
-3 = Average
-2 = Poor
-1 = Very Poor
-Include a 1–2 sentence explanation.
