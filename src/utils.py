@@ -196,6 +196,8 @@ def save_bulk_summary_chat_history(messages: list) -> None:
 
 
 def add_footer():
+
+    
     """
     Add a dynamic footer to the page with current year, app name, and author.
     """
