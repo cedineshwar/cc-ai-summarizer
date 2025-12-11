@@ -209,7 +209,7 @@ temperature = st.sidebar.slider(
 )
 max_tokens = st.sidebar.slider(
     "Max Tokens", 
-    0, 10000, 
+    0, 1000, 
     st.session_state.max_tokens,
     help=f"Default from config: {Config.MAX_TOKENS}"
 )
